@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f0eee9;font-family:Arimo,Helvetica,sans-serif}
+a{color:#288F85}a:hover{color:#9C0760}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:700 13px/1.2 Arimo,sans-serif;color:#1a1a1a;letter-spacing:.04em;text-transform:uppercase}
+.dv-opts{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 Arimo,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 Arimo,sans-serif;color:rgba(0,0,0,.5)}
+.nt{margin:2px 0 0;padding-left:16px;font:500 13px/1.45 Caveat,cursive;color:#288F85;max-width:560px}
+.nt li{margin-bottom:1px}
+</style></helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">LDS — Information architecture, navigation &amp; page wireframes</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Sitemap — 12 pages collapsed into 5 nav buckets</div>
+<div class="dv-card" style="width:900px;padding:22px 24px">
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+    <div style="font:700 11px/1.1 Arimo,sans-serif;letter-spacing:.06em;padding:8px 10px;border:2px solid #1a1a1a">LEGAL<br>DESIGN<br>SUMMIT</div>
+    <div>
+      <div style="font:700 13px Arimo,sans-serif;letter-spacing:.06em">HOME  /index</div>
+      <div style="font:11px/1.4 Arimo,sans-serif;color:#7D8A89">Year-round hub. Switches between “next edition” mode and “post-summit” mode via one flag.</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+    <div style="border-top:3px solid #288F85;padding-top:9px;display:flex;flex-direction:column;gap:7px">
+      <div style="font:700 11px Arimo,sans-serif;letter-spacing:.06em">THE SUMMIT</div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Program <span style="color:#A9B1B1">/program</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Speakers <span style="color:#A9B1B1">/speakers</span><br><span style="color:#A9B1B1">↳ /speakers/:slug</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">BrainFactory <span style="color:#A9B1B1">/brainfactory</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Travel &amp; Venue <span style="color:#A9B1B1">/travel</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Past editions <span style="color:#A9B1B1">/archive</span> <span style="color:#9C0760">NEW</span></div>
+    </div>
+    <div style="border-top:3px solid #288F85;padding-top:9px;display:flex;flex-direction:column;gap:7px">
+      <div style="font:700 11px Arimo,sans-serif;letter-spacing:.06em">ATTEND</div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Tickets <span style="color:#A9B1B1">/tickets</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Who is attending <span style="color:#A9B1B1">/attending</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Scholarships <span style="color:#A9B1B1">/scholarships</span> <span style="color:#9C0760">NEW</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">FAQ <span style="color:#A9B1B1">/faq</span> <span style="color:#9C0760">NEW</span></div>
+    </div>
+    <div style="border-top:3px solid #288F85;padding-top:9px;display:flex;flex-direction:column;gap:7px">
+      <div style="font:700 11px Arimo,sans-serif;letter-spacing:.06em">COMMUNITY</div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">The Gallery <span style="color:#A9B1B1">/gallery</span><br><span style="color:#A9B1B1">↳ /gallery/:slug</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Blog / Journal <span style="color:#A9B1B1">/blog</span><br><span style="color:#A9B1B1">↳ /blog/:slug</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Get involved <span style="color:#A9B1B1">/volunteer</span> <span style="color:#9C0760">NEW</span></div>
+    </div>
+    <div style="border-top:3px solid #288F85;padding-top:9px;display:flex;flex-direction:column;gap:7px">
+      <div style="font:700 11px Arimo,sans-serif;letter-spacing:.06em">PARTNER</div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Become a partner <span style="color:#A9B1B1">/partner</span> <span style="color:#9C0760">NEW</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Our partners <span style="color:#A9B1B1">/partners</span></div>
+    </div>
+    <div style="border-top:3px solid #288F85;padding-top:9px;display:flex;flex-direction:column;gap:7px">
+      <div style="font:700 11px Arimo,sans-serif;letter-spacing:.06em">ABOUT</div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Our story &amp; motto <span style="color:#A9B1B1">/about</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Meet the team <span style="color:#A9B1B1">/team</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Values &amp; code of conduct <span style="color:#A9B1B1">/values</span></div>
+      <div style="font:11px/1.35 Arimo,sans-serif;color:#4E5654;border:1px solid #e2e0db;padding:6px 7px">Contact <span style="color:#A9B1B1">/contact</span></div>
+    </div>
+  </div>
+  <div style="margin-top:16px;padding-top:12px;border-top:1px dashed #cfcdc8;display:flex;gap:10px;flex-wrap:wrap">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89;padding-top:5px">FOOTER-ONLY / UTILITY:</div>
+    <div style="font:11px Arimo,sans-serif;color:#4E5654;background:#f3f2ee;padding:5px 8px">/privacy</div>
+    <div style="font:11px Arimo,sans-serif;color:#4E5654;background:#f3f2ee;padding:5px 8px">/privacy-recruitment</div>
+    <div style="font:11px Arimo,sans-serif;color:#4E5654;background:#f3f2ee;padding:5px 8px">Whistleblower form (ext.)</div>
+    <div style="font:11px Arimo,sans-serif;color:#4E5654;background:#f3f2ee;padding:5px 8px">/newsletter — thank-you</div>
+    <div style="font:11px Arimo,sans-serif;color:#4E5654;background:#f3f2ee;padding:5px 8px">404</div>
+  </div>
+</div>
+<ul class="nt"><li>Today’s nav has 11 flat items + “More”. This groups them so nothing is more than 2 clicks deep.</li><li>Speakers, Gallery, Blog, Team and Program sessions are all CMS collections — model them as such, not hand-coded pages.</li></ul>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Global header — desktop, mega-menu open, and scrolled state</div>
+<div class="dv-card" style="width:620px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #e2e0db">
+    <div style="font:700 9px/1.05 Arimo,sans-serif;letter-spacing:.05em">LEGAL<br>DESIGN<br>SUMMIT</div>
+    <div style="display:flex;gap:14px;font:700 9px Arimo,sans-serif;color:#4E5654;letter-spacing:.07em"><span style="color:#288F85;border-bottom:2px solid #288F85;padding-bottom:2px">THE SUMMIT ▾</span><span>ATTEND ▾</span><span>COMMUNITY ▾</span><span>PARTNER</span><span>ABOUT ▾</span></div>
+    <div style="display:flex;gap:7px;align-items:center"><span style="font:9px Arimo,sans-serif;color:#7D8A89">EN</span><div style="background:#288F85;color:#fff;font:700 9px Arimo,sans-serif;letter-spacing:.06em;padding:7px 10px">GET TICKETS</div></div>
+  </div>
+  <div style="background:#fbfaf8;border-bottom:1px solid #e2e0db;padding:16px;display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 9px Arimo,sans-serif;letter-spacing:.07em;color:#7D8A89">THE 2026 EDITION</div>
+      <div style="height:9px;background:#d6d4cf;width:70%"></div><div style="height:9px;background:#d6d4cf;width:55%"></div><div style="height:9px;background:#d6d4cf;width:64%"></div><div style="height:9px;background:#d6d4cf;width:48%"></div><div style="height:9px;background:#d6d4cf;width:58%"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 9px Arimo,sans-serif;letter-spacing:.07em;color:#7D8A89">QUICK LINKS</div>
+      <div style="height:9px;background:#e4e2dd;width:60%"></div><div style="height:9px;background:#e4e2dd;width:72%"></div><div style="height:9px;background:#e4e2dd;width:50%"></div>
+    </div>
+    <div style="background:#AEEAE4;padding:11px;display:flex;flex-direction:column;gap:7px">
+      <div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">FEATURED CARD</div>
+      <div style="height:54px;background:repeating-linear-gradient(45deg,#fff 0 7px,#e6f5f3 7px 14px);display:flex;align-items:center;justify-content:center;font:9px ui-monospace,monospace;color:#4E5654">keynote photo</div>
+      <div style="height:8px;background:#7DDAD0;width:80%"></div><div style="height:8px;background:#7DDAD0;width:55%"></div>
+    </div>
+  </div>
+  <div style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;background:#1a1a1a">
+    <div style="font:700 8px/1.05 Arimo,sans-serif;color:#fff;letter-spacing:.05em">LEGAL DESIGN SUMMIT</div>
+    <div style="display:flex;gap:12px;font:700 8px Arimo,sans-serif;color:#A9B1B1;letter-spacing:.07em"><span>SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div>
+    <div style="background:#7DDAD0;color:#1a1a1a;font:700 8px Arimo,sans-serif;padding:6px 9px;letter-spacing:.06em">TICKETS — 3 DAYS LEFT</div>
+  </div>
+  <div style="padding:8px 16px;font:500 12px Caveat,cursive;color:#288F85;border-top:1px solid #e2e0db">↑ condensed sticky bar after 400px scroll: one-line logo, urgency label on the CTA</div>
+</div>
+<ul class="nt"><li>Only 5 top-level items + a permanent ticket CTA; “More” disappears.</li><li>Mega-menu panel is optional per bucket — Partner has no children, so it links straight through.</li></ul>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Home A — event-first (conversion to tickets)</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="height:190px;background:repeating-linear-gradient(45deg,#ecebe7 0 8px,#e0ded9 8px 16px);position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;gap:9px">
+    <div style="position:absolute;top:8px;right:10px;font:9px ui-monospace,monospace;color:#7D8A89">summit footage loop, muted</div>
+    <div style="font:700 21px/1.05 Arimo,sans-serif;letter-spacing:-.01em">DESIGNING EVOLUTION,<br>LEADING REVOLUTION</div>
+    <div style="height:8px;background:#b9b7b2;width:76%"></div>
+    <div style="display:flex;gap:8px;align-items:center"><div style="background:#288F85;color:#fff;font:700 9px Arimo,sans-serif;padding:8px 12px">GET YOUR TICKET</div><div style="border:1px solid #1a1a1a;font:700 9px Arimo,sans-serif;padding:8px 12px">SEE THE PROGRAM</div><div style="font:9px Arimo,sans-serif;color:#4E5654">Helsinki · 5–6 Nov 2026</div></div>
+  </div>
+  <div style="background:#288F85;color:#fff;padding:11px 14px;display:flex;justify-content:space-between;text-align:center">
+    <div><div style="font:700 15px Arimo,sans-serif">600+</div><div style="font:7px Arimo,sans-serif;letter-spacing:.06em">ATTENDEES</div></div>
+    <div><div style="font:700 15px Arimo,sans-serif">50+</div><div style="font:7px Arimo,sans-serif;letter-spacing:.06em">SPEAKERS</div></div>
+    <div><div style="font:700 15px Arimo,sans-serif">20+</div><div style="font:7px Arimo,sans-serif;letter-spacing:.06em">SESSIONS</div></div>
+    <div><div style="font:700 15px Arimo,sans-serif">10</div><div style="font:7px Arimo,sans-serif;letter-spacing:.06em">WORKSHOPS</div></div>
+    <div><div style="font:700 15px Arimo,sans-serif">2</div><div style="font:7px Arimo,sans-serif;letter-spacing:.06em">DAYS</div></div>
+  </div>
+  <div style="padding:14px;display:flex;flex-direction:column;gap:7px;border-bottom:1px solid #e2e0db">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">WHY THIS EXISTS — 3 statements</div>
+    <div style="font:700 13px/1.25 Arimo,sans-serif">Terms of service no one reads? <span style="color:#9C0760">Check.</span><br>Contracts by lawyers, for lawyers? <span style="color:#9C0760">Check.</span><br>This needs to change.</div>
+  </div>
+  <div style="padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89;grid-column:1/-1">WHAT HAPPENS THERE</div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:7px;background:#d6d4cf"></div><div style="height:7px;background:#e4e2dd;width:70%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:7px;background:#d6d4cf"></div><div style="height:7px;background:#e4e2dd;width:70%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:44px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:7px;background:#d6d4cf"></div><div style="height:7px;background:#e4e2dd;width:70%"></div></div>
+  </div>
+  <div style="padding:14px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #e2e0db">
+    <div style="display:flex;justify-content:space-between"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">PROGRAM AT A GLANCE</div><div style="font:700 9px Arimo,sans-serif;color:#288F85">FULL PROGRAM →</div></div>
+    <div style="display:flex;gap:8px"><div style="width:52px;font:700 9px Arimo,sans-serif;color:#9C0760">09:30</div><div style="flex:1;height:8px;background:#d6d4cf"></div></div>
+    <div style="display:flex;gap:8px"><div style="width:52px;font:700 9px Arimo,sans-serif;color:#9C0760">10:15</div><div style="flex:1;height:8px;background:#d6d4cf"></div></div>
+    <div style="display:flex;gap:8px"><div style="width:52px;font:700 9px Arimo,sans-serif;color:#9C0760">11:00</div><div style="flex:1;height:8px;background:#d6d4cf"></div></div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:8px">
+    <div style="display:flex;justify-content:space-between"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">SPEAKERS — 8 of 50, shuffled</div><div style="font:700 9px Arimo,sans-serif;color:#288F85">ALL SPEAKERS →</div></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+      <div><div style="height:58px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#e4e2dd;width:60%;margin-top:3px"></div></div>
+      <div><div style="height:58px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#e4e2dd;width:60%;margin-top:3px"></div></div>
+      <div><div style="height:58px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#e4e2dd;width:60%;margin-top:3px"></div></div>
+      <div><div style="height:58px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#e4e2dd;width:60%;margin-top:3px"></div></div>
+    </div>
+  </div>
+  <div style="padding:14px;background:#AEEAE4;display:flex;gap:12px;align-items:center">
+    <div style="flex:1"><div style="font:700 11px Arimo,sans-serif;letter-spacing:.05em">BRAINFACTORY</div><div style="height:7px;background:#7DDAD0;margin-top:6px"></div><div style="height:7px;background:#7DDAD0;width:75%;margin-top:4px"></div><div style="margin-top:8px;font:700 9px Arimo,sans-serif;color:#288F85">HOW IT WORKS →</div></div>
+    <div style="width:110px;height:64px;background:repeating-linear-gradient(45deg,#fff 0 7px,#e6f5f3 7px 14px);display:flex;align-items:center;justify-content:center;font:9px ui-monospace,monospace;color:#4E5654">workshop</div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:8px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">MADE POSSIBLE BY — tiered logo wall</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px"><div style="height:26px;background:#ecebe7"></div><div style="height:26px;background:#ecebe7"></div><div style="height:26px;background:#ecebe7"></div><div style="height:26px;background:#ecebe7"></div></div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px"><div style="height:16px;background:#f2f1ed"></div><div style="height:16px;background:#f2f1ed"></div><div style="height:16px;background:#f2f1ed"></div><div style="height:16px;background:#f2f1ed"></div><div style="height:16px;background:#f2f1ed"></div><div style="height:16px;background:#f2f1ed"></div><div style="height:16px;background:#f2f1ed"></div></div>
+    <div style="font:700 9px Arimo,sans-serif;color:#288F85">SEE ALL 70+ COLLABORATORS →</div>
+  </div>
+  <div style="padding:14px;display:flex;gap:10px;align-items:flex-end;border-bottom:1px solid #e2e0db">
+    <div style="flex:1"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">STAY IN THE LOOP</div><div style="height:26px;border:1px solid #cfcdc8;margin-top:7px;display:flex;align-items:center;padding:0 7px;font:9px Arimo,sans-serif;color:#A9B1B1">your email</div></div>
+    <div style="background:#1a1a1a;color:#fff;font:700 9px Arimo,sans-serif;padding:8px 11px">SUBSCRIBE</div>
+  </div>
+  <div style="padding:14px;background:#1a1a1a;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:10px">
+    <div><div style="font:700 8px/1.1 Arimo,sans-serif;color:#fff;letter-spacing:.05em">LEGAL<br>DESIGN<br>SUMMIT</div><div style="font:500 11px Caveat,cursive;color:#7DDAD0;margin-top:6px">motto lockup + socials</div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:6px;background:#4E5654;width:70%"></div><div style="height:6px;background:#4E5654;width:55%"></div><div style="height:6px;background:#4E5654;width:62%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:6px;background:#4E5654;width:70%"></div><div style="height:6px;background:#4E5654;width:55%"></div><div style="height:6px;background:#4E5654;width:62%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:6px;background:#4E5654;width:70%"></div><div style="height:6px;background:#4E5654;width:55%"></div><div style="height:6px;background:#4E5654;width:62%"></div></div>
+  </div>
+</div>
+<ul class="nt"><li>Motto is the H1; the aftermovie is the background, not a separate link.</li><li>Between editions the hero swaps to “thank you + aftermovie + waitlist”: same slots, different data.</li><li>LinkedIn embed wall is dropped — it is slow and off-brand. One newsletter block instead.</li></ul>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Home B — manifesto-first (typographic, purpose-led)</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:#1a1a1a"><div style="font:700 8px/1.05 Arimo,sans-serif;color:#fff">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#A9B1B1;letter-spacing:.06em"><span>SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#7DDAD0;color:#1a1a1a;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="background:#1a1a1a;padding:24px 16px 20px;display:flex;flex-direction:column;gap:12px">
+    <div style="font:700 26px/1.02 Arimo,sans-serif;color:#fff;letter-spacing:-.01em">WHERE LAW<br>MEETS <span style="color:#7DDAD0">DESIGN.</span></div>
+    <div style="font:13px/1.45 Arimo,sans-serif;color:#A9B1B1;max-width:300px">A global community turning ideas into better justice, strategic advantage and truly human-centred legal services.</div>
+    <div style="display:flex;gap:8px"><div style="background:#7DDAD0;color:#1a1a1a;font:700 9px Arimo,sans-serif;padding:8px 12px">JOIN THE 2026 SUMMIT</div><div style="border:1px solid #7D8A89;color:#fff;font:700 9px Arimo,sans-serif;padding:8px 12px">WATCH THE FILM</div></div>
+  </div>
+  <div style="padding:16px 14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:10px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">THE PROBLEM — scroll-revealed, one line at a time</div>
+    <div style="font:700 15px/1.3 Arimo,sans-serif">Terms of service that no one reads?</div>
+    <div style="font:700 15px/1.3 Arimo,sans-serif;color:#9C0760">Check.</div>
+    <div style="font:700 15px/1.3 Arimo,sans-serif;color:#A9B1B1">Contracts by lawyers, for lawyers?</div>
+    <div style="font:700 15px/1.3 Arimo,sans-serif;color:#A9B1B1">Check.</div>
+    <div style="height:1px;background:#e2e0db"></div>
+    <div style="font:700 17px/1.25 Arimo,sans-serif">THIS NEEDS TO CHANGE.</div>
+  </div>
+  <div style="padding:14px;display:flex;gap:12px;border-bottom:1px solid #e2e0db;align-items:center;background:#fbfaf8">
+    <div style="width:130px;height:86px;background:repeating-linear-gradient(45deg,#ecebe7 0 7px,#e0ded9 7px 14px);display:flex;align-items:center;justify-content:center;font:9px ui-monospace,monospace;color:#7D8A89">venue photo</div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+      <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#288F85">NEXT EDITION — one dense card</div>
+      <div style="font:700 13px Arimo,sans-serif">5–6 NOVEMBER 2026 · HELSINKI</div>
+      <div style="height:7px;background:#d6d4cf"></div><div style="height:7px;background:#e4e2dd;width:70%"></div>
+      <div style="display:flex;gap:6px;margin-top:3px"><div style="background:#288F85;color:#fff;font:700 8px Arimo,sans-serif;padding:6px 9px">TICKETS FROM 90€</div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:6px 9px">PROGRAM</div></div>
+    </div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">FOUR WAYS IN — equal-weight tiles</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+      <div style="border:1px solid #e2e0db;padding:10px;display:flex;flex-direction:column;gap:5px"><div style="font:700 10px Arimo,sans-serif">ATTEND</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:60%"></div></div>
+      <div style="border:1px solid #e2e0db;padding:10px;display:flex;flex-direction:column;gap:5px"><div style="font:700 10px Arimo,sans-serif">SPEAK / HOST</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:60%"></div></div>
+      <div style="border:1px solid #e2e0db;padding:10px;display:flex;flex-direction:column;gap:5px"><div style="font:700 10px Arimo,sans-serif">VOLUNTEER</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:60%"></div></div>
+      <div style="border:1px solid #e2e0db;padding:10px;display:flex;flex-direction:column;gap:5px"><div style="font:700 10px Arimo,sans-serif">PARTNER</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:60%"></div></div>
+    </div>
+  </div>
+  <div style="padding:14px;background:#9C0760;display:flex;flex-direction:column;gap:7px">
+    <div style="font:700 9px Arimo,sans-serif;color:#FCBDE3;letter-spacing:.07em">FROM THE COMMUNITY</div>
+    <div style="font:700 15px/1.3 Arimo,sans-serif;color:#fff">“Pull-quote from a past attendee, two lines maximum.”</div>
+    <div style="font:9px Arimo,sans-serif;color:#FCBDE3">Name, role, organisation</div>
+  </div>
+  <div style="padding:14px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #e2e0db">
+    <div style="display:flex;justify-content:space-between"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">LATEST FROM THE BLOG + GALLERY</div><div style="font:700 9px Arimo,sans-serif;color:#288F85">SEE ALL →</div></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
+      <div><div style="height:48px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:6px;background:#e4e2dd;width:65%;margin-top:3px"></div></div>
+      <div><div style="height:48px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:6px;background:#e4e2dd;width:65%;margin-top:3px"></div></div>
+      <div><div style="height:48px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:6px;background:#e4e2dd;width:65%;margin-top:3px"></div></div>
+    </div>
+  </div>
+  <div style="padding:14px;background:#1a1a1a;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:10px">
+    <div><div style="font:700 8px/1.1 Arimo,sans-serif;color:#fff">LEGAL<br>DESIGN<br>SUMMIT</div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:6px;background:#4E5654;width:70%"></div><div style="height:6px;background:#4E5654;width:55%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:6px;background:#4E5654;width:70%"></div><div style="height:6px;background:#4E5654;width:55%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="height:6px;background:#4E5654;width:70%"></div><div style="height:6px;background:#4E5654;width:55%"></div></div>
+  </div>
+</div>
+<ul class="nt"><li>Works all year: the event card is one module, not the whole page.</li><li>Dark hero + big Arimo caps is the closest thing to the brand book’s cover.</li></ul>
+</div>
+
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Home C — modular hub (tile grid, no single hero)</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div style="grid-column:1/-1;background:#288F85;padding:14px;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 8px Arimo,sans-serif;color:#AEEAE4;letter-spacing:.08em">NEXT EDITION · HELSINKI · 5–6 NOV 2026</div>
+      <div style="font:700 20px/1.05 Arimo,sans-serif;color:#fff">DESIGNING EVOLUTION,<br>LEADING REVOLUTION</div>
+      <div style="display:flex;gap:7px;align-items:center"><div style="background:#fff;color:#288F85;font:700 9px Arimo,sans-serif;padding:7px 10px">GET TICKETS</div><div style="font:9px Arimo,sans-serif;color:#AEEAE4">Early bird ends 30 June</div></div>
+    </div>
+    <div style="height:112px;background:repeating-linear-gradient(45deg,#ecebe7 0 7px,#e0ded9 7px 14px);padding:10px;display:flex;flex-direction:column;justify-content:space-between"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">PROGRAM 2026</div><div style="font:9px ui-monospace,monospace;color:#7D8A89">stage photo</div></div>
+    <div style="height:112px;background:#AEEAE4;padding:10px;display:flex;flex-direction:column;justify-content:space-between"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">BRAINFACTORY<br>WORKSHOPS</div><div style="font:700 8px Arimo,sans-serif;color:#288F85">10 SESSIONS →</div></div>
+    <div style="grid-column:1/-1;border:1px solid #e2e0db;padding:11px;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;justify-content:space-between"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">SPEAKERS</div><div style="font:700 8px Arimo,sans-serif;color:#288F85">ALL 50+ →</div></div>
+      <div style="display:flex;gap:6px"><div style="flex:1;height:52px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="flex:1;height:52px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="flex:1;height:52px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="flex:1;height:52px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="flex:1;height:52px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div></div>
+    </div>
+    <div style="background:#FCBDE3;padding:11px;display:flex;flex-direction:column;gap:6px;min-height:84px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">THE GALLERY</div><div style="height:6px;background:#DD7EB7"></div><div style="height:6px;background:#DD7EB7;width:65%"></div><div style="font:700 8px Arimo,sans-serif;color:#9C0760;margin-top:auto">BROWSE WORK →</div></div>
+    <div style="border:1px solid #e2e0db;padding:11px;display:flex;flex-direction:column;gap:6px;min-height:84px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">BLOG</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:70%"></div><div style="font:700 8px Arimo,sans-serif;color:#288F85;margin-top:auto">READ →</div></div>
+    <div style="grid-column:1/-1;background:#1a1a1a;padding:12px;display:flex;justify-content:space-between;align-items:center"><div><div style="font:700 11px Arimo,sans-serif;color:#fff">JOIN 4,000+ IN THE COMMUNITY</div><div style="font:9px Arimo,sans-serif;color:#A9B1B1;margin-top:3px">Newsletter · LinkedIn · Local chapters</div></div><div style="background:#7DDAD0;color:#1a1a1a;font:700 9px Arimo,sans-serif;padding:8px 11px">SUBSCRIBE</div></div>
+    <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:7px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">PARTNERS &amp; COLLABORATORS</div><div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px"><div style="height:20px;background:#ecebe7"></div><div style="height:20px;background:#ecebe7"></div><div style="height:20px;background:#ecebe7"></div><div style="height:20px;background:#ecebe7"></div><div style="height:20px;background:#ecebe7"></div><div style="height:20px;background:#ecebe7"></div></div></div>
+  </div>
+  <div style="padding:12px 14px;background:#1a1a1a;display:flex;justify-content:space-between"><div style="font:700 8px/1.1 Arimo,sans-serif;color:#fff">LEGAL DESIGN SUMMIT</div><div style="display:flex;gap:9px"><div style="height:6px;width:40px;background:#4E5654"></div><div style="height:6px;width:40px;background:#4E5654"></div><div style="height:6px;width:40px;background:#4E5654"></div></div></div>
+</div>
+<ul class="nt"><li>Every tile is a CMS-driven module the team can reorder without a developer.</li><li>Most flexible off-season, weakest for first-time ticket buyers — pick this only if the year-round community is the priority.</li></ul>
+</div>
+
+<div class="dv-opt" id="1f">
+<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Program — filterable two-day timeline</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span style="color:#288F85">SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:16px 14px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 22px Arimo,sans-serif;letter-spacing:-.01em">PROGRAM</div><div style="height:7px;background:#d6d4cf;width:80%;margin-top:8px"></div><div style="height:7px;background:#e4e2dd;width:55%;margin-top:4px"></div></div>
+  <div style="padding:10px 14px;display:flex;gap:7px;align-items:center;border-bottom:1px solid #e2e0db;flex-wrap:wrap">
+    <div style="background:#1a1a1a;color:#fff;font:700 9px Arimo,sans-serif;padding:6px 10px">DAY 1 · 5 NOV</div>
+    <div style="border:1px solid #cfcdc8;font:700 9px Arimo,sans-serif;padding:6px 10px;color:#4E5654">DAY 2 · 6 NOV</div>
+    <div style="flex:1"></div>
+    <div style="border:1px solid #cfcdc8;font:9px Arimo,sans-serif;padding:6px 8px;color:#7D8A89">Track ▾</div>
+    <div style="border:1px solid #cfcdc8;font:9px Arimo,sans-serif;padding:6px 8px;color:#7D8A89">Room ▾</div>
+    <div style="border:1px solid #cfcdc8;font:9px Arimo,sans-serif;padding:6px 8px;color:#7D8A89">Format ▾</div>
+  </div>
+  <div style="padding:12px 14px;display:flex;flex-direction:column;gap:9px;border-bottom:1px solid #e2e0db">
+    <div style="display:flex;gap:10px;border-left:3px solid #288F85;padding-left:9px">
+      <div style="width:44px;font:700 10px Arimo,sans-serif;color:#9C0760">09:30<div style="font:400 8px Arimo,sans-serif;color:#A9B1B1">45 min</div></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="font:700 11px Arimo,sans-serif">KEYNOTE — SESSION TITLE HERE</div><div style="display:flex;gap:6px;align-items:center"><div style="width:18px;height:18px;border-radius:50%;background:#e0ded9"></div><div style="height:6px;background:#d6d4cf;width:110px"></div></div><div style="display:flex;gap:5px"><span style="font:700 7px Arimo,sans-serif;background:#AEEAE4;padding:3px 5px;letter-spacing:.05em">MAIN STAGE</span><span style="font:700 7px Arimo,sans-serif;background:#f2f1ed;padding:3px 5px;letter-spacing:.05em;color:#4E5654">ACCESS TO JUSTICE</span></div></div>
+      <div style="font:700 14px Arimo,sans-serif;color:#7D8A89">+</div>
+    </div>
+    <div style="display:flex;gap:10px;border-left:3px solid #9C0760;padding-left:9px;background:#fbfaf8;padding:9px">
+      <div style="width:44px;font:700 10px Arimo,sans-serif;color:#9C0760">10:15</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:6px"><div style="font:700 11px Arimo,sans-serif">EXPANDED ROW — abstract + speakers</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:65%"></div><div style="display:flex;gap:6px;margin-top:2px"><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:5px 8px">ADD TO CALENDAR</div><div style="font:700 8px Arimo,sans-serif;color:#288F85;padding:5px 0">SPEAKER PROFILE →</div></div></div>
+      <div style="font:700 14px Arimo,sans-serif;color:#7D8A89">–</div>
+    </div>
+    <div style="display:flex;gap:10px;padding-left:12px;align-items:center;background:#f3f2ee;padding:8px 12px"><div style="width:44px;font:700 10px Arimo,sans-serif;color:#7D8A89">11:00</div><div style="flex:1;font:700 10px Arimo,sans-serif;color:#4E5654;letter-spacing:.05em">BREAK / NETWORKING — non-session row, no expand</div></div>
+    <div style="display:flex;gap:10px;border-left:3px solid #288F85;padding-left:9px"><div style="width:44px;font:700 10px Arimo,sans-serif;color:#9C0760">11:30</div><div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="font:700 11px Arimo,sans-serif">PARALLEL SESSIONS — 3 rooms side by side</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px"><div style="border:1px solid #e2e0db;padding:6px"><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;margin-top:3px;width:70%"></div></div><div style="border:1px solid #e2e0db;padding:6px"><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;margin-top:3px;width:70%"></div></div><div style="border:1px solid #e2e0db;padding:6px"><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;margin-top:3px;width:70%"></div></div></div></div></div>
+  </div>
+  <div style="padding:12px 14px;display:flex;gap:8px;align-items:center;background:#AEEAE4"><div style="flex:1;font:700 10px Arimo,sans-serif">BUILD YOUR OWN SCHEDULE — save sessions, export .ics</div><div style="background:#288F85;color:#fff;font:700 8px Arimo,sans-serif;padding:6px 9px">MY PROGRAM</div></div>
+  <div style="padding:12px 14px;background:#1a1a1a"><div style="height:6px;background:#4E5654;width:60%"></div><div style="height:6px;background:#4E5654;width:40%;margin-top:5px"></div></div>
+</div>
+<ul class="nt"><li>Sessions are a collection: time, duration, room, track, format, speakers[], abstract, slides URL.</li><li>Pre-summit the page shows a “program coming in September” state with the same filter chrome.</li></ul>
+</div>
+
+<div class="dv-opt" id="1g">
+<div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Tickets — tiers, comparison, group + scholarship paths</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span style="color:#288F85">ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:16px 14px 12px;border-bottom:1px solid #e2e0db;display:flex;justify-content:space-between;align-items:flex-end"><div><div style="font:700 22px Arimo,sans-serif">TICKETS</div><div style="height:7px;background:#d6d4cf;width:170px;margin-top:8px"></div></div><div style="background:#FCBDE3;font:700 9px Arimo,sans-serif;padding:7px 9px;color:#9C0760">EARLY BIRD ENDS IN 12 DAYS</div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="border:1px solid #e2e0db;padding:11px;display:flex;flex-direction:column;gap:6px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">STUDENT</div><div style="font:700 18px Arimo,sans-serif">45€</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:70%"></div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:6px;text-align:center;margin-top:4px">SELECT</div></div>
+    <div style="border:2px solid #288F85;padding:11px;display:flex;flex-direction:column;gap:6px;position:relative"><div style="position:absolute;top:-9px;left:10px;background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:3px 6px">MOST POPULAR</div><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#288F85">STANDARD</div><div style="font:700 18px Arimo,sans-serif">190€</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf;width:70%"></div><div style="background:#288F85;color:#fff;font:700 8px Arimo,sans-serif;padding:6px;text-align:center;margin-top:4px">SELECT</div></div>
+    <div style="border:1px solid #e2e0db;padding:11px;display:flex;flex-direction:column;gap:6px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">CORPORATE</div><div style="font:700 18px Arimo,sans-serif">390€</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:70%"></div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:6px;text-align:center;margin-top:4px">SELECT</div></div>
+    <div style="border:1px solid #e2e0db;padding:11px;display:flex;flex-direction:column;gap:6px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">ONLINE</div><div style="font:700 18px Arimo,sans-serif">FREE</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:70%"></div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:6px;text-align:center;margin-top:4px">REGISTER</div></div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:7px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">WHAT’S INCLUDED — comparison table, 6 rows</div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:5px;font:8px Arimo,sans-serif;color:#4E5654"><div></div><div style="font-weight:700;text-align:center">STU</div><div style="font-weight:700;text-align:center">STD</div><div style="font-weight:700;text-align:center">CORP</div><div style="font-weight:700;text-align:center">ONL</div></div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:5px;align-items:center"><div style="height:6px;background:#d6d4cf"></div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div></div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:5px;align-items:center"><div style="height:6px;background:#d6d4cf"></div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:10px Arimo,sans-serif;color:#A9B1B1">—</div></div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:5px;align-items:center"><div style="height:6px;background:#d6d4cf"></div><div style="text-align:center;font:10px Arimo,sans-serif;color:#A9B1B1">—</div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:700 10px Arimo,sans-serif;color:#288F85">✓</div><div style="text-align:center;font:10px Arimo,sans-serif;color:#A9B1B1">—</div></div>
+  </div>
+  <div style="padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="background:#AEEAE4;padding:11px;display:flex;flex-direction:column;gap:5px"><div style="font:700 10px Arimo,sans-serif">GROUP BOOKING 5+</div><div style="height:6px;background:#7DDAD0"></div><div style="font:700 8px Arimo,sans-serif;color:#288F85;margin-top:3px">REQUEST A QUOTE →</div></div>
+    <div style="background:#FCBDE3;padding:11px;display:flex;flex-direction:column;gap:5px"><div style="font:700 10px Arimo,sans-serif">SCHOLARSHIP SEATS</div><div style="height:6px;background:#DD7EB7"></div><div style="font:700 8px Arimo,sans-serif;color:#9C0760;margin-top:3px">APPLY BY 1 OCT →</div></div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:7px"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">TICKET FAQ — accordion ×6</div><div style="border-bottom:1px solid #e2e0db;padding-bottom:6px;display:flex;justify-content:space-between"><div style="height:6px;background:#d6d4cf;width:70%"></div><div style="font:700 9px Arimo,sans-serif;color:#7D8A89">+</div></div><div style="border-bottom:1px solid #e2e0db;padding-bottom:6px;display:flex;justify-content:space-between"><div style="height:6px;background:#d6d4cf;width:60%"></div><div style="font:700 9px Arimo,sans-serif;color:#7D8A89">+</div></div><div style="border-bottom:1px solid #e2e0db;padding-bottom:6px;display:flex;justify-content:space-between"><div style="height:6px;background:#d6d4cf;width:65%"></div><div style="font:700 9px Arimo,sans-serif;color:#7D8A89">+</div></div></div>
+  <div style="padding:10px 14px;background:#288F85;display:flex;justify-content:space-between;align-items:center"><div style="font:700 10px Arimo,sans-serif;color:#fff">STANDARD × 1 — 190€</div><div style="background:#fff;color:#288F85;font:700 9px Arimo,sans-serif;padding:7px 10px">CHECKOUT</div></div>
+  <div style="padding:7px 14px;font:500 12px Caveat,cursive;color:#288F85;background:#fbfaf8">↑ sticky mobile/desktop summary bar once a tier is selected; checkout is an embedded external provider</div>
+</div>
+<ul class="nt"><li>Decide early whether checkout is embedded or a redirect — it changes the whole page’s footer behaviour.</li><li>Sold-out and “registration opens soon” states need designing too; same cards, disabled styling.</li></ul>
+</div>
+
+<div class="dv-opt" id="1h">
+<div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Speakers — searchable grid + speaker detail</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span style="color:#288F85">SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:16px 14px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 22px Arimo,sans-serif">SPEAKERS</div><div style="display:flex;gap:7px;margin-top:10px;flex-wrap:wrap"><div style="flex:1;min-width:120px;border:1px solid #cfcdc8;padding:6px 8px;font:9px Arimo,sans-serif;color:#A9B1B1">Search name or topic</div><div style="border:1px solid #cfcdc8;padding:6px 8px;font:9px Arimo,sans-serif;color:#7D8A89">Track ▾</div><div style="border:1px solid #cfcdc8;padding:6px 8px;font:9px Arimo,sans-serif;color:#7D8A89">Year ▾</div></div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border-bottom:1px solid #e2e0db">
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+    <div><div style="height:66px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div><div style="height:5px;background:#e4e2dd;width:75%;margin-top:3px"></div></div>
+  </div>
+  <div style="padding:14px;background:#fbfaf8;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">SPEAKER DETAIL — /speakers/:slug (also usable as a drawer)</div>
+    <div style="display:flex;gap:12px">
+      <div style="width:90px;height:110px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px);display:flex;align-items:flex-end;justify-content:center;font:8px ui-monospace,monospace;color:#7D8A89;padding-bottom:4px">portrait 3:4</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+        <div style="font:700 14px Arimo,sans-serif">SPEAKER NAME</div>
+        <div style="font:10px Arimo,sans-serif;color:#4E5654">Role · Organisation · Country</div>
+        <div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:60%"></div>
+        <div style="display:flex;gap:6px;margin-top:3px"><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:5px 8px">LINKEDIN</div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:5px 8px">WEBSITE</div></div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #e2e0db;padding-top:9px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">THEIR SESSIONS</div><div style="display:flex;gap:9px;margin-top:6px"><div style="flex:1;border:1px solid #e2e0db;padding:8px"><div style="font:700 9px Arimo,sans-serif;color:#9C0760">DAY 1 · 09:30</div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div></div><div style="flex:1;border:1px solid #e2e0db;padding:8px"><div style="font:700 9px Arimo,sans-serif;color:#9C0760">DAY 2 · 14:00</div><div style="height:6px;background:#d6d4cf;margin-top:5px"></div></div></div></div>
+  </div>
+</div>
+<ul class="nt"><li>One speaker record, three surfaces: grid card, detail page, program row chip.</li><li>Past-edition speakers stay published and filterable by year — good for SEO and credibility.</li></ul>
+</div>
+
+<div class="dv-opt" id="1i">
+<div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>BrainFactory — workshop catalogue + sign-up</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span style="color:#288F85">SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="background:#AEEAE4;padding:18px 14px;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 8px Arimo,sans-serif;letter-spacing:.08em;color:#288F85">#BRAINFACTORY</div>
+    <div style="font:700 21px/1.05 Arimo,sans-serif">HANDS-ON,<br>NOT HANDS-UP.</div>
+    <div style="height:7px;background:#7DDAD0;width:78%"></div><div style="height:7px;background:#7DDAD0;width:60%"></div>
+    <div style="display:flex;gap:7px;margin-top:4px"><div style="background:#288F85;color:#fff;font:700 9px Arimo,sans-serif;padding:7px 10px">BOOK A WORKSHOP</div><div style="border:1px solid #288F85;color:#288F85;font:700 9px Arimo,sans-serif;padding:7px 10px">HOST ONE</div></div>
+  </div>
+  <div style="padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="grid-column:1/-1;font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">HOW IT WORKS — 3 steps</div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="font:700 15px Arimo,sans-serif;color:#288F85">01</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:70%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="font:700 15px Arimo,sans-serif;color:#288F85">02</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:70%"></div></div>
+    <div style="display:flex;flex-direction:column;gap:5px"><div style="font:700 15px Arimo,sans-serif;color:#288F85">03</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:70%"></div></div>
+  </div>
+  <div style="padding:14px;display:flex;flex-direction:column;gap:9px;border-bottom:1px solid #e2e0db">
+    <div style="display:flex;justify-content:space-between;align-items:center"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">THE 10 WORKSHOPS — capacity-aware list</div><div style="border:1px solid #cfcdc8;font:9px Arimo,sans-serif;padding:5px 7px;color:#7D8A89">Slot ▾</div></div>
+    <div style="border:1px solid #e2e0db;padding:10px;display:flex;gap:10px;align-items:center"><div style="width:34px;height:34px;background:#AEEAE4;font:700 10px/34px Arimo,sans-serif;text-align:center;color:#288F85">W1</div><div style="flex:1"><div style="font:700 10px Arimo,sans-serif">WORKSHOP TITLE</div><div style="height:6px;background:#e4e2dd;margin-top:5px;width:80%"></div></div><div style="text-align:right"><div style="font:700 8px Arimo,sans-serif;color:#288F85">8 SEATS LEFT</div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:4px 7px;margin-top:4px">JOIN</div></div></div>
+    <div style="border:1px solid #e2e0db;padding:10px;display:flex;gap:10px;align-items:center;opacity:.55"><div style="width:34px;height:34px;background:#ecebe7;font:700 10px/34px Arimo,sans-serif;text-align:center;color:#7D8A89">W2</div><div style="flex:1"><div style="font:700 10px Arimo,sans-serif">FULL WORKSHOP — waitlist state</div><div style="height:6px;background:#e4e2dd;margin-top:5px;width:70%"></div></div><div style="text-align:right"><div style="font:700 8px Arimo,sans-serif;color:#9C0760">FULL</div><div style="border:1px solid #7D8A89;font:700 8px Arimo,sans-serif;padding:4px 7px;margin-top:4px;color:#4E5654">WAITLIST</div></div></div>
+    <div style="border:1px solid #e2e0db;padding:10px;display:flex;gap:10px;align-items:center"><div style="width:34px;height:34px;background:#FCBDE3;font:700 10px/34px Arimo,sans-serif;text-align:center;color:#9C0760">W3</div><div style="flex:1"><div style="font:700 10px Arimo,sans-serif">WORKSHOP TITLE</div><div style="height:6px;background:#e4e2dd;margin-top:5px;width:85%"></div></div><div style="text-align:right"><div style="font:700 8px Arimo,sans-serif;color:#288F85">21 SEATS</div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:4px 7px;margin-top:4px">JOIN</div></div></div>
+  </div>
+  <div style="padding:14px;display:flex;gap:12px;align-items:center;background:#fbfaf8"><div style="width:120px;height:74px;background:repeating-linear-gradient(45deg,#ecebe7 0 7px,#e0ded9 7px 14px);display:flex;align-items:center;justify-content:center;font:8px ui-monospace,monospace;color:#7D8A89">workshop photo</div><div style="flex:1"><div style="font:700 10px Arimo,sans-serif">WANT TO FACILITATE?</div><div style="height:6px;background:#d6d4cf;margin-top:6px"></div><div style="height:6px;background:#e4e2dd;width:65%;margin-top:4px"></div><div style="font:700 8px Arimo,sans-serif;color:#288F85;margin-top:7px">CALL FOR FACILITATORS →</div></div></div>
+  <div style="padding:12px 14px;background:#1a1a1a"><div style="height:6px;background:#4E5654;width:55%"></div></div>
+</div>
+<ul class="nt"><li>Workshop seats are the biggest functional requirement on the site — needs real capacity counts tied to ticket holders.</li></ul>
+</div>
+
+<div class="dv-opt" id="1j">
+<div class="dv-olabel"><a class="dv-oid" href="#1j">1j</a>Travel &amp; Venue — practical, map-led</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span style="color:#288F85">SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="height:120px;background:repeating-linear-gradient(45deg,#ecebe7 0 8px,#e0ded9 8px 16px);display:flex;align-items:flex-end;padding:12px"><div style="font:700 18px/1.1 Arimo,sans-serif">HELSINKI<br><span style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#4E5654">VENUE NAME · ADDRESS</span></div></div>
+  <div style="padding:14px;display:flex;gap:12px;border-bottom:1px solid #e2e0db">
+    <div style="flex:1.1;height:120px;background:#e9f3f1;border:1px solid #cfe5e1;display:flex;align-items:center;justify-content:center;font:9px ui-monospace,monospace;color:#288F85">interactive map<br>+ pinned venue</div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+      <div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">GETTING THERE</div>
+      <div style="display:flex;gap:7px;align-items:center"><div style="width:16px;height:16px;background:#AEEAE4"></div><div style="flex:1;height:6px;background:#d6d4cf"></div></div>
+      <div style="display:flex;gap:7px;align-items:center"><div style="width:16px;height:16px;background:#AEEAE4"></div><div style="flex:1;height:6px;background:#d6d4cf"></div></div>
+      <div style="display:flex;gap:7px;align-items:center"><div style="width:16px;height:16px;background:#AEEAE4"></div><div style="flex:1;height:6px;background:#d6d4cf"></div></div>
+      <div style="display:flex;gap:7px;align-items:center"><div style="width:16px;height:16px;background:#AEEAE4"></div><div style="flex:1;height:6px;background:#d6d4cf"></div></div>
+    </div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">STAY — partner hotels with discount codes</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
+      <div style="border:1px solid #e2e0db"><div style="height:44px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:7px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:60%;margin-top:4px"></div><div style="font:700 8px Arimo,sans-serif;color:#288F85;margin-top:5px">CODE LDS26</div></div></div>
+      <div style="border:1px solid #e2e0db"><div style="height:44px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:7px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:60%;margin-top:4px"></div><div style="font:700 8px Arimo,sans-serif;color:#288F85;margin-top:5px">CODE LDS26</div></div></div>
+      <div style="border:1px solid #e2e0db"><div style="height:44px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:7px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:60%;margin-top:4px"></div><div style="font:700 8px Arimo,sans-serif;color:#288F85;margin-top:5px">CODE LDS26</div></div></div>
+    </div>
+  </div>
+  <div style="padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="border:1px solid #e2e0db;padding:11px"><div style="font:700 10px Arimo,sans-serif">ACCESSIBILITY</div><div style="height:6px;background:#d6d4cf;margin-top:6px"></div><div style="height:6px;background:#e4e2dd;width:70%;margin-top:4px"></div></div>
+    <div style="border:1px solid #e2e0db;padding:11px"><div style="font:700 10px Arimo,sans-serif">VISA &amp; INVITATION LETTERS</div><div style="height:6px;background:#d6d4cf;margin-top:6px"></div><div style="height:6px;background:#e4e2dd;width:70%;margin-top:4px"></div></div>
+    <div style="border:1px solid #e2e0db;padding:11px"><div style="font:700 10px Arimo,sans-serif">48H IN HELSINKI</div><div style="height:6px;background:#d6d4cf;margin-top:6px"></div><div style="height:6px;background:#e4e2dd;width:70%;margin-top:4px"></div></div>
+    <div style="border:1px solid #e2e0db;padding:11px"><div style="font:700 10px Arimo,sans-serif">SUSTAINABLE TRAVEL</div><div style="height:6px;background:#d6d4cf;margin-top:6px"></div><div style="height:6px;background:#e4e2dd;width:70%;margin-top:4px"></div></div>
+  </div>
+  <div style="padding:12px 14px;background:#1a1a1a"><div style="height:6px;background:#4E5654;width:50%"></div></div>
+</div>
+<ul class="nt"><li>Venue, hotels and city tips are the top pre-travel support questions — keep them one page, not three.</li></ul>
+</div>
+
+<div class="dv-opt" id="1k">
+<div class="dv-olabel"><a class="dv-oid" href="#1k">1k</a>Who is attending — audience proof</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span style="color:#288F85">ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:16px 14px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 20px/1.1 Arimo,sans-serif">WHO IS IN THE ROOM</div><div style="height:7px;background:#d6d4cf;width:75%;margin-top:8px"></div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;border-bottom:1px solid #e2e0db">
+    <div style="display:flex;flex-direction:column;gap:7px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">BY ROLE — horizontal bars</div><div style="display:flex;gap:6px;align-items:center"><div style="height:11px;background:#288F85;width:80%"></div><div style="font:8px Arimo,sans-serif;color:#4E5654">38%</div></div><div style="display:flex;gap:6px;align-items:center"><div style="height:11px;background:#7DDAD0;width:60%"></div><div style="font:8px Arimo,sans-serif;color:#4E5654">24%</div></div><div style="display:flex;gap:6px;align-items:center"><div style="height:11px;background:#AEEAE4;width:44%"></div><div style="font:8px Arimo,sans-serif;color:#4E5654">18%</div></div><div style="display:flex;gap:6px;align-items:center"><div style="height:11px;background:#DD7EB7;width:30%"></div><div style="font:8px Arimo,sans-serif;color:#4E5654">12%</div></div></div>
+    <div style="display:flex;flex-direction:column;gap:7px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">BY COUNTRY — 40+ countries</div><div style="height:104px;background:#e9f3f1;border:1px solid #cfe5e1;display:flex;align-items:center;justify-content:center;font:9px ui-monospace,monospace;color:#288F85">world map, real geo data</div></div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:8px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">ORGANISATIONS THAT CAME — searchable wall</div>
+    <div style="border:1px solid #cfcdc8;padding:6px 8px;font:9px Arimo,sans-serif;color:#A9B1B1">Search organisation</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px"><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div><div style="height:24px;background:#f2f1ed"></div></div>
+  </div>
+  <div style="padding:14px;display:flex;flex-direction:column;gap:9px;border-bottom:1px solid #e2e0db">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">WHAT THEY SAID — 3 quote cards</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px"><div style="background:#fbfaf8;padding:9px"><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#e4e2dd;width:60%;margin-top:4px"></div></div><div style="background:#fbfaf8;padding:9px"><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#e4e2dd;width:60%;margin-top:4px"></div></div><div style="background:#fbfaf8;padding:9px"><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#e4e2dd;width:60%;margin-top:4px"></div></div></div>
+  </div>
+  <div style="padding:12px 14px;background:#288F85;display:flex;justify-content:space-between;align-items:center"><div style="font:700 11px Arimo,sans-serif;color:#fff">YOUR PEERS ARE COMING BACK IN 2026</div><div style="background:#fff;color:#288F85;font:700 9px Arimo,sans-serif;padding:7px 10px">GET TICKETS</div></div>
+</div>
+<ul class="nt"><li>This page is the strongest sales asset for corporate tickets and sponsors — link it from /partner too.</li></ul>
+</div>
+
+<div class="dv-opt" id="1l">
+<div class="dv-olabel"><a class="dv-oid" href="#1l">1l</a>The Gallery — legal design work, filterable</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span>ATTEND</span><span style="color:#288F85">COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:16px 14px 12px;border-bottom:1px solid #e2e0db;display:flex;justify-content:space-between;align-items:flex-end"><div><div style="display:flex;gap:7px;align-items:center"><div style="font:700 20px Arimo,sans-serif">THE GALLERY</div><div style="background:#FCBDE3;color:#9C0760;font:700 7px Arimo,sans-serif;padding:3px 5px">BETA</div></div><div style="height:7px;background:#d6d4cf;width:190px;margin-top:8px"></div></div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:6px 9px">SUBMIT WORK</div></div>
+  <div style="padding:10px 14px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid #e2e0db"><div style="background:#1a1a1a;color:#fff;font:700 8px Arimo,sans-serif;padding:5px 8px">ALL</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">CONTRACTS</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">PRIVACY</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">COURTS</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">POLICY</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">EDUCATION</div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="border:1px solid #e2e0db"><div style="height:80px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px);display:flex;align-items:center;justify-content:center;font:8px ui-monospace,monospace;color:#7D8A89">artefact</div><div style="padding:8px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:65%;margin-top:4px"></div></div></div>
+    <div style="border:1px solid #e2e0db"><div style="height:110px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:8px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:65%;margin-top:4px"></div></div></div>
+    <div style="border:1px solid #e2e0db"><div style="height:70px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:8px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:65%;margin-top:4px"></div></div></div>
+    <div style="border:1px solid #e2e0db"><div style="height:104px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:8px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:65%;margin-top:4px"></div></div></div>
+    <div style="border:1px solid #e2e0db"><div style="height:74px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:8px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:65%;margin-top:4px"></div></div></div>
+    <div style="border:1px solid #e2e0db"><div style="height:92px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="padding:8px"><div style="height:6px;background:#d6d4cf"></div><div style="height:5px;background:#e4e2dd;width:65%;margin-top:4px"></div></div></div>
+  </div>
+  <div style="padding:14px;background:#fbfaf8;display:flex;flex-direction:column;gap:8px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">ITEM DETAIL — /gallery/:slug</div>
+    <div style="display:flex;gap:12px"><div style="flex:1.3;height:110px;background:repeating-linear-gradient(45deg,#ecebe7 0 7px,#e0ded9 7px 14px);display:flex;align-items:center;justify-content:center;font:8px ui-monospace,monospace;color:#7D8A89">before / after slider</div><div style="flex:1;display:flex;flex-direction:column;gap:6px"><div style="font:700 11px Arimo,sans-serif">PROJECT TITLE</div><div style="font:9px Arimo,sans-serif;color:#4E5654">Author · Org · Year</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:55%"></div><div style="font:700 8px Arimo,sans-serif;color:#288F85;margin-top:3px">DOWNLOAD / SOURCE →</div></div></div>
+  </div>
+</div>
+<ul class="nt"><li>Needs a moderated submission form + review queue — the only place with user-generated content.</li></ul>
+</div>
+
+<div class="dv-opt" id="1m">
+<div class="dv-olabel"><a class="dv-oid" href="#1m">1m</a>Blog index + article template</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span>ATTEND</span><span style="color:#288F85">COMMUNITY</span><span>PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;gap:12px">
+    <div style="flex:1.2;height:110px;background:repeating-linear-gradient(45deg,#ecebe7 0 7px,#e0ded9 7px 14px)"></div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px"><div style="font:700 8px Arimo,sans-serif;color:#9C0760;letter-spacing:.07em">FEATURED · 6 MIN READ</div><div style="font:700 14px/1.2 Arimo,sans-serif">HEADLINE OF THE LEAD ARTICLE, TWO LINES</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:70%"></div><div style="font:9px Arimo,sans-serif;color:#7D8A89;margin-top:3px">Author · 12 Mar 2026</div></div>
+  </div>
+  <div style="padding:10px 14px;display:flex;gap:6px;border-bottom:1px solid #e2e0db;flex-wrap:wrap"><div style="background:#1a1a1a;color:#fff;font:700 8px Arimo,sans-serif;padding:5px 8px">ALL</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">SUMMIT NEWS</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">PRACTICE</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">RESEARCH</div><div style="border:1px solid #cfcdc8;font:700 8px Arimo,sans-serif;padding:5px 8px;color:#4E5654">INTERVIEWS</div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-bottom:1px solid #e2e0db">
+    <div><div style="height:58px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="font:700 7px Arimo,sans-serif;color:#9C0760;margin-top:6px;letter-spacing:.06em">PRACTICE</div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#d6d4cf;width:80%;margin-top:3px"></div></div>
+    <div><div style="height:58px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="font:700 7px Arimo,sans-serif;color:#9C0760;margin-top:6px;letter-spacing:.06em">RESEARCH</div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#d6d4cf;width:80%;margin-top:3px"></div></div>
+    <div><div style="height:58px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="font:700 7px Arimo,sans-serif;color:#9C0760;margin-top:6px;letter-spacing:.06em">INTERVIEWS</div><div style="height:6px;background:#d6d4cf;margin-top:4px"></div><div style="height:6px;background:#d6d4cf;width:80%;margin-top:3px"></div></div>
+  </div>
+  <div style="padding:14px;background:#fbfaf8;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">ARTICLE TEMPLATE — /blog/:slug, 680px measure</div>
+    <div style="display:flex;gap:12px">
+      <div style="width:70px;display:flex;flex-direction:column;gap:5px"><div style="font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em">ON THIS PAGE</div><div style="height:5px;background:#e4e2dd"></div><div style="height:5px;background:#e4e2dd;width:80%"></div><div style="height:5px;background:#e4e2dd;width:60%"></div><div style="height:1px;background:#e2e0db;margin:3px 0"></div><div style="font:700 7px Arimo,sans-serif;color:#288F85">SHARE</div></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+        <div style="font:700 15px/1.2 Arimo,sans-serif">ARTICLE HEADLINE IN ARIMO CAPS</div>
+        <div style="font:9px Arimo,sans-serif;color:#7D8A89">Author, role · 12 Mar 2026 · 6 min</div>
+        <div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:60%"></div>
+        <div style="border-left:3px solid #288F85;padding-left:8px;margin:4px 0"><div style="font:700 11px/1.3 Arimo,sans-serif">Pull quote styling</div></div>
+        <div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#d6d4cf"></div>
+        <div style="background:#AEEAE4;padding:9px;margin-top:5px;display:flex;justify-content:space-between;align-items:center"><div style="font:700 9px Arimo,sans-serif">END-OF-POST CTA — newsletter or tickets</div><div style="background:#288F85;color:#fff;font:700 8px Arimo,sans-serif;padding:5px 8px">JOIN</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<ul class="nt"><li>Call it Blog now, keep the door open for “Journal” if the content becomes editorial.</li></ul>
+</div>
+
+<div class="dv-opt" id="1n">
+<div class="dv-olabel"><a class="dv-oid" href="#1n">1n</a>About — story, team, values, get involved</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span>PARTNER</span><span style="color:#288F85">ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="padding:18px 14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 8px Arimo,sans-serif;letter-spacing:.08em;color:#288F85">OUR PURPOSE</div>
+    <div style="font:700 17px/1.2 Arimo,sans-serif">TO BELONG BY FEEDING THE INNER SPARK THAT DRIVES THE OUTER LEGAL TRANSFORMATION.</div>
+    <div style="height:7px;background:#d6d4cf;width:80%"></div><div style="height:7px;background:#e4e2dd;width:60%"></div>
+  </div>
+  <div style="padding:14px;display:flex;gap:9px;border-bottom:1px solid #e2e0db;flex-wrap:wrap">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89;width:100%">BRAND TONE AS PILLARS — 5 chips</div>
+    <div style="background:#AEEAE4;font:700 9px Arimo,sans-serif;padding:7px 9px">INNOVATIVE</div>
+    <div style="background:#AEEAE4;font:700 9px Arimo,sans-serif;padding:7px 9px">COLLABORATIVE</div>
+    <div style="background:#FCBDE3;font:700 9px Arimo,sans-serif;padding:7px 9px">PRAGMATIC</div>
+    <div style="background:#FCBDE3;font:700 9px Arimo,sans-serif;padding:7px 9px">OPTIMISTIC</div>
+    <div style="background:#A9B1B1;color:#fff;font:700 9px Arimo,sans-serif;padding:7px 9px">ACCESSIBLE</div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:9px">
+    <div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">TIMELINE — 2016 → today, horizontal scroll</div>
+    <div style="display:flex;gap:10px;align-items:flex-start"><div style="flex:1;border-top:2px solid #288F85;padding-top:6px"><div style="font:700 9px Arimo,sans-serif;color:#288F85">2016</div><div style="height:6px;background:#e4e2dd;margin-top:4px"></div></div><div style="flex:1;border-top:2px solid #288F85;padding-top:6px"><div style="font:700 9px Arimo,sans-serif;color:#288F85">2019</div><div style="height:6px;background:#e4e2dd;margin-top:4px"></div></div><div style="flex:1;border-top:2px solid #288F85;padding-top:6px"><div style="font:700 9px Arimo,sans-serif;color:#288F85">2023</div><div style="height:6px;background:#e4e2dd;margin-top:4px"></div></div><div style="flex:1;border-top:2px solid #9C0760;padding-top:6px"><div style="font:700 9px Arimo,sans-serif;color:#9C0760">2025</div><div style="height:6px;background:#e4e2dd;margin-top:4px"></div></div></div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:9px">
+    <div style="display:flex;justify-content:space-between"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">MEET THE TEAM — grouped by crew</div><div style="font:700 9px Arimo,sans-serif;color:#288F85">/team →</div></div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px"><div><div style="height:46px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:5px;background:#d6d4cf;margin-top:4px"></div></div><div><div style="height:46px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:5px;background:#d6d4cf;margin-top:4px"></div></div><div><div style="height:46px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:5px;background:#d6d4cf;margin-top:4px"></div></div><div><div style="height:46px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:5px;background:#d6d4cf;margin-top:4px"></div></div><div><div style="height:46px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:5px;background:#d6d4cf;margin-top:4px"></div></div><div><div style="height:46px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px)"></div><div style="height:5px;background:#d6d4cf;margin-top:4px"></div></div></div>
+  </div>
+  <div style="padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="border:1px solid #e2e0db;padding:10px"><div style="font:700 9px Arimo,sans-serif">VALUES &amp; CODE OF CONDUCT</div><div style="height:6px;background:#e4e2dd;margin-top:6px"></div></div>
+    <div style="border:1px solid #e2e0db;padding:10px"><div style="font:700 9px Arimo,sans-serif">VOLUNTEER WITH US</div><div style="height:6px;background:#e4e2dd;margin-top:6px"></div></div>
+    <div style="border:1px solid #e2e0db;padding:10px"><div style="font:700 9px Arimo,sans-serif">PRESS KIT &amp; LOGOS</div><div style="height:6px;background:#e4e2dd;margin-top:6px"></div></div>
+  </div>
+  <div style="padding:12px 14px;background:#1a1a1a"><div style="height:6px;background:#4E5654;width:45%"></div></div>
+</div>
+<ul class="nt"><li>Values page keeps its own URL (it is referenced externally) but lives under About.</li><li>Add a press kit — the brand book’s logo set belongs on the site, downloadable.</li></ul>
+</div>
+
+<div class="dv-opt" id="1o">
+<div class="dv-olabel"><a class="dv-oid" href="#1o">1o</a>Become a partner — new page, sponsor funnel</div>
+<div class="dv-card" style="width:440px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e2e0db"><div style="font:700 8px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="display:flex;gap:9px;font:700 7px Arimo,sans-serif;color:#7D8A89;letter-spacing:.06em"><span>SUMMIT</span><span>ATTEND</span><span>COMMUNITY</span><span style="color:#288F85">PARTNER</span><span>ABOUT</span></div><div style="background:#288F85;color:#fff;font:700 7px Arimo,sans-serif;padding:5px 7px">TICKETS</div></div>
+  <div style="background:#9C0760;padding:18px 14px;display:flex;flex-direction:column;gap:9px"><div style="font:700 8px Arimo,sans-serif;color:#FCBDE3;letter-spacing:.08em">PARTNER WITH LDS</div><div style="font:700 20px/1.08 Arimo,sans-serif;color:#fff">REACH 600+ PEOPLE<br>REDESIGNING THE LAW.</div><div style="display:flex;gap:7px;margin-top:3px"><div style="background:#fff;color:#9C0760;font:700 9px Arimo,sans-serif;padding:7px 10px">DOWNLOAD THE DECK</div><div style="border:1px solid #FCBDE3;color:#fff;font:700 9px Arimo,sans-serif;padding:7px 10px">BOOK A CALL</div></div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:9px;border-bottom:1px solid #e2e0db;text-align:center"><div><div style="font:700 15px Arimo,sans-serif;color:#9C0760">600+</div><div style="font:7px Arimo,sans-serif;color:#4E5654;letter-spacing:.05em">ATTENDEES</div></div><div><div style="font:700 15px Arimo,sans-serif;color:#9C0760">40+</div><div style="font:7px Arimo,sans-serif;color:#4E5654;letter-spacing:.05em">COUNTRIES</div></div><div><div style="font:700 15px Arimo,sans-serif;color:#9C0760">70+</div><div style="font:7px Arimo,sans-serif;color:#4E5654;letter-spacing:.05em">COLLABORATORS</div></div><div><div style="font:700 15px Arimo,sans-serif;color:#9C0760">4k</div><div style="font:7px Arimo,sans-serif;color:#4E5654;letter-spacing:.05em">NEWSLETTER</div></div></div>
+  <div style="padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-bottom:1px solid #e2e0db">
+    <div style="grid-column:1/-1;font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">PACKAGES — 3 tiers + à la carte</div>
+    <div style="border:1px solid #e2e0db;padding:10px;display:flex;flex-direction:column;gap:5px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">SUPPORTER</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:70%"></div><div style="height:6px;background:#e4e2dd;width:60%"></div></div>
+    <div style="border:2px solid #9C0760;padding:10px;display:flex;flex-direction:column;gap:5px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em;color:#9C0760">PARTNER</div><div style="height:6px;background:#DD7EB7"></div><div style="height:6px;background:#DD7EB7;width:70%"></div><div style="height:6px;background:#DD7EB7;width:60%"></div></div>
+    <div style="border:1px solid #e2e0db;padding:10px;display:flex;flex-direction:column;gap:5px"><div style="font:700 9px Arimo,sans-serif;letter-spacing:.06em">MAIN PARTNER</div><div style="height:6px;background:#e4e2dd"></div><div style="height:6px;background:#e4e2dd;width:70%"></div><div style="height:6px;background:#e4e2dd;width:60%"></div></div>
+  </div>
+  <div style="padding:14px;border-bottom:1px solid #e2e0db;display:flex;flex-direction:column;gap:8px"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">NON-PROFIT COLLABORATION — free, different path</div><div style="display:flex;gap:10px;align-items:center"><div style="flex:1;height:6px;background:#d6d4cf"></div><div style="border:1px solid #1a1a1a;font:700 8px Arimo,sans-serif;padding:5px 8px">JOIN FORCES</div></div></div>
+  <div style="padding:14px;background:#fbfaf8;display:flex;flex-direction:column;gap:8px"><div style="font:700 10px Arimo,sans-serif;letter-spacing:.06em;color:#7D8A89">ENQUIRY FORM — 5 fields, inline validation</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><div style="border:1px solid #cfcdc8;padding:7px;font:9px Arimo,sans-serif;color:#A9B1B1">Name</div><div style="border:1px solid #cfcdc8;padding:7px;font:9px Arimo,sans-serif;color:#A9B1B1">Work email</div><div style="border:1px solid #cfcdc8;padding:7px;font:9px Arimo,sans-serif;color:#A9B1B1">Organisation</div><div style="border:1px solid #cfcdc8;padding:7px;font:9px Arimo,sans-serif;color:#A9B1B1">Package of interest ▾</div><div style="grid-column:1/-1;border:1px solid #cfcdc8;padding:7px 7px 24px;font:9px Arimo,sans-serif;color:#A9B1B1">Message</div></div><div style="background:#9C0760;color:#fff;font:700 9px Arimo,sans-serif;padding:8px;text-align:center">SEND ENQUIRY</div></div>
+</div>
+<ul class="nt"><li>Today partner logos appear with no way to become one. This is the clearest revenue gap on the current site.</li><li>Magenta family used here to keep the sponsor funnel visually distinct from the teal attendee funnel.</li></ul>
+</div>
+
+<div class="dv-opt" id="1p">
+<div class="dv-olabel"><a class="dv-oid" href="#1p">1p</a>Mobile — home, menu, program, ticket checkout</div>
+<div class="dv-card" style="width:640px;padding:16px;display:flex;gap:14px;background:#fbfaf8">
+  <div style="width:140px;border:1px solid #cfcdc8;background:#fff;border-radius:12px;overflow:hidden">
+    <div style="height:14px;background:#f2f1ed"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 8px;border-bottom:1px solid #e2e0db"><div style="font:700 6px/1.05 Arimo,sans-serif">LEGAL<br>DESIGN<br>SUMMIT</div><div style="font:700 11px Arimo,sans-serif">≡</div></div>
+    <div style="height:96px;background:repeating-linear-gradient(45deg,#ecebe7 0 6px,#e0ded9 6px 12px);display:flex;align-items:flex-end;padding:8px"><div style="font:700 11px/1.05 Arimo,sans-serif">DESIGNING EVOLUTION,<br>LEADING REVOLUTION</div></div>
+    <div style="padding:8px;display:flex;flex-direction:column;gap:6px"><div style="background:#288F85;color:#fff;font:700 8px Arimo,sans-serif;padding:8px;text-align:center">GET TICKETS</div><div style="height:6px;background:#d6d4cf"></div><div style="height:6px;background:#e4e2dd;width:70%"></div></div>
+    <div style="background:#288F85;padding:7px;display:flex;justify-content:space-between;color:#fff;font:700 8px Arimo,sans-serif"><span>600+</span><span>50+</span><span>2</span></div>
+    <div style="padding:8px;display:flex;flex-direction:column;gap:5px"><div style="height:40px;background:#ecebe7"></div><div style="height:40px;background:#AEEAE4"></div></div>
+    <div style="padding:6px 8px;font:500 10px Caveat,cursive;color:#288F85">tap targets ≥44px</div>
+  </div>
+  <div style="width:140px;border:1px solid #cfcdc8;background:#1a1a1a;border-radius:12px;overflow:hidden">
+    <div style="height:14px;background:#2a2a2a"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 8px"><div style="font:700 6px/1.05 Arimo,sans-serif;color:#fff">LEGAL<br>DESIGN<br>SUMMIT</div><div style="font:700 11px Arimo,sans-serif;color:#fff">✕</div></div>
+    <div style="padding:10px 8px;display:flex;flex-direction:column;gap:9px">
+      <div style="font:700 12px Arimo,sans-serif;color:#fff;letter-spacing:.04em">THE SUMMIT <span style="color:#7DDAD0">▾</span></div>
+      <div style="padding-left:9px;display:flex;flex-direction:column;gap:6px"><div style="font:9px Arimo,sans-serif;color:#A9B1B1">Program</div><div style="font:9px Arimo,sans-serif;color:#A9B1B1">Speakers</div><div style="font:9px Arimo,sans-serif;color:#A9B1B1">BrainFactory</div><div style="font:9px Arimo,sans-serif;color:#A9B1B1">Travel &amp; Venue</div></div>
+      <div style="font:700 12px Arimo,sans-serif;color:#fff;letter-spacing:.04em">ATTEND ▸</div>
+      <div style="font:700 12px Arimo,sans-serif;color:#fff;letter-spacing:.04em">COMMUNITY ▸</div>
+      <div style="font:700 12px Arimo,sans-serif;color:#fff;letter-spacing:.04em">PARTNER</div>
+      <div style="font:700 12px Arimo,sans-serif;color:#fff;letter-spacing:.04em">ABOUT ▸</div>
+      <div style="background:#7DDAD0;color:#1a1a1a;font:700 8px Arimo,sans-serif;padding:8px;text-align:center;margin-top:6px">GET TICKETS</div>
+    </div>
+  </div>
+  <div style="width:140px;border:1px solid #cfcdc8;background:#fff;border-radius:12px;overflow:hidden">
+    <div style="height:14px;background:#f2f1ed"></div>
+    <div style="padding:7px 8px;border-bottom:1px solid #e2e0db;font:700 10px Arimo,sans-serif">PROGRAM</div>
+    <div style="display:flex;border-bottom:1px solid #e2e0db"><div style="flex:1;background:#1a1a1a;color:#fff;font:700 7px Arimo,sans-serif;padding:6px;text-align:center">DAY 1</div><div style="flex:1;font:700 7px Arimo,sans-serif;padding:6px;text-align:center;color:#4E5654">DAY 2</div></div>
+    <div style="padding:8px;display:flex;gap:6px;border-bottom:1px solid #e2e0db"><div style="border:1px solid #cfcdc8;font:7px Arimo,sans-serif;padding:4px 6px;color:#7D8A89">Track ▾</div><div style="border:1px solid #cfcdc8;font:7px Arimo,sans-serif;padding:4px 6px;color:#7D8A89">Room ▾</div></div>
+    <div style="padding:8px;display:flex;flex-direction:column;gap:8px">
+      <div style="border-left:3px solid #288F85;padding-left:7px"><div style="font:700 7px Arimo,sans-serif;color:#9C0760">09:30</div><div style="font:700 8px Arimo,sans-serif;margin-top:2px">SESSION TITLE</div><div style="height:5px;background:#e4e2dd;margin-top:4px;width:70%"></div></div>
+      <div style="border-left:3px solid #288F85;padding-left:7px"><div style="font:700 7px Arimo,sans-serif;color:#9C0760">10:15</div><div style="font:700 8px Arimo,sans-serif;margin-top:2px">SESSION TITLE</div><div style="height:5px;background:#e4e2dd;margin-top:4px;width:80%"></div></div>
+      <div style="background:#f3f2ee;padding:6px;font:700 7px Arimo,sans-serif;color:#4E5654">BREAK</div>
+      <div style="border-left:3px solid #9C0760;padding-left:7px"><div style="font:700 7px Arimo,sans-serif;color:#9C0760">11:30</div><div style="font:700 8px Arimo,sans-serif;margin-top:2px">PARALLEL ×3</div></div>
+    </div>
+  </div>
+  <div style="width:140px;border:1px solid #cfcdc8;background:#fff;border-radius:12px;overflow:hidden">
+    <div style="height:14px;background:#f2f1ed"></div>
+    <div style="padding:7px 8px;border-bottom:1px solid #e2e0db;font:700 10px Arimo,sans-serif">TICKETS</div>
+    <div style="padding:8px;display:flex;flex-direction:column;gap:7px">
+      <div style="border:1px solid #e2e0db;padding:7px"><div style="font:700 7px Arimo,sans-serif;color:#7D8A89">STUDENT</div><div style="font:700 12px Arimo,sans-serif">45€</div></div>
+      <div style="border:2px solid #288F85;padding:7px"><div style="font:700 7px Arimo,sans-serif;color:#288F85">STANDARD</div><div style="font:700 12px Arimo,sans-serif">190€</div><div style="height:5px;background:#d6d4cf;margin-top:4px"></div></div>
+      <div style="border:1px solid #e2e0db;padding:7px"><div style="font:700 7px Arimo,sans-serif;color:#7D8A89">CORPORATE</div><div style="font:700 12px Arimo,sans-serif">390€</div></div>
+      <div style="border:1px solid #e2e0db;padding:7px"><div style="font:700 7px Arimo,sans-serif;color:#7D8A89">ONLINE</div><div style="font:700 12px Arimo,sans-serif">FREE</div></div>
+    </div>
+    <div style="margin-top:6px;padding:8px;background:#288F85;display:flex;justify-content:space-between;align-items:center"><div style="font:700 7px Arimo,sans-serif;color:#fff">190€</div><div style="background:#fff;color:#288F85;font:700 7px Arimo,sans-serif;padding:6px 8px">CHECKOUT</div></div>
+  </div>
+</div>
+<ul class="nt"><li>Mobile is where most ticket traffic lands — the sticky checkout bar and the accordion menu are the two things to get right.</li></ul>
+</div>
+
+</div>
+<p class="dv-next">Try next: “go with <a class="dv-oid" href="#1d">1d</a> and take the stats strip from <a class="dv-oid" href="#1c">1c</a>” · “add wireframes for scholarships, FAQ and the 404” · “turn the chosen direction into a hi-fi branded design”</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>
