@@ -16,10 +16,13 @@ export function NextEdition() {
             <p className="h-brand text-[12px] text-[#9C0760] mt-3">
               BrainFactory &middot; {nextEdition.brainFactoryDate}
             </p>
+            <p className="text-[15px] text-[#1a1a1a] mt-4 font-medium">
+              {nextEdition.city} &mdash; {nextEdition.venue}
+            </p>
+            <p className="text-[13px] text-[#7D8A89] mt-1">{nextEdition.venueAddress}</p>
             <p className="text-[15px] text-[#4E5654] mt-4 max-w-md">
-              {nextEdition.status}. Ticket details will appear here as soon as
-              they&rsquo;re confirmed &mdash; we&rsquo;d rather tell you nothing than
-              tell you something wrong.
+              {nextEdition.status} as soon as they&rsquo;re confirmed &mdash;
+              we&rsquo;d rather tell you nothing than tell you something wrong.
             </p>
           </div>
           <div className="flex gap-3 shrink-0">

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { manifesto, highlightsVideo } from "@/lib/content/home";
+import { manifesto, highlightsVideo, nextEdition } from "@/lib/content/home";
 
 // Manifesto-first hero, with the event-first direction's video treatment
 // folded in: a muted, looping ambient video plays behind the statement
@@ -40,7 +40,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-[1240px] w-full px-5 md:px-8 pb-16 pt-40">
         <p className="h-brand text-[11px] text-[#7DDAD0] mb-5 tracking-widest">
-          Legal Design Summit &middot; 9&ndash;10 September 2027
+          {nextEdition.city} &middot; {nextEdition.dateRange}
         </p>
         <h1 className="font-bold text-white text-[10vw] leading-[1.05] md:text-[52px] md:leading-[1.08] max-w-4xl tracking-tight">
           {manifesto.statement}

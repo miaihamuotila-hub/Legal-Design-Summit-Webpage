@@ -29,14 +29,17 @@ export const stats2025 = [
 ];
 
 // Dates confirmed directly by the organiser (Mia Ihamuotila, Chair) on
-// 2026-09-21. City, venue, and ticket details are still unconfirmed — left
-// empty rather than guessed.
+// 2026-09-21. Venue confirmed as the same as 2025 — address verified against
+// the source site's travel page, not re-typed from memory. Ticket details
+// are still unconfirmed — left empty rather than guessed.
 export const nextEdition = {
   year: "2027",
   dateRange: "9–10 September 2027",
   brainFactoryDate: "8 September 2027",
-  city: null as string | null,
-  status: "City and venue will be announced",
+  city: "Helsinki, Finland",
+  venue: "University of Helsinki Main Building",
+  venueAddress: "5 Aleksanterinkatu, 00100 Helsinki, Finland",
+  status: "Ticket details will be announced",
 };
 
 // Historical — real, confirmed external video (2025 BrainFactory Highlights).
