@@ -16,6 +16,11 @@ export const problemStatement = [
 ];
 export const problemStatementClose = "This needs to change.";
 
+// Proposed — new copy, drafted with the organiser 2026-09, distilled from the
+// brand book's original "Our Purpose" slide. Not sourced from the old site.
+export const purposeStatement =
+  "We exist so your spark for change has somewhere to belong.";
+
 // Historical — 2025 edition numbers. Speaker/workshop counts use the exact
 // enumerable records we hold (42 profiles, 9 published workshops) rather than
 // the old site's rounder marketing figures ("50+", "10"), which the brief

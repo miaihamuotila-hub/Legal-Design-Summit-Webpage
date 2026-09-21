@@ -5,6 +5,7 @@ import { Stats } from "@/components/home/stats";
 import { FourWaysIn } from "@/components/home/four-ways-in";
 import { Testimonial } from "@/components/home/testimonial";
 import { ContentTeasers } from "@/components/home/content-teasers";
+import { PurposeBand } from "@/components/home/purpose-band";
 import { Partners } from "@/components/home/partners";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <FourWaysIn />
       <Testimonial />
       <ContentTeasers />
+      <PurposeBand />
       <Partners />
     </>
   );
