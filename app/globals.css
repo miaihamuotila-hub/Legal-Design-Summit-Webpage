@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-arimo);
+
+  /* Legal Design Summit brand palette (see design-handoff/uploads brand book) */
+  --color-ink: #1a1a1a;
+  --color-teal: #288f85;
+  --color-magenta: #9c0760;
+  --color-charcoal: #4e5654;
+  --color-grey: #7d8a89;
+  --color-grey-light: #a9b1b1;
+  --color-teal-light: #7ddad0;
+  --color-mint: #aeeae4;
+  --color-pink: #dd7eb7;
+  --color-pink-light: #fcbde3;
+  --color-paper: #fbfaf8;
+  --color-hairline: #e2e0db;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-arimo), Arial, Helvetica, sans-serif;
+}
+
+/* Brand headings: Arimo, bold, all caps, tight tracking — per brand book typography rules */
+.h-brand {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}

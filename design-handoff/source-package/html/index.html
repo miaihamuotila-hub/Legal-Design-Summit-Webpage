@@ -1,0 +1,1681 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:site_name" content="Legal Design Summit" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Legal Design Summit" />
+	<meta property="og:image" content="images/meta.png" />
+
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<link href="css/vendor/formstone/carousel.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/vendor/formstone/lightbox.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/vendor/formstone/themes/light.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/styles.css" type="text/css" rel="stylesheet" media="all">
+
+
+	<script type="text/javascript" src="scripts/vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/vendor/jquery/jquery.once.min.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/core.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/carousel.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/mediaquery.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/touch.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/transition.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/equalize.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/lightbox.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/viewer.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+
+	<title>Legal Design Summit</title>
+	<style>
+		.team .image {
+			width: 225px;
+			height: 225px;
+			border-radius: 50%;
+			overflow: hidden;
+			margin: auto;
+		}
+
+		.flex-container {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			justify-content: center;
+			-ms-box-orient: horizontal;
+			display: flex;
+		}
+
+		.wrap {
+
+			flex-wrap: wrap;
+		}
+
+		.flex-item {
+			padding: 20px;
+			margin: 10px;
+			width: 240px;
+			height: 150px;
+			align-items: center;
+			line-height: 100px;
+			text-align: center;
+			justify-content: center;
+		}
+
+		.flex-item:hover img {
+			transform: scale(1.2);
+		}
+
+		.flex-item img {
+			max-width: 100%;
+			height: auto;
+			transition: transform 0.2s ease-in-out;
+		}
+
+		.notification-section {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+			flex-wrap: wrap;
+		}
+
+		.logo-section {
+			background-color: white;
+			padding: 40px 20px;
+			text-align: center;
+		}
+
+		.logo-grid {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 24px;
+			margin-top: 30px;
+		}
+
+		.logo-grid a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 180px;
+			height: 160px;
+			padding: 10px;
+			background-color: #fff;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+			transition: transform 0.2s ease;
+		}
+
+		.logo-grid a:hover {
+			transform: scale(1.05);
+		}
+
+		.logo-grid img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100px;
+			object-fit: contain;
+		}
+
+		.logo-grid img[src*="RTK"],
+		.logo-grid img[src*="OliveHarbor"],
+		.logo-grid img[src*="Stanford"],
+		.logo-grid img[src*="NU College"],
+		.logo-grid img[src*="lawyer_design_school"],
+		.logo-grid img[src*="tr_Helsingborg"],
+		.logo-grid img[src*="hamburg"] {
+			max-height: 140px;
+		}
+
+		.logo-grid img.large-logo {
+			max-height: 140px;
+		}
+
+		.stats-section {
+			background: linear-gradient(to right, #f2f9fd, #f8fbff);
+			padding: 60px 20px;
+			text-align: center;
+		}
+
+		.stats-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.stats-subtitle {
+			font-size: 1.2em;
+			color: #888;
+			margin-bottom: 40px;
+		}
+
+		.stats-grid {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 50px;
+		}
+
+		.stat-box {
+			background: #ffffff;
+			border-radius: 16px;
+			box-shadow: 0 8px 20px -8px rgb(0 0 0 / 10%);
+			padding: 2rem 1rem 1.75rem;
+			transition: transform 0.25s ease;
+		}
+
+		.stat-box:hover {
+			transform: translateY(-6px);
+		}
+
+		.stat-box i {
+			font-size: 1.75rem;
+			color: var(--lds-primary-dark);
+			margin-bottom: 0.75rem;
+		}
+
+		.stat-num {
+			display: block;
+			font-size: 1.75rem;
+			font-weight: 700;
+			color: var(--lds-text);
+		}
+
+		.stat-label {
+			display: block;
+			font-size: 0.9rem;
+			letter-spacing: 0.4px;
+			opacity: 0.8;
+		}
+
+		.stat-icon {
+			background: linear-gradient(135deg, #7ddad0, #8cc9f0);
+			color: white;
+			font-size: 30px;
+			border-radius: 50%;
+			width: 80px;
+			height: 80px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 20px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		}
+
+
+		.stat-number {
+			font-size: 1.8em;
+			font-weight: bold;
+			color: #222;
+		}
+
+
+		:root {
+			--lds-primary: #aeece9;
+			--lds-primary-dark: #0e9d98;
+			--lds-bg-light: #eaf7fc;
+
+			--lds-text: #232323;
+			--nav-font-size: 1.125rem;
+		}
+
+
+		.lds-hero {
+			background: linear-gradient(to bottom, #fff 0%, var(--lds-bg-light) 100%);
+			padding: 4rem 0 6rem;
+
+			border-bottom: 4px solid var(--lds-primary);
+			color: var(--lds-text);
+			overflow: hidden;
+		}
+
+
+		.hero-header {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+			flex-wrap: wrap;
+			margin-bottom: 3rem;
+			justify-content: flex-start;
+		}
+
+		.lds-logo {
+			max-height: 340px;
+			flex: 0 0 340px;
+		}
+
+		.hero-headline {
+			flex: 1 1 400px;
+			font-size: 2rem;
+			line-height: 1.35;
+		}
+
+		.hero-headline strong {
+			font-weight: 800;
+			color: var(--lds-primary-dark);
+		}
+
+		.hero-stats {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 1.75rem 2.5rem;
+			text-align: center;
+			max-width: none;
+			margin: 0 auto;
+		}
+
+		@media (max-width: 992px) {
+			.lds-hero {
+				padding: 3rem 0 4.5rem;
+			}
+
+			.hero-headline {
+				font-size: 1.5rem;
+			}
+
+			.lds-logo {
+				flex: 0 0 260px;
+				max-height: 260px;
+			}
+
+		}
+
+		@media(max-width:560px) {
+			.sponsor-row.primary img {
+				height: 72px;
+			}
+
+			.sponsor-row.secondary img {
+				height: 56px;
+			}
+		}
+
+		#content-events {
+
+			background: #fff;
+
+			padding: 60px 0;
+
+		}
+
+
+		.sponsors {
+			background: #fff;
+			padding: 32px 0 36px;
+			text-align: center;
+			box-shadow: 0 -3px 8px -4px rgba(0, 0, 0, .06);
+		}
+
+		.sponsors h3 {
+			margin: 0 0 18px;
+			font-weight: 700;
+		}
+
+		.sponsor-row {
+			display: grid;
+			justify-content: center;
+			gap: 32px 56px;
+
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+
+		.sponsor-row img {
+			max-height: 200px;
+			max-width: 240px;
+			width: auto;
+			height: auto;
+		}
+
+
+		.sponsor-row.primary {
+			grid-template-columns: repeat(4, auto);
+		}
+
+		.sponsor-row.secondary {
+			grid-template-columns: repeat(3, auto);
+			margin-top: 22px;
+		}
+
+		.sponsor-row a {
+			display: flex;
+			align-items: center;
+			transition: transform .18s ease;
+		}
+
+		.sponsor-row a:hover {
+			transform: scale(1.06);
+		}
+
+
+		.sponsor-logos a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: transform .18s ease;
+		}
+
+		.sponsor-logos a:hover {
+			transform: scale(1.06);
+		}
+
+		.sponsor-logos img {
+			max-width: 100%;
+			max-height: 90px;
+			object-fit: contain;
+		}
+
+		.wrapper.menu {
+			background: rgba(125, 218, 208, 0.83);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+
+		}
+
+		.wrapper.menu .menu-container ul.menu>li>a {
+			padding: 12px 18px;
+			font-size: 1.25rem !important;
+			line-height: 1.4;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+		}
+
+		.menu-toggler {
+			display: none;
+			background: transparent;
+			border: 0;
+			font: inherit;
+			padding: .75rem 1rem;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		.menu-toggler:focus-visible {
+			outline: 2px solid #fff;
+			outline-offset: 2px;
+		}
+
+		.menu-toggler .icon::before {
+			content: "☰";
+			margin-left: .5rem;
+		}
+
+		@media (max-width: 768px) {
+			.menu-toggler {
+				display: inline-flex;
+				align-items: center;
+				gap: .5rem;
+			}
+
+			.menu-container {
+				position: relative;
+			}
+
+			.menu-container .lds-nav {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				flex-direction: column;
+				align-items: stretch;
+				background: var(--lds-bar-bg);
+				max-height: 0;
+				overflow: hidden;
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+				transition: max-height .25s ease, opacity .2s ease, visibility .2s ease;
+				box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .25);
+				justify-content: flex-start;
+			}
+
+			/* Open state toggled via JS */
+			.menu-container.open .lds-nav {
+				max-height: 80vh;
+
+				overflow: auto;
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+			}
+
+			@media (max-width: 640px) {
+				.lds-nav {
+					flex-direction: column;
+				}
+			}
+
+			.lds-nav .more {
+				order: 999;
+			}
+
+			.lds-nav .more.hidden {
+				display: none;
+			}
+		}
+
+
+
+		.lds-nav .submenu {
+
+			min-width: 220px;
+			border-radius: 8px;
+			box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .25);
+		}
+
+
+		.lds-nav a:focus-visible,
+		.lds-nav .more>button:focus-visible,
+		.lds-nav .submenu a:focus-visible {
+			outline: 2px solid #fff;
+			outline-offset: 2px;
+		}
+
+
+		@media (min-width: 992px) {
+
+			.lds-nav>li>a,
+			.lds-nav .more>button {
+				padding-left: 1.1rem;
+				padding-right: 1.1rem;
+			}
+		}
+
+		.wrapper.menu .content-main {
+			padding: 12px 0;
+		}
+
+
+		.lds-header {
+			background: rgba(125, 218, 208, 0.83);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+		}
+
+		.hidden {
+			display: none !important;
+		}
+
+
+
+		.lds-nav {
+			max-width: 100%;
+			display: inline-flex;
+			font-family: 'Helvetica Neue', sans-serif;
+			background: transparent;
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			gap: 0;
+			display: flex;
+
+			justify-content: center;
+		}
+
+		.lds-nav ul {
+			display: flex;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.lds-nav li {
+			white-space: nowrap;
+		}
+
+		.lds-nav>li {
+			flex: 0 0 auto;
+		}
+
+		.lds-nav a,
+		.lds-nav .more>button {
+			display: block;
+			padding: .75rem 1rem;
+			color: #fff;
+			font: 1rem/1.4 "Helvetica Neue", sans-serif;
+			text-decoration: none;
+			cursor: pointer;
+			position: relative;
+			font-family: 'Helvetica Neue', sans-serif;
+			text-align: center;
+		}
+
+		.lds-nav .more>button::after {
+
+			content: " ▾";
+		}
+
+		.lds-nav .more>button:focus-visible {
+			outline: 2px solid #fff;
+			outline-offset: 2px;
+		}
+
+		.lds-nav .more {
+			position: relative;
+		}
+
+		.lds-nav .submenu {
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			min-width: 180px;
+			margin: 0;
+			padding: .5rem 0;
+			list-style: none;
+			background: rgba(125, 218, 208, 0.83);
+
+			transform: translateX(-50%);
+			text-align: left;
+			font-family: 'Helvetica Neue', sans-serif;
+		}
+
+		.lds-nav .submenu li a {
+			padding: .6rem 1rem;
+		}
+
+		.lds-nav .more.open .submenu {
+			display: block;
+		}
+
+		.lds-nav a,
+		.lds-nav .more>button {
+			color: #fff;
+		}
+
+		.lds-nav a:hover,
+		.lds-nav .submenu li a:hover,
+		.lds-nav .more>button:hover {
+			background: rgba(255, 255, 255, .10);
+			color: #fff;
+		}
+
+		:root {
+			--lds-bar-bg: rgba(125, 218, 208, 0.83);
+		}
+
+		.wrapper.menu,
+		.lds-nav,
+		.lds-nav .submenu {
+			background: var(--lds-bar-bg);
+		}
+
+		@media (min-width: 769px) {
+			.lds-nav {
+				background: transparent !important;
+			}
+		}
+
+		.lds-nav a:hover,
+		.lds-nav .more>button:hover,
+		.lds-nav .submenu li a:hover {
+			background: rgba(255, 255, 255, .10);
+		}
+
+		.lds-nav>li>a,
+		.lds-nav .more>button,
+		.lds-nav .submenu li a {
+			font-family: 'Helvetica Neue', sans-serif;
+			font-weight: 400;
+			font-size: var(--nav-font-size);
+			line-height: 1.35;
+			letter-spacing: 0.01em;
+			padding: 0.9rem 1.4rem;
+			background: transparent !important;
+		}
+
+		.lds-nav>li>a,
+		.lds-nav .more>button,
+		.lds-nav .submenu li a {
+			background: transparent !important;
+			border: 0;
+			outline: none;
+		}
+
+		@media (max-width:640px) {
+			.lds-nav ul {
+				flex-direction: column;
+			}
+
+			.lds-nav .more.hidden {
+				display: none;
+			}
+		}
+
+		.wrapper.menu .menu-container {
+			overflow: visible !important;
+		}
+
+		.wrapper.menu {
+			box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+		}
+
+		@media (min-width: 992px) {
+			.wrapper.menu .menu-container ul.menu>li {
+				margin: 0 1rem;
+
+			}
+		}
+
+
+		@media (max-width: 640px) {
+
+			html {
+				font-size: 100%;
+			}
+
+			body {
+				line-height: 1.45;
+			}
+
+			h1,
+			.hero-headline {
+				font-size: clamp(1.35rem, 6vw, 1.75rem);
+			}
+
+			.stats-title {
+				font-size: 1.35rem;
+			}
+
+			.stats-subtitle {
+				font-size: 1rem;
+			}
+
+			section,
+			.wrapper {
+				padding-left: 5vw;
+				padding-right: 5vw;
+			}
+
+
+			.lds-logo {
+				max-height: 140px;
+				flex: 0 0 140px;
+			}
+
+			.hero-header {
+				gap: 1.5rem;
+			}
+
+			.hero-stats {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1.25rem;
+			}
+
+
+			.notify-btn {
+				display: block;
+				padding: .9rem 1.25rem;
+				margin-bottom: .75rem;
+			}
+
+
+			.flex-item {
+				width: 46%;
+				padding: 10px;
+				height: auto;
+			}
+
+			.logo-grid a,
+			.sponsor-row a {
+				width: 44vw;
+				height: 110px;
+			}
+
+			.logo-grid img,
+			.sponsor-row img {
+				max-height: 80%;
+			}
+
+			.sponsor-row.primary,
+			.sponsor-row.secondary,
+			.logo-grid {
+				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+			}
+
+			.team .image {
+				width: 140px;
+				height: 140px;
+			}
+
+			.footer p {
+				font-size: .85rem;
+				word-break: break-word;
+			}
+
+			.social-media a {
+				display: inline-block;
+				margin: 4px 6px;
+			}
+		}
+
+		.lds-nav .submenu {
+			z-index: 1000;
+		}
+
+		.linkedin-microfeed {
+			background: linear-gradient(to right, #fff 0%, var(--lds-bg-light) 100%);
+			border-top: 1px solid var(--lds-primary);
+			border-bottom: 1px solid var(--lds-primary);
+			padding: 28px 0 32px;
+		}
+
+		.microfeed-header {
+			display: flex;
+			align-items: center;
+			gap: .75rem;
+			margin-bottom: 16px;
+		}
+
+		.microfeed-title {
+			margin: 0;
+			font-weight: 700;
+			font-size: 1.1rem;
+			color: var(--lds-text);
+		}
+
+		.live-dot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--lds-primary-dark);
+			box-shadow: 0 0 0 0 rgba(14, 157, 152, .5);
+			animation: pulse 2.4s infinite;
+		}
+
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 0 0 rgba(14, 157, 152, .45);
+			}
+
+			70% {
+				box-shadow: 0 0 0 10px rgba(14, 157, 152, 0);
+			}
+
+			100% {
+				box-shadow: 0 0 0 0 rgba(14, 157, 152, 0);
+			}
+		}
+
+		.microfeed-cta {
+			margin-left: auto;
+			font-size: .95rem;
+			text-decoration: none;
+			color: var(--lds-primary-dark);
+			border: 1px solid rgba(14, 157, 152, .25);
+			padding: .35rem .6rem;
+			border-radius: 999px;
+			transition: background .2s ease, transform .2s ease;
+		}
+
+		.microfeed-cta:hover {
+			background: rgba(14, 157, 152, .06);
+			transform: translateY(-1px);
+		}
+
+		.linkedin-carousel {
+			overflow: visible;
+		}
+
+		.microcard {
+			width: 360px;
+			max-width: 92vw;
+			background: #fff;
+			border-radius: 16px;
+			border-left: 4px solid var(--lds-primary-dark);
+			box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .25);
+			overflow: hidden;
+			margin: 6px 8px;
+			transition: transform .25s ease, box-shadow .25s ease;
+		}
+
+		.microcard:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 14px 30px -14px rgba(0, 0, 0, .28);
+		}
+
+		.microcard iframe {
+			display: block;
+			width: 100%;
+			height: 280px;
+			border: 0;
+			background: #fff;
+		}
+
+
+		@media (max-width: 640px) {
+			.microcard iframe {
+				height: 240px;
+			}
+		}
+
+
+		@media (prefers-reduced-motion: reduce) {
+			.linkedin-carousel {
+				--autoplay: 0;
+			}
+		}
+
+
+		.li-scroll {
+			display: flex;
+			gap: 12px;
+			overflow-x: auto;
+			overflow-y: hidden;
+			padding: 4px 2px 12px;
+			scroll-snap-type: x proximity;
+			-webkit-overflow-scrolling: touch;
+			touch-action: pan-x;
+			/* soft edge fade */
+			mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+			-webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+		}
+
+		/* Nice, discreet scrollbar */
+		.li-scroll::-webkit-scrollbar {
+			height: 10px;
+		}
+
+		.li-scroll::-webkit-scrollbar-track {
+			background: transparent;
+		}
+
+		.li-scroll::-webkit-scrollbar-thumb {
+			background: rgba(14, 157, 152, .35);
+			border-radius: 999px;
+		}
+
+		.li-scroll {
+			scrollbar-width: thin;
+			scrollbar-color: rgba(14, 157, 152, .45) transparent;
+		}
+
+
+		.li-scroll .microcard {
+			flex: 0 0 360px;
+
+			margin: 0;
+
+			scroll-snap-align: start;
+		}
+
+
+		.microcard {
+			background: #fff;
+			border-radius: 16px;
+			border-left: 4px solid var(--lds-primary-dark);
+			box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .25);
+			overflow: hidden;
+			transition: transform .25s ease, box-shadow .25s ease;
+		}
+
+		.microcard:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 14px 30px -14px rgba(0, 0, 0, .28);
+		}
+
+
+		.microcard iframe {
+			display: block;
+			width: 100%;
+			height: 280px;
+
+			border: 0;
+			background: #fff;
+		}
+
+		@media (max-width: 640px) {
+			.li-scroll .microcard {
+				flex-basis: 82vw;
+			}
+
+
+			.microcard iframe {
+				height: 240px;
+			}
+		}
+
+
+		@media (prefers-reduced-motion: reduce) {
+			.li-scroll {
+				scroll-snap-type: none;
+			}
+		}
+
+		.microfeed-header .microfeed-cta {
+			display: none;
+		}
+
+
+		.microfeed-actions {
+			display: flex;
+			justify-content: center;
+			margin-top: 12px;
+		}
+
+
+		.notify-btn.li-follow-btn {
+			font-size: 1.05rem;
+
+			padding: .9rem 1.25rem;
+
+			border-radius: 999px;
+
+			box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .28);
+		}
+
+
+		@media (max-width:640px) {
+			.microfeed-actions {
+				margin-top: 10px;
+			}
+
+			.notify-btn.li-follow-btn {
+				width: auto;
+			}
+		}
+
+		/* --- Sponsors --- */
+		.sponsors {
+			padding: 2rem 0;
+		}
+
+		.sponsors h3 {
+			text-align: center;
+			margin-bottom: 1.5rem;
+		}
+
+		/* rows become responsive grids */
+		.sponsor-row {
+			display: grid;
+			gap: clamp(12px, 2vw, 24px);
+			align-items: center;
+			/* center the boxes on the row */
+			justify-items: center;
+			/* center the content in each box */
+		}
+
+		/* # of columns on desktop */
+		.sponsor-row.primary {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		.sponsor-row.secondary {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		/* each link is the “logo box” */
+		.sponsor-row a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: var(--cell-h, 120px);
+			/* default cell height */
+			padding: clamp(8px, 1.5vw, 16px);
+			/* breathing room so tall logos don’t touch edges */
+		}
+
+		/* different box heights per tier (optional) */
+		.sponsor-row.primary {
+			--cell-h: 140px;
+		}
+
+		.sponsor-row.secondary {
+			--cell-h: 110px;
+		}
+
+		/* images scale to fit box, never distort */
+		.sponsor-row img {
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			object-fit: contain;
+			/* keeps aspect ratio, no cropping */
+		}
+
+		/* --- Mobile / small tablets --- */
+		@media (max-width: 768px) {
+
+			.sponsor-row.primary,
+			.sponsor-row.secondary {
+				grid-template-columns: repeat(2, 1fr);
+				/* 2-across on mobile */
+			}
+
+			.sponsor-row.primary {
+				--cell-h: 96px;
+			}
+
+			.sponsor-row.secondary {
+				--cell-h: 84px;
+			}
+		}
+
+		@media (max-width: 420px) {
+
+			.sponsor-row.primary,
+			.sponsor-row.secondary {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="active">
+
+	<div class="wrapper menu fluid">
+
+		<div class="container">
+
+			<div id="menu">
+
+				<div class="content-main">
+
+					<div class="block menu-main">
+						<div class="content">
+
+							<button class="menu-toggler" id="menuToggle" aria-label="Open navigation"
+								aria-controls="ldsNav" aria-expanded="false">
+								Menu <span class="icon" aria-hidden="true"></span>
+							</button>
+							<div class="menu-container" role="navigation" aria-label="Primary">
+								<ul class="lds-nav" id="ldsNav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="brainfactory.html">BrainFactory</a></li>
+									<li><a href="program.html">Program</a></li>
+									<li><a href="tickets.html">Tickets</a></li>
+									<li><a href="speakers.html">Speakers</a></li>
+									<li><a href="travel.html">Travel & Venue</a></li>
+									<li><a href="previous-participants.html">Who is attending?</a></li>
+
+									<li><a href="about-us.html">Meet the Team</a></li>
+									<li><a href="values.html">Values</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<li><a href="the-gallery.html">[Beta] The Gallery</a></li>
+
+									<li class="more hidden">
+										<button type="button" aria-haspopup="true" aria-expanded="false"
+											aria-controls="moreMenu">More</button>
+										<ul class="submenu" id="moreMenu"></ul>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="background-video">
+		<video autoplay loop muted playsinline class="back-video">
+			<source src="images/video/summit-footage.mp4" type="video/mp4">
+		</video>
+
+		<div class="container">
+			<!-- Header Section Begins -->
+			<div class="header-content">
+				<div class="text-content">
+					<div class="blue-bar">
+					</div>
+					<h1 style="color: white;">Legal Design Summit</h1>
+					<p class="slogan-enhanced">Thank you for the 2025 Summit! Stay tuned for updates...
+					</p>
+					<br><br>
+					<p class="slogan-long">Welcome to the largest non-profit legal design event in the world.</p>
+				</div>
+			</div>
+			<!-- HEADER Section Ends -->
+		</div>
+	</div>
+	<div class="notification-section">
+		<a href="https://www.linkedin.com/feed/update/urn:li:activity:7381283883494846464" target="_blank"
+			class="notify-btn">
+			View the aftermovie here!
+		</a>
+	</div>
+
+	<section class="lds-hero">
+		<div class="hero-inner container">
+			<!-- Top row  ---------------------------------------------------- -->
+			<div class="hero-header">
+				<img src="images/logos/LDS2025 logo.png" alt="Legal Design Summit 2025 logo" class="lds-logo" />
+
+				<h1 class="hero-headline">
+					Where law meets design—and a global community turns ideas into better justice, strategic advantage,
+					and truly human-centered legal services.<br /><br />
+				</h1>
+			</div>
+
+			<div class="hero-stats">
+				<div class="stat-box">
+					<i class="fas fa-users"></i>
+					<span class="stat-num">600+</span>
+					<span class="stat-label">Global Attendees</span>
+				</div>
+
+				<div class="stat-box">
+					<i class="fas fa-calendar-alt"></i>
+					<span class="stat-num">20+</span>
+					<span class="stat-label">Sessions</span>
+				</div>
+
+				<div class="stat-box">
+					<i class="fas fa-brain"></i>
+					<span class="stat-num">10</span>
+					<span class="stat-label">BrainFactory Workshops</span>
+				</div>
+
+				<div class="stat-box">
+					<i class="fas fa-clock"></i>
+					<span class="stat-num">2</span>
+					<span class="stat-label">Intensive Days</span>
+				</div>
+
+				<div class="stat-box">
+					<i class="fas fa-microphone"></i>
+					<span class="stat-num">50+</span>
+					<span class="stat-label">Expert Speakers</span>
+				</div>
+			</div>
+		</div>
+		<div class="notification-section">
+			<a href="https://www.linkedin.com/feed/update/urn:li:activity:7381283883494846464" target="_blank"
+				class="notify-btn">
+				View the 2025 aftermovie here!
+			</a>
+		</div>
+	</section>
+	<!-- ─── Sponsor block ───────────────────────────────────────── -->
+	<section class="sponsors" id="sponsors">
+		<h3>The Legal Design Summit is made possible by:</h3>
+
+		<!-- 1st-tier sponsors (row of 4) -->
+		<div class="sponsor-row primary">
+			<a href="https://www.helsinki.fi/en/faculty-law" target="_blank">
+				<img loading="lazy" src="images/collabs/Helsingin-yliopisto-oikis.PNG" alt="Helsinki University">
+			</a>
+			<a href="https://newcode.ai/" target="_blank">
+				<img loading="lazy" src="images/collabs/-Newcode.ai.svg" alt="Newcode.ai">
+			</a>
+			<a href="https://www.dlapiper.com/en/about-us/law-and" target="_blank">
+				<img loading="lazy" src="images/collabs/DLA Piper.jpg" alt="DLA Piper">
+			</a>
+			<a href="https://www.legora.com" target="_blank">
+				<img loading="lazy" src="images/collabs/Legora (word logo).png" alt="Legora">
+			</a>
+		</div>
+		<div class="sponsor-row secondary">
+			<a href="https://ey.com" target="_blank">
+				<img loading="lazy" src="images/collabs/EY_Law_ Black.png" alt="EY Law">
+			</a>
+			<a href="https://www.almainsights.fi/" target="_blank">
+				<img loading="lazy" src="images/collabs/Alma Insights__black.png" alt="Alma Insights">
+			</a>
+			<a href="https://www.ilvessolutions.fi/en/" target="_blank">
+				<img loading="lazy" src="images/collabs/ilves logo.png" alt="Ilves Solutions">
+			</a>
+		</div>
+	</section>
+
+
+
+	<div class="wrapper fluid propositions">
+
+
+
+		<div class="container">
+
+
+
+			<div class="row no-gutters">
+
+				<div class="col-md-6 col-first">&nbsp;</div>
+
+				<div class="col-md-6 col-second">
+
+					<div id="content-propositions">
+
+
+
+						<div class="content-main">
+							<h3>Terms of Service that no one reads?<br><span class="enhanced">Check.</span></h3>
+							<h3>Contracts by lawyers, for lawyers?<br><span class="enhanced">Check.</span></h3>
+							<h3>This needs to change.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+
+	</div>
+
+
+	<div class="logo-section">
+		<h3>In co-operation with:</h3>
+		<p>We love collaborating with non-profits - Get in touch to join forces with us!</p>
+		<div class="logo-grid">
+
+			<a href="https://www.dot.legal/" target="_blank"><img loading="lazy" src="images/collabs/Dot.-logo.jpg"
+					alt="Dot"></a>
+			<a href="https://legaldesign-journal.com/" target="_blank"><img
+					src="images/collabs/Legal Design Journal.JPG" alt="Legal Design Journal"></a>
+			<a href="https://www.hiil.org/" target="_blank"><img loading="lazy"
+					src="images/collabs/HiiL_Logo color tagline.png"></a>
+			<a href="https://legalhackers.org/" target="_blank"><img loading="lazy" src="images/collabs/lh.png"></a>
+			<a href="https://elta.org/" target="_blank"><img loading="lazy" src="images/collabs/elta.png"></a>
+			<a href="https://www.tum.de/" target="_blank"><img
+					src="images/collabs/TUM_Logo_extern_mt_EN_RGB_neg_p(Christian Djeffal).png"></a>
+			<a href="https://www.iltanet.org/home" target=" _blank"><img loading="lazy"
+					src="images/collabs/ILTA-logo-full.svg"></a>
+			<a href="https://www.copenhagenlegaltech.dk/" target="_blank"><img loading="lazy"
+					src="images/collabs/clt.png"></a>
+			<a href="https://www.copenhagenlegaltech.dk/" target="_blank"><img
+					src="images/collabs/Copenhagen Legal Tech.png"></a>
+			<a href="https://juristiliitto.fi/" target="_blank"><img loading="lazy"
+					src="images/collabs/Juristiliitto.png"></a>
+			<a href="https://chancerylaneproject.org/" target="_blank"><img loading="lazy"
+					src="images/collabs/TCLP.png"></a>
+			<a href="https://www.vttresearch.com/en" target=" _blank"><img loading="lazy"
+					src="images/collabs/VTT_Orange_Logo.png"></a>
+			<a href="https://www.helsinki.fi/en/networks/legal-tech-lab" target=" _blank"><img
+					src="images/collabs/helsinki-legal-tech-lab.png"></a>
+			<a href="https://projects.tuni.fi/jargonfree/" target=" _blank"><img loading="lazy"
+					src="images/collabs/JARGONFREE_logo.jpg"></a>
+			<a href="https://legalshake.com/" target=" _blank"><img loading="lazy"
+					src="images/collabs/Legal_Shake.png"></a>
+			<a href="https://legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/NJLDL-Logo-v1.png"></a>
+			<a href="https://oikeusministerio.fi/en/frontpage" target=" _blank"><img
+					src="images/collabs/OM_eng_RGB.png"></a>
+			<a href="https://www.uwasa.fi/en" target=" _blank"><img loading="lazy"
+					src="images/collabs/University-of-Vaasa-Logo-EN-Small-Vertical-Greytxt.jpg"></a>
+			<a href="https://www.univ-antananarivo.mg/" target=" _blank"><img loading="lazy"
+					src="images/collabs/Logo FDSP - Université d'Antananarivo (1).png"></a>
+
+			<a href="https://law.vanderbilt.edu/academics/academic-programs/law-and-innovation/activities.php"
+				target="_blank"><img loading="lazy" src="images/collabs/vanderbilt.png"></a>
+			<a href="https://www.newcastle.edu.au/" target="_blank"><img
+					src="images/collabs/University of Newcastle (Australia).jpg"></a>
+			<a href="https://www.nulawlab.org/" target="_blank"><img loading="lazy" src="images/collabs/nu-law.png"></a>
+
+
+			<a href="https://taltech.ee/en/department-law" target="_blank"><img loading="lazy"
+					src="images/collabs/TalTech.png"></a>
+			<a href="https://taltech.ee/en/department-law" target="_blank"><img loading="lazy"
+					src="images/collabs/lancaster-logo-2.PNG"></a>
+			<a href="https://suffolklitlab.org/" target=" _blank"><img loading="lazy"
+					src="images/collabs/Suffolk University Law School Legal Tech Lab.png"></a>
+
+			<a href="https://www.utu.fi/en" target="_blank"><img loading="lazy"
+					src="images/collabs/UTU_logo_EN_RGB.png"></a>
+
+			<a href="https://www.aalto.fi/en" target=" _blank"><img loading="lazy"
+					src="images/collabs/Aalto uni logo.png"></a>
+			<a href="https://www.nulawlab.org/projects/the-east-boston-spatial-justice-lab" target=" _blank"><img
+					loading="lazy" src="images/collabs/East Boston Spatial Justice Lab.jpeg"></a>
+
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/TiLD Logo ORIGINAL.png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/LawInova_1.png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/Constitutional Design Lab1 (Christian Djeffal).png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/Digital Law Lab.png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/BC Access to Justice Center for Excellence (BC ACE).png"></a>
+			<a href="https://www.justiceadda.com/" target=" _blank"><img loading="lazy"
+					src="images/collabs/justiceAddaLogo (2).png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/Attorney-at-Code.png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/Liquid Legal Institute .png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/Lebanese American University.jpg"></a>
+
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/Gabne Gabnys Law Firm (Jovita Morta Gabne).png"></a>
+			<a href="legaldesignsummit.com" target=" _blank"><img loading="lazy"
+					src="images/collabs/iO_Justice_Logo(LauraMarquez).png"></a>
+			<a href="https://www.linkedin.com/in/nokkonen/" target=" _blank"><img loading="lazy"
+					src="images/collabs/kolmas persoona logo (Outi Nokkonen).svg"></a>
+
+
+			<a href="https://www.jku.at/en/schools/" target=" _blank"><img loading="lazy"
+					src="images/collabs/JKU_School_LIFT_C_en_schwarz_hoch_cmyk.jpg"></a>
+
+			<a href="https://me.stanford.edu/" target="_blank">
+				<img loading="lazy" src="images/collabs/Stanford Mechanical Engineeering Logo.png" alt="Stanford"
+					class="large-logo" />
+			</a>
+
+			<a href="https://www.nu.edu/college/school-of-arts-letters-and-sciences/" target="_blank">
+				<img loading="lazy" src="images/collabs/NU College of Art and Design. JPG" alt="NU College"
+					class="large-logo" />
+			</a>
+
+
+			<a href="https://www.laurea.fi/en/" target=" _blank"><img loading="lazy"
+					src="images/collabs/laurea-pystylogo_rgb.png"></a>
+
+			<a href="https://legaldesignsummit.com" target="_blank">
+				<img loading="lazy" src="images/collabs/d-Van updated logo.png" alt="RTK" class="large-logo" />
+			</a>
+			<a href="https://legaldesignsummit.com" target="_blank">
+				<img loading="lazy" src="images/collabs/Legal-D(DorraHarrar)UPDATED.png" alt="Dorra Harrar"
+					class="large-logo" />
+				<a href="https://www.plmj.com/en/" target=" _blank"><img loading="lazy"
+						src="images/collabs/PLMJ_Logo_V.S1.POS.jpg"></a>
+			</a>
+			<a href="https://legaldesignsummit.com" target="_blank">
+				<img loading="lazy" src="images/collabs/RTK logo (Peegi Kaibald).png" alt="RTK" class="large-logo" />
+			</a>
+			<a href="https://legaldesignsummit.com" target="_blank">
+				<img loading="lazy" src="images/collabs/Jaramillo Villamizar SAS (1).jpg" alt="RTK"
+					class="large-logo" />
+			</a>
+			<a href="https://legaldesignsummit.com" target="_blank">
+				<img loading="lazy" src="images/collabs/EdgertonRiley-full(Peter Hornsby).png" alt="RTK"
+					class="large-logo" />
+			</a>
+			<a href="https://www.aho.no/english/" target="_blank">
+				<img loading="lazy" src="images/collabs/Oslo School of Architecture & Design.png" alt="OSAD"
+					class="large-logo" />
+			</a>
+
+			</a>
+			<a href="#" target="_blank">
+				<img loading="lazy" src="images/collabs/Public Legal Design.PNG" alt="blank" class="large-logo" />
+			</a>
+			<a href="#" target="_blank">
+				<img loading="lazy" src="images/collabs/Legal-Design-Sandbox-logo-200x66.png" alt="blank"
+					class="large-logo" />
+			</a>
+
+			<a href="https://www.lawtoons.in/" target="_blank">
+				<img loading="lazy" src="images/collabs/Lawtoons.jpg" alt="Lawtoons" class="large-logo" />
+			</a>
+			<a href="https://www.domstol.se/domstolsverket/other-languages/english/" target="_blank"><img loading="lazy"
+					src="images/collabs/Domstolsverket.png"></a>
+			<a href="https://lawyersdesignschool.com/" target="_blank">
+				<img loading="lazy" src="images/collabs/lawyer_design_school.png" alt="Lawyers Design School"
+					class="large-logo" />
+			</a>
+			<a href="#" target="_blank">
+				<img loading="lazy" src="images/collabs/e-legal.png" alt="E-legal" class="large-logo" />
+			</a>
+			<a href="#" target="_blank">
+				<img loading="lazy" src="images/collabs/logo_SDN Finland Chapter_RGB.jpg" alt="E-legal"
+					class="large-logo" />
+			</a>
+
+			<a href="https://ddw.nl/en/locations/716/foundation-we-are" target="_blank">
+				<img loading="lazy" src="images/collabs/FoundationWeAre.png" alt="Foundation we are"
+					class="large-logo" />
+			</a>
+			<a href="https://www.domstol.se/helsingborgs-tingsratt/" target="_blank">
+				<img loading="lazy" src="images/collabs/tr_Helsingborg_logo.png" alt="Helsingborg Court"
+					class="large-logo" />
+			</a>
+
+			<a href="https://www.uni-hamburg.de/en.html" target="_blank">
+				<img loading="lazy" src="images/collabs/university of hamburg-logo-u-2010-u-farbe-u-rgb.jpg"
+					alt="University of Hamburg" class="large-logo" />
+			</a>
+
+		</div>
+	</div>
+
+	<section class="linkedin-microfeed" aria-labelledby="linkedinHeading">
+		<div class="container">
+			<div class="microfeed-header">
+				<span class="live-dot" aria-hidden="true"></span>
+				<h3 id="linkedinHeading" class="microfeed-title">From our LinkedIn</h3>
+			</div>
+
+			<!-- Horizontal scroll track -->
+			<div class="li-scroll" role="region" aria-label="LinkedIn posts" tabindex="0">
+
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7367206570557935617?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7367206127698128897?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7367206346183593985?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7366756376456376324?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7366755273106931714?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7366458825173798913?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7361700308256808962?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7361370359054450689?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+				</div>
+
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7361369881587388417?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+				</div>
+
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:share:7361368548167905281?collapsed=1"
+						height="670" width="504" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+				</div>
+				<div class="microcard">
+					<iframe
+						src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7359562440252022784?collapsed=1"
+						height="567" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+				</div>
+			</div>
+			<div class="microfeed-actions">
+				<a class="notify-btn li-follow-btn" href="https://www.linkedin.com/company/legaldesignsummit/"
+					target="_blank" rel="noopener">
+					Follow us on LinkedIn
+				</a>
+			</div>
+
+			<noscript>
+				<p style="text-align:center;margin-top:.75rem;">
+					See our latest on <a href="https://www.linkedin.com/company/legaldesignsummit/" target="_blank"
+						rel="noopener">LinkedIn</a>.
+				</p>
+			</noscript>
+		</div>
+	</section>
+
+
+	<div class="wrapper actions" style="background-color: white; padding-bottom: 0px;">
+		<div class="container">
+			<div id="content-actions">
+				<div class="content-main">
+					<div class="padding-top-40"></div>
+					<div class="social-media padding-top-40 justify-center">
+						<div class="row col">
+							<a href="https://www.linkedin.com/company/10936008/"
+								class="icon linkedin col-3 margin-right-5" target="_blank">LinkedIn</a>
+							<a href="https://www.facebook.com/legaldesignsummit/"
+								class="icon facebook col-3 margin-right-5 margin-left-5" target="_blank">Facebook</a>
+							<a href="https://www.instagram.com/legaldesignsummit/"
+								class="icon instagram col-3 margin-right-5 margin-left-5" target="_blank">Instagram</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper footer" style="background-color: white; padding-top: 40px;">
+		<div class="container">
+			<div class="content-main">
+				<div class="justify-center">
+					<p style="color: #7ddad0; font-weight: bold;"><a style="color: black; font-weight: normal;"
+							href="mailto:info@legaldesignsummit.com"> info@legaldesignsummit</a> | <a
+							style="color: black;  font-weight: normal;" href="https://forms.gle/yFSxNdMBgnmbwZdWA">
+							Whistleblower Form</a> | <a style="color: black;  font-weight: normal;"
+							href="privacy.html">Privacy Policy</a> | <a style="color: black;  font-weight: normal;"
+							href="privacy-rec.html">Recruitment Privacy Policy</a></p>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="scroll-up" style="padding-top: 30px; padding-bottom: 10px; margin-bottom: 0px;"></a>
+	</div>
+	<script>
+		(() => {
+			const MAX_VISIBLE = 6;
+			const nav = document.getElementById('ldsNav');
+			const moreLi = nav.querySelector('.more');
+			const moreBtn = moreLi.querySelector('button');
+			const subMenu = moreLi.querySelector('.submenu');
+
+			const toggleBtn = document.getElementById('menuToggle');
+
+			const menuContainer = toggleBtn ? toggleBtn.nextElementSibling : null;
+
+			function closeMobileNav() {
+				if (!menuContainer) return;
+				menuContainer.classList.remove('open');
+				toggleBtn.setAttribute('aria-expanded', 'false');
+			}
+
+			function redistribute() {
+
+				while (subMenu.firstChild) {
+					nav.insertBefore(subMenu.firstChild, moreLi);
+				}
+				moreLi.classList.add('hidden');
+				moreLi.classList.remove('open');
+				moreBtn.setAttribute('aria-expanded', 'false');
+
+
+				if (window.innerWidth <= 768) return;
+
+
+				const available = nav.parentElement.clientWidth;
+				let used = moreLi.offsetWidth;
+				let shown = 0;
+
+				[...nav.children].forEach(li => {
+					if (li === moreLi) return;
+					const fits = used + li.offsetWidth <= available;
+					const underCap = shown < MAX_VISIBLE;
+
+					if (fits && underCap) {
+						used += li.offsetWidth;
+						shown += 1;
+					} else {
+						subMenu.appendChild(li);
+					}
+				});
+
+				if (subMenu.children.length) {
+					moreLi.classList.remove('hidden');
+				}
+			}
+
+			if (toggleBtn && menuContainer) {
+				toggleBtn.addEventListener('click', (e) => {
+					e.stopPropagation();
+					const isOpen = menuContainer.classList.toggle('open');
+					toggleBtn.setAttribute('aria-expanded', String(isOpen));
+					if (!isOpen) {
+						moreLi.classList.remove('open');
+						moreBtn.setAttribute('aria-expanded', 'false');
+					}
+				});
+			}
+			document.addEventListener('click', (e) => {
+				const clickedToggle = toggleBtn && (e.target === toggleBtn || toggleBtn.closest('#menuToggle'));
+				if (menuContainer && !menuContainer.contains(e.target) && !clickedToggle) {
+					moreLi.classList.remove('open');
+					moreBtn.setAttribute('aria-expanded', 'false');
+					closeMobileNav();
+				}
+			});
+
+			moreBtn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				const isOpen = moreLi.classList.toggle('open');
+				moreBtn.setAttribute('aria-expanded', String(isOpen));
+			});
+
+			// Close on outside click / Esc
+			document.addEventListener('click', (e) => {
+				if (menuContainer && !menuContainer.contains(e.target)) {
+					moreLi.classList.remove('open');
+					moreBtn.setAttribute('aria-expanded', 'false');
+					closeMobileNav();
+				}
+			});
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') {
+					moreLi.classList.remove('open');
+					moreBtn.setAttribute('aria-expanded', 'false');
+					closeMobileNav();
+				}
+			});
+
+			// Recalc on load/resize and whenever the container resizes
+			window.addEventListener('load', redistribute);
+			window.addEventListener('resize', redistribute);
+			if ('ResizeObserver' in window) {
+				const ro = new ResizeObserver(redistribute);
+				ro.observe(nav.parentElement);
+			}
+		})();
+
+	</script>
+
+
+
+
+</body>
+
+
+
+</html>

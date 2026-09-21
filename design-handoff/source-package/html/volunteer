@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta property="og:site_name" content="Legal Design Summit" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Legal Design Summit" />
+	<meta property="og:image" content="images/meta.png" />
+
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<link href="css/vendor/formstone/carousel.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/vendor/formstone/lightbox.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/vendor/formstone/themes/light.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/styles.css" type="text/css" rel="stylesheet" media="all">
+
+	<script type="text/javascript" src="scripts/vendor/respond.min.js"></script>
+	<script type="text/javascript" src="scripts/vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/vendor/jquery/jquery.once.min.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/core.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/carousel.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/mediaquery.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/touch.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/transition.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/equalize.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/lightbox.js"></script>
+	<script type="text/javascript" src="scripts/vendor/formstone/viewer.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+	<script src="http://code,jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>
+	<script>
+		$(function () {
+			$("#footer").load("footer.html");
+		});
+	</script>
+
+	<style>
+		.speaker h3 {
+			margin-bottom: 1rem;
+
+		}
+
+		.speaker p {
+			line-height: 1.3;
+		}
+	</style>
+
+	<title>Legal Design Summit</title>
+
+</head>
+
+<body class="active">
+
+	<!-- Wrapper // Menu Section Begins -->
+
+	<div class="wrapper menu fluid">
+
+		<!-- Container Section Begins -->
+
+		<div class="container">
+
+			<!-- Menu Section Begins -->
+
+			<div id="menu">
+
+				<!-- Content Main Section Begins -->
+
+				<div class="content-main">
+
+					<div class="block menu-main">
+						<div class="content">
+
+							<div class="menu-toggler">Menu<span class="icon"></span></div>
+
+							<div class="menu-container">
+								<ul class="menu">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="brainfactory.html">BrainFactory</a></li>
+									<li><a href="program.html">Program</a></li>
+									<li><a href="tickets.html">Tickets</a></li>
+									<li><a href="speakers.html">Speakers</a></li>
+									<li><a href="previous-participants.html">Who is attending?</a></li>
+									<li><a href="travel.html">Travel & Venue</a></li>
+									<li><a href="about-us.html">Meet the Team</a></li>
+									<li><a href="values.html">Values</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<li><a href="the-gallery.html">[Beta] The Gallery</a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+
+				</div>
+
+				<!-- Content Main Section Ends -->
+
+			</div>
+
+			<!-- Menu Section Ends -->
+
+		</div>
+
+		<!-- Container Section Ends -->
+
+	</div>
+
+	<!-- Wrapper // Menu Section Ends -->
+	<div class="wrapper about-us" style="padding-bottom: 1rem;">
+
+		<div class="container">
+
+			<!-- Content Section Begins -->
+
+			<div id="content-about-us">
+
+				<div class="speaker" style="max-width: 800px;">
+
+					<h2 style="text-align: center;">Volunteer</h2>
+
+					<h4 style="text-align: center; padding-bottom: 5rem;">Join Our Team as a Volunteer for the Legal
+						Design Summit in Helsinki September 2025!</h4>
+
+					<h3 style="text-align: center;">What?</h3>
+					<p>Welcome to the Legal Design Summit, where innovation, collaboration, and cutting-edge ideas
+						collide! Our mission is to create a vibrant platform where forward-thinking professionals can
+						exchange knowledge and expertise on law, design, and digital services.
+						<br><br>As we embark on this transformative journey, we need an incredible team of volunteers to
+						make it all happen! Volunteering with us means having a front-row seat to the creation of the
+						world's leading legal design event. Whether you're new to legal design or an expert in the
+						field, this is your chance to immerse yourself in an incredible global network of legal design!
+					</p>
+
+					<h3 style="text-align: center;">A Place for Everyone!</h3>
+					<p>No matter your background, expertise, or professional field, we want you! You don't need to be a
+						lawyer or a legal student to be a part of this amazing community, all people irrespective of
+						their background are welcome. If you're a doer who loves making things happen, if you crave
+						international connections and friendships, or if you're simply curious about the world of legal
+						design – this is your chance!</p>
+
+					<h3 style="text-align: center;">You as a volunteer?</h3>
+					<p>As a volunteer for the Legal Design Summit, you will be involved in a variety of essential
+						tasks to ensure the event's success. Leading up to the event we need doers and ideators to
+						create the next version - or even generation - of the Summit. Apply through the form below - or
+						get in touch with us directly!</p>
+
+					<h3 style="text-align: center;">Join us!</h3>
+
+
+
+				</div>
+
+			</div>
+
+			<!-- Content Main Section Ends -->
+
+		</div>
+
+	</div>
+
+	<div class="wrapper" style="text-align: center;">
+		<iframe
+			src="https://docs.google.com/forms/d/e/1FAIpQLSeuJ-5uXaqTjiitx-p471YlQkbdB4d_hAyqrOtnDhdPBiAMdg/viewform?embedded=true"
+			width="640" height="2840" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+	</div>
+
+
+	<!-- Wrapper // Header Section Ends -->
+
+	<!-- Wrapper // Content Section Begins -->
+
+	<!-- Wrapper // Content Actions Section Begins -->
+
+
+	<!-- Wrapper // Content Actions Section Ends -->
+
+
+
+
+
+	<!-- Wrapper // Footer Section Begins -->
+
+	<div class="wrapper footer" style="padding-top: 0;">
+
+		<!-- Container Section Begins -->
+
+
+		<!-- Container Section Ends -->
+
+		<div id="footer"></div>
+
+
+	</div>
+
+	<!-- Wrapper // Footer Section Ends -->
+
+
+
+</body>
+
+</html>

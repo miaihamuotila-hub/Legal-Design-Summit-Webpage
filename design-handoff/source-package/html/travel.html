@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta property="og:site_name" content="Legal Design Summit" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Legal Design Summit" />
+  <meta property="og:image" content="images/meta.png" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link href="css/vendor/formstone/carousel.css" type="text/css" rel="stylesheet" media="all">
+  <link href="css/vendor/formstone/lightbox.css" type="text/css" rel="stylesheet" media="all">
+  <link href="css/vendor/formstone/themes/light.css" type="text/css" rel="stylesheet" media="all">
+  <link href="css/styles.css" type="text/css" rel="stylesheet" media="all">
+
+  <script type="text/javascript" src="scripts/vendor/respond.min.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jquery/jquery.once.min.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/core.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/carousel.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/mediaquery.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/touch.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/transition.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/equalize.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/lightbox.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/viewer.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+
+  <script>
+    $(function () {
+      $("#footer").load("footer.html");
+    });
+  </script>
+  <title>Travel &amp; Accommodation – Legal Design Summit</title>
+
+  <style>
+    :root {
+      --lds-primary: #aeece9;
+      --lds-primary-dark: #0e9d98;
+      --lds-bg-light: #eaf7fc;
+      --lds-text: #232323;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      color: var(--lds-text);
+    }
+
+    .hero {
+      padding: 5rem 1rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffffff 0%, var(--lds-bg-light) 100%);
+      border-bottom: 4px solid var(--lds-primary);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--lds-primary-dark);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .venue-badge {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: var(--lds-primary);
+      color: var(--lds-text);
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--lds-primary-dark);
+      justify-self: center;
+    }
+
+    .section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--lds-primary);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--lds-primary-dark);
+    }
+
+    .card p {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      background-color: var(--lds-primary);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tips-list {
+      list-style: disc inside;
+      margin-left: 1rem;
+    }
+
+    .tips-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* === Theme tokens (fallbacks if not already defined) === */
+    :root {
+      --lds-bar-bg: rgba(125, 218, 208, 0.83);
+      --lds-nav-text: #fff;
+      --lds-nav-font-size: 1.125rem;
+      --lds-max-width: 1200px;
+    }
+
+    /* === Bar container === */
+    .lds-menu {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--lds-bar-bg);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    }
+
+    .lds-menu .menu-inner {
+      max-width: var(--lds-max-width);
+      margin: 0 auto;
+      padding: 0 .75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* center the whole bar on desktop */
+    }
+
+    /* === Toggler (hidden on desktop) === */
+    .lds-menu .menu-toggler {
+      display: none;
+      background: transparent;
+      border: 0;
+      font: inherit;
+      padding: .8rem 1rem;
+      color: var(--lds-nav-text);
+      cursor: pointer;
+    }
+
+    .lds-menu .menu-toggler .icon::before {
+      content: "☰";
+      margin-left: .5rem;
+    }
+
+    .lds-menu .menu-toggler:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* === Primary list (desktop) === */
+    .lds-menu .lds-nav {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      /* centered on desktop */
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: "Helvetica Neue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .lds-menu .lds-nav>li {
+      position: relative;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .lds-menu .lds-nav a,
+    .lds-menu .lds-nav .more>button {
+      display: block;
+      padding: .9rem 1.1rem;
+      color: var(--lds-nav-text);
+      text-decoration: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: var(--lds-nav-font-size);
+      line-height: 1.35;
+      letter-spacing: .01em;
+      text-align: center;
+    }
+
+    .lds-menu .lds-nav a:hover,
+    .lds-menu .lds-nav .more>button:hover {
+      background: rgba(255, 255, 255, .10);
+    }
+
+    .lds-menu .lds-nav a:focus-visible,
+    .lds-menu .lds-nav .more>button:focus-visible,
+    .lds-menu .lds-nav .submenu a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .lds-menu .lds-nav .more>button::after {
+      content: " ▾";
+    }
+
+    /* === Submenu (desktop) === */
+    .lds-menu .lds-nav .submenu {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      min-width: 220px;
+      margin: 0;
+      padding: .5rem 0;
+      list-style: none;
+      background: var(--lds-bar-bg);
+      border-radius: 8px;
+      box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .25);
+      z-index: 1000;
+    }
+
+    .lds-menu .lds-nav .submenu li a {
+      padding: .65rem 1rem;
+      display: block;
+    }
+
+    .lds-menu .lds-nav .more.open .submenu {
+      display: block;
+    }
+
+    /* === Mobile panel === */
+    @media (max-width: 768px) {
+      .lds-menu .menu-inner {
+        justify-content: space-between;
+      }
+
+      /* Only collapse if JS is active (progressive enhancement) */
+      .js .lds-menu .menu-toggler {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .js .lds-menu .menu-container {
+        position: relative;
+        width: 100%;
+      }
+
+      .js .lds-menu .menu-container .lds-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--lds-bar-bg);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: max-height .25s ease, opacity .2s ease, visibility .2s ease;
+        box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .25);
+      }
+
+      .js .lds-menu .menu-container.open .lds-nav {
+        max-height: 80vh;
+        overflow: auto;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      /* No overflow bucket on mobile */
+      .lds-menu .lds-nav .more {
+        order: 999;
+      }
+
+      .lds-menu .lds-nav .more.hidden {
+        display: none;
+      }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .lds-menu .menu-container .lds-nav {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="lds-menu">
+    <div class="menu-inner">
+      <button class="menu-toggler" id="menuToggle" aria-label="Open navigation" aria-controls="ldsNav"
+        aria-expanded="false">
+        Menu <span class="icon" aria-hidden="true"></span>
+      </button>
+
+      <nav class="menu-container" role="navigation" aria-label="Primary">
+        <ul class="lds-nav" id="ldsNav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="brainfactory.html">BrainFactory</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="tickets.html">Tickets</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="previous-participants.html">Who is attending?</a></li>
+          <li><a href="travel.html">Travel & Venue</a></li>
+          <li><a href="about-us.html">Meet the Team</a></li>
+          <li><a href="values.html">Values</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="the-gallery.html">[Beta] The Gallery</a></li>
+
+          <li class="more hidden">
+            <button type="button" aria-haspopup="true" aria-expanded="false" aria-controls="moreMenu">More</button>
+            <ul class="submenu" id="moreMenu"></ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <section class="hero">
+    <h1>Travel &amp; Accommodation</h1>
+    <p>Plan your trip to Helsinki for the Legal Design Summit 2025</p>
+    <div class="venue-badge">Summit venue: 5 Aleksanterinkatu, Helsinki</div>
+  </section>
+
+  <main id="travel-content">
+    <!-- Summit Venue Section -->
+    <section id="venue" class="section">
+      <h2 class="section-title">Summit Venue</h2>
+      <p>The Legal Design Summit 2025 will take place at the University of Helsinki’s main building at
+        <strong>5 Aleksanterinkatu, 00100 Helsinki, Finland</strong>. The venue is in the heart of the city centre, next
+        to Senate Square and the Helsinki Cathedral. You’ll find a fully accessible entrance on Aleksanterinkatu and the
+        beautiful Great Hall inside.
+      </p>
+      <p>Use tram 2, 4 or 7 to get to the venue – the <em>Senaatintori</em> stop is right around the corner. Helsinki
+        Central Station is a short 7‑minute walk away.</p>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=5+Aleksanterinkatu%2C+Helsinki" target="_blank"
+          rel="noopener">View in Google Maps</a></p>
+      <figure style="margin:1rem 0; text-align: center;">
+        <img src="images/backgrounds/travel_map.png" alt="Map showing the University of Helsinki"
+          style="width:100%; max-width:600px; height:auto; border:1px solid #ccc;">
+        <figcaption style="font-size:0.85rem; color:#666;">Tourist Attractions and Summit venue</figcaption>
+      </figure>
+    </section>
+
+    <!-- Getting There Section -->
+    <section id="getting-there" class="section">
+      <h2 class="section-title">Getting There</h2>
+      <p><strong>From the airport:</strong> Helsinki Airport (HEL) is about 30 minutes from the city centre. Take the I
+        or P train directly from the airport to Helsinki Central Station, then walk or hop on tram 2, 4 or 7 to reach
+        the venue. Taxis and airport buses are also available outside the terminal.</p>
+      <p><strong>By train:</strong> Long‑distance trains arrive at Helsinki Central Station. From there, it’s a short
+        walk along Keskuskatu to Aleksanterinkatu, or you can take the trams mentioned above.</p>
+      <p><strong>By bus/tram:</strong> The HSL network covers the entire Helsinki region. You can purchase day tickets
+        via the HSL app. Tram lines 2 and 4 stop at Senate Square near the venue, and numerous buses serve nearby stops.
+      </p>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section id="accommodation" class="section">
+      <h2 class="section-title">Accommodation</h2>
+      <p>We recommend booking your stay early. Here are a few options within walking distance of the Summit venue:</p>
+      <div class="card-grid">
+        <div class="card">
+          <div class="badge">Mid‑range</div>
+          <h3>Hotel Haven</h3>
+          <p>Unioninkatu 17 (5 min walk)</p>
+          <p>Elegant boutique hotel overlooking the harbour; breakfast included.</p>
+          <p><a href="https://www.hotelhaven.fi/en" target="_blank" rel="noopener">Website</a></p>
+        </div>
+        <div class="card">
+          <div class="badge">Mid‑range</div>
+          <h3>Scandic Kaisaniemi</h3>
+          <p>Kaisaniemenkatu 7 (8 min walk)</p>
+          <p>Comfortable rooms and sauna, close to the central station and metro.</p>
+          <p><a href="https://www.scandichotels.com/hotels/finland/helsinki/scandic-kaisaniemi" target="_blank"
+              rel="noopener">Website</a></p>
+        </div>
+        <div class="card">
+          <div class="badge">Premium</div>
+          <h3>Hotel Fabian</h3>
+          <p>Fabianinkatu 7 (6 min walk)</p>
+          <p>Stylish, eco‑friendly hotel with spacious rooms and a quiet courtyard.</p>
+          <p><a href="https://www.hotelfabian.com/" target="_blank" rel="noopener">Website</a></p>
+        </div>
+        <div class="card">
+          <div class="badge">Budget</div>
+          <h3>Omena Hotel Yrjönkatu</h3>
+          <p>Yrjönkatu 30 (10 min walk)</p>
+          <p>Self‑service budget hotel with basic amenities in the city centre.</p>
+          <p><a href="https://www.omenahotels.com/en/helsinki/yrjonkatu/" target="_blank" rel="noopener">Website</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Helsinki Section -->
+    <section id="explore" class="section">
+      <h2 class="section-title">Explore Helsinki</h2>
+      <p>While you’re here, make time to discover the city’s highlights:</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Helsinki Cathedral &amp; Senate Square</h3>
+          <p>The neoclassical cathedral is one of Finland’s most photographed landmarks and sits right next to the
+            summit venue.</p>
+        </div>
+        <div class="card">
+          <h3>Suomenlinna Sea Fortress</h3>
+          <p>A UNESCO World Heritage site just a 15‑minute ferry ride from the Market Square. Explore historic
+            fortifications and enjoy seaside views.</p>
+        </div>
+        <div class="card">
+          <h3>Oodi Central Library</h3>
+          <p>A modern architectural gem opposite the Parliament House. Grab a coffee, browse the library or simply
+            admire the wooden wave‑like design.</p>
+        </div>
+        <div class="card">
+          <h3>Design District &amp; Market Square</h3>
+          <p>Wander through boutique shops and galleries in the Design District, then sample local delicacies at the
+            Market Square.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section id="tips" class="section">
+      <h2 class="section-title">Travel Tips</h2>
+      <ul class="tips-list">
+        <li><strong>Weather:</strong> Late autumn in Helsinki can be chilly (0–5 °C) with occasional rain or snow. Bring
+          warm layers and waterproof shoes.</li>
+        <li><strong>Currency:</strong> Finland uses the Euro (€). Credit and debit cards are widely accepted, and
+          contactless payment is common.</li>
+        <li><strong>Language:</strong> Finnish and Swedish are the official languages, but English is widely spoken,
+          especially in the city centre.</li>
+        <li><strong>Emergency number:</strong> Dial <strong>112</strong> for police, fire or medical emergencies.</li>
+        <li><strong>Public transport:</strong> <a href="https://www.hsl.fi/en">the HSL app</a> for real‑time tram, bus
+          and metro timetables and to
+          purchase tickets on the go.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+
+      const MAX_VISIBLE = 6;
+
+      const root = document.querySelector('.lds-menu');
+      const nav = root.querySelector('#ldsNav');
+      const moreLi = nav.querySelector('.more');
+      const moreBtn = moreLi.querySelector('button');
+      const subMenu = moreLi.querySelector('.submenu');
+      const toggleBtn = root.querySelector('#menuToggle');
+      const menuContainer = root.querySelector('.menu-container');
+
+      function closeMobileNav() {
+        menuContainer.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      function redistribute() {
+        // Put everything back in the main row
+        while (subMenu.firstChild) {
+          nav.insertBefore(subMenu.firstChild, moreLi);
+        }
+        moreLi.classList.add('hidden');
+        moreLi.classList.remove('open');
+        moreBtn.setAttribute('aria-expanded', 'false');
+
+        // Mobile: show everything; no "More"
+        if (window.innerWidth <= 768) return;
+
+        // Desktop: measure available width and bucket overflow into "More"
+        const available = nav.parentElement.clientWidth; // container width
+        let used = moreLi.offsetWidth;                  // reserve space for "More"
+        let shown = 0;
+
+        [...nav.children].forEach(li => {
+          if (li === moreLi) return;
+          const fits = used + li.offsetWidth <= available;
+          const underCap = shown < MAX_VISIBLE;
+
+          if (fits && underCap) {
+            used += li.offsetWidth;
+            shown += 1;
+          } else {
+            subMenu.appendChild(li);
+          }
+        });
+
+        if (subMenu.children.length) {
+          moreLi.classList.remove('hidden');
+        }
+      }
+
+      // Hamburger toggle
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = menuContainer.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', String(isOpen));
+        if (!isOpen) {
+          moreLi.classList.remove('open');
+          moreBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // "More" dropdown (desktop)
+      moreBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = moreLi.classList.toggle('open');
+        moreBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Close on outside click / Esc
+      document.addEventListener('click', (e) => {
+        if (!root.contains(e.target)) {
+          moreLi.classList.remove('open');
+          moreBtn.setAttribute('aria-expanded', 'false');
+          closeMobileNav();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          moreLi.classList.remove('open');
+          moreBtn.setAttribute('aria-expanded', 'false');
+          closeMobileNav();
+        }
+      });
+
+      // Recalc when layout changes
+      window.addEventListener('load', redistribute);
+      window.addEventListener('resize', redistribute);
+      if ('ResizeObserver' in window) {
+        const ro = new ResizeObserver(redistribute);
+        ro.observe(nav.parentElement);
+      }
+    })();
+
+
+
+  </script>
+</body>
+
+</html>

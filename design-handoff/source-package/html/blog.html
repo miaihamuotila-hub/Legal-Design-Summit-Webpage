@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Legal Design Summit</title>
+
+
+	<meta name="description" content="Legal Design Summit blog: stories, testimonials and behind-the-scenes.">
+
+
+	<meta property="og:site_name" content="Legal Design Summit">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Legal Design Summit">
+	<meta property="og:image" content="images/meta.png">
+
+	<link rel="icon" type="image/png" href="images/favicon.png">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+	<link href="css/vendor/formstone/carousel.css" rel="stylesheet">
+	<link href="css/vendor/formstone/lightbox.css" rel="stylesheet">
+	<link href="css/vendor/formstone/themes/light.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+
+
+	<style>
+		:root {
+			--focus-ring: 3px solid var(--brand-turquoise);
+			--focus-offset: 3px;
+		}
+
+		:where(a, button, input, select, textarea, summary, [role="button"], [tabindex]:not([tabindex="-1"])):focus-visible {
+			outline: var(--focus-ring);
+			outline-offset: var(--focus-offset);
+			border-radius: .5rem;
+		}
+
+
+
+		@supports selector(:focus-visible) {
+			:focus {
+				outline: none;
+			}
+		}
+
+		@media (forced-colors: active) {
+			:where(a, button, input, select, textarea, summary, [role="button"], [tabindex]:not([tabindex="-1"])):focus-visible {
+				outline: 2px solid CanvasText;
+			}
+		}
+
+		:root {
+			--brand-turquoise: #8bd8d6;
+			--tag-bg: #AEECE9;
+			--tag-text: #333;
+			--heading: #000;
+			--body: #333;
+			--max-width: 900px;
+		}
+
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "Inter", Arial, Helvetica, sans-serif;
+			color: var(--body);
+			line-height: 1.6;
+			background: #fff;
+		}
+
+
+		.top-bar {
+			background: var(--brand-turquoise);
+			padding: 0.75rem 0;
+		}
+
+		.nav {
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+			flex-wrap: wrap;
+			max-width: var(--max-width);
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+
+		.nav a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: 600;
+			text-transform: uppercase;
+			font-size: 0.9rem;
+		}
+
+		.lds-nav a[aria-current="page"] {
+			background: rgba(255, 255, 255, .15);
+			border-bottom: 2px solid #fff;
+		}
+
+
+
+		.container {
+			max-width: var(--max-width);
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+
+		.blog-title {
+			margin: 2rem 0 1rem;
+			font-size: 1.9rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			text-align: center;
+
+			font-family: "Oswald", sans-serif;
+
+		}
+
+
+		.tags {
+			display: flex;
+			gap: 0.75rem;
+			flex-wrap: wrap;
+			margin-bottom: 1.5rem;
+			justify-content: flex-start;
+		}
+
+		.tag {
+			background: var(--tag-bg);
+			color: var(--tag-text);
+			padding: 0.45rem 0.9rem;
+			border-radius: 9999px;
+			font-size: 0.85rem;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+
+		article h2 {
+			font-size: 1.55rem;
+			margin-bottom: 1rem;
+			color: var(--heading);
+			padding: 1rem;
+		}
+
+		article h3 {
+			font-size: 1.25rem;
+			margin: 1.5rem 0 0.5rem;
+			color: var(--heading);
+		}
+
+		article p {
+			margin-bottom: 1rem;
+			text-align: justify;
+		}
+
+		h1,
+		h2 {
+			font-family: 'Oswald', sans-serif;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			color: #000;
+			justify-self: center;
+		}
+
+		h3,
+		h4 {
+			font-family: 'Oswald', sans-serif;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			color: #000;
+			justify-self: left;
+			padding: 1.15;
+		}
+
+		:root {
+
+			--para-lh: 1.15;
+
+			--para-gap: 0em;
+
+		}
+
+		article p {
+			line-height: var(--para-lh);
+			margin: 0 0 var(--para-gap);
+		}
+
+		article p:last-of-type {
+			margin-bottom: 0;
+		}
+
+		.author {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 1rem;
+			margin-top: 2rem;
+			padding-top: 1.25rem;
+			border-top: 1px solid #ccc;
+		}
+
+		.author p {
+			flex: 1 1 auto;
+			font-size: 0.9rem;
+		}
+
+		.author img {
+			flex-shrink: 0;
+			width: 160px;
+			height: auto;
+			border-radius: 0.5rem;
+
+			object-fit: cover;
+			justify-content: right;
+		}
+
+		article ul {
+			margin: 0 0 1.5rem 1.5rem;
+
+			padding: 0;
+		}
+
+
+		article li {
+			position: relative;
+			margin: 0 0 .6rem;
+
+			padding-left: 1.1rem;
+
+			list-style: none;
+
+			line-height: 1.15;
+		}
+
+		article li::before {
+			content: '';
+			position: absolute;
+			left: 0;
+
+			top: .55em;
+
+			width: .45rem;
+			height: .45rem;
+			border-radius: 50%;
+			background: var(--brand-turquoise);
+		}
+
+
+
+		@media (max-width: 600px) {
+			.blog-title {
+				font-size: 1.6rem;
+			}
+
+			article h2 {
+				font-size: 1.35rem;
+			}
+		}
+
+		:root {
+			--lds-bar-bg: rgba(125, 218, 208, 0.83);
+
+			--nav-font-size: 1.125rem;
+
+		}
+
+
+		:root {
+			--lds-bar-bg: rgba(125, 218, 208, 0.83);
+			--lds-nav-text: #fff;
+			--lds-nav-font-size: 1.125rem;
+			--lds-max-width: 1200px;
+		}
+
+		.lds-menu {
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			background: var(--lds-bar-bg);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+		}
+
+		.lds-menu .menu-inner {
+			max-width: var(--lds-max-width);
+			margin: 0 auto;
+			padding: 0 .75rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			/* center the whole bar on desktop */
+		}
+
+
+		.lds-menu .menu-toggler {
+			display: none;
+			background: transparent;
+			border: 0;
+			font: inherit;
+			padding: .8rem 1rem;
+			color: var(--lds-nav-text);
+			cursor: pointer;
+		}
+
+		.lds-menu .menu-toggler .icon::before {
+			content: "☰";
+			margin-left: .5rem;
+		}
+
+		.lds-menu .menu-toggler:focus-visible {
+			outline: 2px solid #fff;
+			outline-offset: 2px;
+		}
+
+		.lds-menu .lds-nav {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: center;
+			/* centered on desktop */
+			gap: 0;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-family: "Helvetica Neue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+		}
+
+		.lds-menu .lds-nav>li {
+			position: relative;
+			white-space: nowrap;
+			flex: 0 0 auto;
+		}
+
+		.lds-menu .lds-nav a,
+		.lds-menu .lds-nav .more>button {
+			display: block;
+			padding: .9rem 1.1rem;
+			color: var(--lds-nav-text);
+			text-decoration: none;
+			background: transparent;
+			border: 0;
+			cursor: pointer;
+			font-weight: 400;
+			font-size: var(--lds-nav-font-size);
+			line-height: 1.35;
+			letter-spacing: .01em;
+			text-align: center;
+		}
+
+		.lds-menu .lds-nav a:hover,
+		.lds-menu .lds-nav .more>button:hover {
+			background: rgba(255, 255, 255, .10);
+		}
+
+		.lds-menu .lds-nav a:focus-visible,
+		.lds-menu .lds-nav .more>button:focus-visible,
+		.lds-menu .lds-nav .submenu a:focus-visible {
+			outline: 2px solid #fff;
+			outline-offset: 2px;
+		}
+
+		.lds-menu .lds-nav .more>button::after {
+			content: " ▾";
+		}
+
+		/* === Submenu (desktop) === */
+		.lds-menu .lds-nav .submenu {
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translateX(-50%);
+			min-width: 220px;
+			margin: 0;
+			padding: .5rem 0;
+			list-style: none;
+			background: var(--lds-bar-bg);
+			border-radius: 8px;
+			box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .25);
+			z-index: 1000;
+		}
+
+		.lds-menu .lds-nav .more.open .submenu {
+			display: block;
+		}
+
+		/* === Mobile panel === */
+		@media (max-width: 768px) {
+			.lds-menu .menu-inner {
+				justify-content: space-between;
+			}
+
+			/* Only collapse if JS is active (progressive enhancement) */
+			.js .lds-menu .menu-toggler {
+				display: inline-flex;
+				align-items: center;
+				gap: .5rem;
+			}
+
+			.js .lds-menu .menu-container {
+				position: relative;
+				width: 100%;
+			}
+
+			.js .lds-menu .menu-container .lds-nav {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				flex-direction: column;
+				align-items: stretch;
+				background: var(--lds-bar-bg);
+				max-height: 0;
+				overflow: hidden;
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+				transition: max-height .25s ease, opacity .2s ease, visibility .2s ease;
+				box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .25);
+			}
+
+			.js .lds-menu .menu-container.open .lds-nav {
+				max-height: 80vh;
+				overflow: auto;
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+			}
+
+			/* No overflow bucket on mobile */
+			.lds-menu .lds-nav .more {
+				order: 999;
+			}
+
+			.lds-menu .lds-nav .more.hidden {
+				display: none;
+			}
+		}
+
+
+		@media (prefers-reduced-motion: reduce) {
+			.lds-menu .menu-container .lds-nav {
+				transition: none;
+			}
+		}
+
+
+		.main-title {
+			text-align: center;
+			font-size: 48px;
+			font-weight: 700;
+			color: #000000;
+			margin-bottom: 15px;
+			font-family: 'Oswald', sans-serif;
+			padding-top: 60px;
+
+			animation: fadeInUp 1s ease-out;
+		}
+
+		.lds-nav .submenu {
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translateX(-50%);
+			min-width: 180px;
+			margin: 0;
+			padding: 0.5rem 0;
+			list-style: none;
+			background: var(--lds-bar-bg);
+			z-index: 1000;
+		}
+
+		.lds-nav .more.open .submenu {
+			display: block;
+		}
+
+		.lds-nav .submenu li a {
+			padding: 0.9rem 1.4rem;
+			font: inherit;
+			color: #fff;
+			background: transparent;
+			border: 0;
+			white-space: nowrap;
+		}
+
+		.lds-nav a:hover,
+		.lds-nav .more>button:hover,
+		.lds-nav .submenu li a:hover {
+			background: rgba(255, 255, 255, .10);
+		}
+
+
+
+
+		.blog-nav a.is-active {
+			color: var(--brand-turquoise);
+			text-decoration: underline;
+		}
+
+		:where(article h2, article h3) {
+			scroll-margin-top: 80px;
+		}
+
+
+
+
+		.blog-nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+
+			flex-wrap: wrap;
+			gap: 1.5rem;
+		}
+
+
+		.blog-graphic {
+			margin: 3rem auto;
+
+			max-width: var(--max-width);
+
+			text-align: center;
+		}
+
+		.blog-graphic img {
+			width: 100%;
+			height: auto;
+			border-radius: .5rem;
+
+			box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+		}
+
+		.blog-graphic figcaption {
+			margin-top: .75rem;
+			font-size: .9rem;
+			color: #555;
+			line-height: 1.4;
+		}
+
+
+		.blog-nav a {
+			font: 600 1rem/1 Oswald, sans-serif;
+			text-decoration: none;
+			color: var(--heading);
+		}
+
+		.blog-nav a:hover {
+			color: var(--brand-turquoise);
+		}
+
+		.anchor-link {
+			margin-left: .5rem;
+			opacity: .5;
+			text-decoration: none;
+		}
+
+		.anchor-link:hover {
+			opacity: 1;
+		}
+
+		:root {
+			--header-height: 64px;
+			--header-height-compact: 44px;
+			--reveal-ease: .25s ease;
+		}
+
+
+
+		main {
+			--sticky-offset: var(--header-height);
+		}
+
+		.blog-nav {
+			position: sticky;
+			top: var(--sticky-offset);
+			z-index: 900;
+			transition: transform var(--reveal-ease), top .2s ease, opacity .2s ease;
+			margin: 2rem 0 2.5rem;
+			border-left: 4px solid var(--brand-turquoise);
+			background: #fff;
+			padding: .75rem 0 1rem 1.25rem;
+		}
+
+
+		.blog-nav.is-hidden {
+			transform: translateY(calc(-100% - .5rem));
+		}
+
+		:root {
+			--header-height: 64px;
+			--header-height-compact: 44px;
+			--reveal-ease: .25s ease;
+		}
+
+		.lds-menu {
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			transition: transform var(--reveal-ease), padding .2s ease;
+			will-change: transform;
+		}
+
+		.lds-menu.is-hidden {
+			transform: translateY(-100%);
+		}
+
+		.lds-menu.is-compact .lds-nav>li>a,
+		.lds-menu.is-compact .lds-nav .more>button {
+			padding: .55rem .9rem;
+		}
+
+		.lds-menu.is-compact~main {
+			--sticky-offset: var(--header-height-compact);
+		}
+
+		.lds-menu .lds-nav :where(a, .more>button):focus-visible {
+			outline: 3px solid #fff;
+			outline-offset: 3px;
+		}
+
+		.lds-menu .menu-container {
+			flex: 1;
+			min-width: 0;
+		}
+
+
+		@media (prefers-reduced-motion: reduce) {
+
+			.wrapper.menu,
+			.blog-nav {
+				transition: none;
+			}
+		}
+
+
+		@media (max-width: 480px) {
+			.blog-nav ul {
+				flex-direction: column;
+				gap: .75rem;
+			}
+		}
+
+		.hidden {
+			display: none !important;
+		}
+
+		@media (max-width: 640px) {
+			.lds-nav {
+				flex-direction: column;
+			}
+
+			.lds-nav .more.hidden {
+				display: none;
+			}
+		}
+
+		/* --- Author block: mobile/tablet fixes --- */
+		@media (max-width: 640px) {
+			.author {
+				flex-wrap: wrap;
+				/* allow a second line */
+				align-items: stretch;
+				gap: 12px;
+			}
+
+			.author img {
+				width: calc(50% - 6px);
+				/* two portraits per row */
+				aspect-ratio: 1 / 1;
+				/* keep them square */
+				height: auto;
+				object-fit: cover;
+				display: block;
+			}
+
+			.author p {
+				order: 3;
+				/* put text under the images */
+				flex-basis: 100%;
+				margin-top: .25rem;
+				text-align: left;
+				/* avoid “rivers” from justify on mobile */
+				hyphens: auto;
+				overflow-wrap: anywhere;
+			}
+		}
+
+
+		@media (min-width: 641px) and (max-width: 959px) {
+			.author img {
+				width: 160px;
+
+				aspect-ratio: 1 / 1;
+			}
+		}
+	</style>
+
+	<script src="scripts/vendor/jquery/jquery.min.js" defer></script>
+	<script src="scripts/vendor/formstone/core.js" defer></script>
+	<script src="scripts/vendor/formstone/mediaquery.js" defer></script>
+	<script src="scripts/vendor/formstone/touch.js" defer></script>
+	<script src="scripts/vendor/formstone/transition.js" defer></script>
+	<script src="scripts/vendor/formstone/equalize.js" defer></script>
+	<script src="scripts/vendor/formstone/carousel.js" defer></script>
+	<script src="scripts/vendor/formstone/lightbox.js" defer></script>
+	<script src="scripts/vendor/formstone/viewer.js" defer></script>
+	<script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+	<div class="lds-menu">
+		<div class="menu-inner">
+			<button class="menu-toggler" id="menuToggle" aria-label="Open navigation" aria-controls="ldsNav"
+				aria-expanded="false">
+				Menu <span class="icon" aria-hidden="true"></span>
+			</button>
+
+			<nav class="menu-container" role="navigation" aria-label="Primary">
+				<ul class="lds-nav" id="ldsNav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="brainfactory.html">BrainFactory</a></li>
+					<li><a href="program.html">Program</a></li>
+					<li><a href="tickets.html">Tickets</a></li>
+					<li><a href="speakers.html">Speakers</a></li>
+					<li><a href="previous-participants.html">Who is attending?</a></li>
+					<li><a href="travel.html">Travel & Venue</a></li>
+					<li><a href="about-us.html">Meet the Team</a></li>
+					<li><a href="values.html">Values</a></li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a href="the-gallery.html">[Beta] The Gallery</a></li>
+
+					<li class="more hidden">
+						<button type="button" aria-haspopup="true" aria-expanded="false"
+							aria-controls="moreMenu">More</button>
+						<ul class="submenu" id="moreMenu"></ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+	<main class="container">
+
+
+		<h1 class="main-title">Legal Design Summit Blog</h1>
+
+		<nav class="blog-nav" aria-label="Blog post list">
+			<ul>
+				<li><a href="#lds-post-8"> Legal Design Summit 2025: what we learned (and what’s next for the
+						community)</a>
+				<li><a href="#lds-post-7"> Speaker Testimonial Series: Tiago Guerreiro - When Design Meets Law: Bridging
+						Creative
+						Innovation and Legal Practice</a>
+				</li>
+				<li><a href="#lds-post-6"> BrainFactory 2025 - Expanding the Playground for Legal Design</a>
+				</li>
+				<li><a href="#lds-post-5">Speaker Testimonial Series: Outi Nokkonen - Reimagining Public Procurement</a>
+				</li>
+				<li><a href="#lds-post-4">Speaker Testimonial Series: Peegi Kaibald - How Legal Design is
+						Transforming
+						Citizen Experience in the Public Sector</a></li>
+				<li><a href="#lds-post-3">Speaker Testimonial Series: Natalia Grant - How UX Research
+						Naturally Evolved Into Creating Access to Justice</a></li>
+				<li><a href="#lds-post-2">From Proposals to Program – Creating the LDS 2025 by Humzah Khan</a></li>
+				<li><a href="#lds-post-1">The Legal Design Summit: What we stand for by Sade Mäntylä</a></li>
+			</ul>
+		</nav>
+		<article id="lds-post-8" data-tags="Blog-main">
+
+			<h2>LDS Blog #8: Legal Design Summit 2025: what we learned (and what’s next for the community)
+			</h2>
+
+			<p>
+				As we look back to the Legal Design Summit 2025, we feel renewed. It was not just an event, but a
+				gathering of hearts and minds from all around the globe, willing to imagine systemic change in law. A
+				group of dedicated and brave people can truly achieve anything – like building a 600+ person
+				conference and community for social transformation on a non-profit basis. Our volunteer team was
+				brilliant. Thank you to all speakers, partners, gallery contributors and participants, too: you made it
+				happen as much as we did.
+			</p>
+
+			<h3>Shaking up the LDS format</h3>
+			<p>
+				This year, we dared to try new things and shook up traditions. We moved from purely user- and
+				human-centric design to more-than-human justice, and legal design for sustainable futures, including
+				AI governance, grass-roots-level democracy and innovative legal education. We reimagined the
+				whole BrainFactory concept into a city-wide workshop sprint, and introduced the idea of co-creation,
+				bringing new ideas and people together, in both the BrainFactory and the Summit program. We also
+				launched the Gallery – a free online resource of legal design projects and concepts applied in
+				practice. We will soon share how projects can continue to be submitted to the Gallery.
+			</p>
+			<h3>What we learned</h3>
+			<p>
+				We also learned a lot – about ourselves, about event organization, about creating an engaging
+				program, and about community building. Thank you for all the feedback and reflections you have
+				shared.
+				Every Summit gives us new perspectives, and this year was no exception. Here’s our key learnings
+				from this year:
+			<ul>
+				<li>Community first: We need to facilitate people coming together, matching thematically
+					aligned people for collaboration, and thus build global networks for innovation, social change
+					and meaningful, transformative careers. </li>
+				<li>Global reach: Inclusive representation is one of the most important backbones of the
+					Summit. We aim to make the future even more inclusive and diverse with the help of regional
+					chapters in bringing the Summit to life.</li>
+				<li>Impactful presentations: We recognize a need for engagement and critical thinking beyond
+					traditional, individual keynotes. This might mean more co-created presentations that show
+					the value of legal design in hands-on practice.</li>
+				<li>Value-based leadership: The Summit’s strength lies in shared principles. How can we turn
+					our values – selflessness, inclusion, courage, and authenticity – into action in designing the
+					evolution ana leading the revolution in law, both locally and globally?</li>
+			</ul>
+			</p>
+			<h3>Opening up new possibilities</h3>
+			<p>
+				Building on these key takeaways, we are excited to continue opening up possibilities for the Summit
+				and the related global movement. The intertwined challenges we face – growing inequality,
+				democratic decline and the triple planetary crisis – call for bold, creative, empathetic and
+				interdisciplinary design-thinking. At the same time, legal design is still not properly embedded in
+				legal education and practice. The wider challenge for the Summit is thus moving from vision to
+				practice: defining what legal design means in action, finding ways to scale and measure its impact, and
+				building the connective tissue between the community, its audience, and the work itself so that
+				legal design becomes truly impactful in mainstream legal practice.
+
+			</p>
+			<br>
+			<p><strong>‘The ultimate, hidden truth of the world is that it is something that we can make, and could just
+					as
+					easily make differently’ </strong>(David Graeber, 2024).</p>
+
+			<br>
+			<p>Legal designers know this.</p>
+			<p>
+				We also know that no one can really design alone. This crystallizes the Summit’s role as not only an
+				event for knowledge sharing about legal design, but as a community and a platform for leading
+				meaningful change in law. We feel hopeful for what’s ahead, knowing that we are creating it
+				together.</p>
+
+			<footer class="author">
+				<img src="images/team/team-2025/volunteers_2025.jpg" alt="Image of all volunteers" />
+				<p>
+					This post was written by <strong> Sade Mäntylä, Mia Ihamuotila and Humzah Khan </strong> part of the
+					Core Team for LDS 2025.
+				</p>
+			</footer>
+		</article>
+		<article id="lds-post-7" data-tags="Blog-Speakertestimonial">
+
+			<h2>LDS Blog #7: Speaker Testimonial Series: Tiago Guerreiro - When Design Meets Law: Bridging Creative
+				Innovation and Legal Practice
+			</h2>
+			<div class="tags">
+				<span class="tag">#Speaker Testimonials</span>
+			</div>
+			<footer class="author">
+				<img src="images/speakers/2025/Tiago Guerreiro_crop.jpg" alt="Tiago Guerreiro">
+				<p>
+					Tiago will be on Day 2 of the 2025 Summit presenting Fireside chat: “From Primary School to
+					University:
+					How Legal Design can Redesign Legal Literacy and Education” with Barbora Obracajova, Michael
+					Doherty,
+					Ruy Coppola Jr. See the full program <a href="program.html">here</a>.
+				</p>
+			</footer>
+			<br>
+			<p>
+				We asked Tiago Guerreiro to share his Legal Design story, and discovered how a bold résumé statement led
+				to a revolutionary approach to legal education and practice!
+				In this ongoing series featuring Legal Design Summit 2025 Speaker Testimonials, we introduce you to
+				inspiring stories that demonstrate Legal Design's transformative power across different sectors and
+				cultures, spotlighting professionals who are reshaping how we think about law, design, and human
+				experience.
+			</p>
+			<p>
+				Meet Tiago Guerreiro, who is the litigation lawyer,specializing in litigation and social economy. He
+				founded his design company Equador in 2018 while taking his first steps as a lawyer at PLMJ. For years,
+				he felt the tension between two worlds that seemed impossible to combine, until he discovered legal
+				design at an innovation event! Now, he's on a mission to add "that pinch of salt to law," applying legal
+				design tools to his daily practice while pioneering legal literacy projects for children. His belief is
+				that education is the most powerful tool for positive social change, especially when introduced to those
+				with a beginner's mindset.
+			</p>
+			<p>
+				Through three key questions, we explored our Legal Design Summit 2025 speakers' journeys, and their
+				responses are truly inspiring! You'll find Tiago's thoughts below.
+
+			</p>
+
+			<h3>Tell us your legal design story - what brought you here?</h3>
+			<p>
+				It all started before I entered law school.
+				I was already working on design projects, mostly as a way of expressing my creativity by exploring
+				design tools. Over time, it became more professional, to the point where I eventually founded my design
+				company, Equador, in 2018.
+			</p>
+			<p>
+				For three years, I ran Equador while taking my first steps as a litigation lawyer at PLMJ, which led me
+				to question even more why everything about the legal world seemed so resistant to change. Back then,
+				Equador had a Portuguese Faculty of Law as a client and, even from a marketing/communication
+				perspective, it was sometimes difficult for them to innovate (but we managed!).
+			</p>
+			<p>
+				However, in terms of the legal work I was doing at the firm, it felt impossible at the time to combine
+				both worlds—design and law.
+
+			</p>
+			<p>
+				A few years later, at an innovation event promoted by the firm, I discovered legal design and everything
+				suddenly clicked!
+			</p>
+			<p>
+				Since then, I have been applying legal design tools and principles to my daily work, both in the legal
+				literacy project I will discuss and in my practice as a lawyer focusing on litigation and the social
+				economy.
+			</p>
+
+			<h3>What are you most looking forward to about the LDS?</h3>
+			<p>
+				To learn the new ways of how legal design can be implemented to create a positive impact. And the LDS
+				program seems to “offer” quite a few!
+
+			</p>
+
+			<h3>What key message do you hope to convey? (a teaser on your presentation)</h3>
+			<p>
+				Education is the most powerful tool we have to bring about positive changes in our society, especially
+				when introduced to those who still have a beginner’s mindset—children!
+			</p>
+			<p>
+				And if law is the science that regulates life in society, then our children (and we, ourselves)
+				definitely need to be (well) educated about it!
+			</p>
+			<footer class="author">
+				<img src="images/team/team-2025/Aysenur.png" alt="Portrait of Ayşenur Kölgesiz" />
+				<p>
+					The introduction to this blog post was written by <strong>Ayşenur Kölgesiz</strong>, part of the
+					Legal Design Summit 2025 and Communication and Social Media Team.
+				</p>
+			</footer>
+		</article>
+		<article id="lds-post-6" data-tags="Blog-BrainFactory">
+
+			<h2>LDS Blog #6: BrainFactory 2025 - Expanding the Playground for Legal Design
+			</h2>
+			<div class="tags">
+				<span class="tag">#BrainFactory</span>
+			</div>
+
+			<br>
+			<p>
+				For years, the BrainFactory concept has been one of the most loved parts of the Legal Design Summit: an
+				immersive three-day experience where a small group of around 40–45 participants worked side-by-side with
+				top facilitators from around the world to tackle real-life legal challenges
+			</p>
+			<br>
+			<p>
+				Over the years, we’ve heard more than once: “BrainFactory changed my life.” That kind of feedback is
+				both humbling and energising — a reminder of the power of bringing people together in a space that
+				sparks creativity, courage, and collaboration.
+			</p>
+			<p>
+				This year we asked: how might we make BrainFactory accessible to more people without diminishing
+				opportunities for individual connection, creativity, and shared learning? What resulted is a bold leap:
+				tripling the number of attendees by welcoming 125 participants into the experience across 9 workshops.
+			</p>
+			<p>By expanding the number and variety of workshops, our goal is to significantly increase the number of
+				people who get to experience and lead BrainFactory. More participants mean more perspectives, more
+				diversity, and more accessibility. We believe that’s where the magic happens.</p>
+
+
+			<h3>From a small lab to a city-wide experience</h3>
+			<p>
+				Instead of three days in one location, BrainFactory will unfold in a single, dynamic day across
+				Helsinki. Nine workshops, each led by a unique team of facilitators, will dive into different corners of
+				legal design. From AI to sustainability to access to justice, participants can explore specialized
+				themes or start from the basics if they’re just beginning their journey.
+			</p>
+			<p>
+				This shift isn’t just about efficiency, although it helps participants who might only be able to take
+				one more day off work. It’s about creating more intersections: more voices, more experiences, more
+				chances for people to meet collaborators they’d never otherwise cross paths.
+			</p>
+
+
+			<h3>Co-creation at its core</h3>
+			<p>
+				While the BrainFactory spirit has always been co-creative, we wanted to extend that opportunity to the
+				facilitators themselves. Some workshop teams are made up of long-time friends and past collaborators,
+				already attuned to each other’s ways of thinking. Others are brand-new combinations, meeting for the
+				first time through this process. In both cases, the result is a vibrant space where people who share a
+				deep passion for legal design — and have been working on it professionally for years — come together to
+				create something unique. Along the way, they’re learning from each other, exchanging methods, and
+				inspiring one another in real time.
+
+			</p>
+			<p>
+				We sought out facilitators who could bring substance from different areas of legal design, from
+				different areas of the world, ensuring the program reflects the diversity and depth of the field today.
+				It all comes together thanks to sponsors who make the workshops possible and bring their own expertise
+				to the table. We are incredible grateful to our sponsors in this process.
+			</p>
+
+			<h3>Always learning and evolving</h3>
+			<p>
+				As always, BrainFactory is a work in progress. We welcome feedback from every participant, so that in
+				the future, it can grow in directions we can’t even imagine yet.
+			</p>
+			<footer class="author">
+				<img src="images/team/team-2025/Laura_Hartnett_Director of Operations.jpg"
+					alt="Portrait of Laura Hartnett" width="640" height="640" loading="lazy" decoding="async" />
+				<img src="images/team/team-2025/Mia_Ihamuotila.jpg" alt="Portrait of Mia Ihamuotila" width="640"
+					height="640" loading="lazy" decoding="async" />
+				<p>
+					This blog post was written by <strong>Laura Hartnett</strong> and <strong>Mia Ihamuotila</strong>.
+					Laura is Team Lead of BrainFactory and Mia is the Chair of the Legal Design Summit.
+				</p>
+			</footer>
+
+
+		</article>
+
+		<article id="lds-post-5" data-tags="Speaker Testimonials">
+
+			<h2>LDS Blog #5: Speaker Testimonial Series: Outi Nokkonen - Reimagining Public Procurement
+			</h2>
+			<div class="tags">
+				<span class="tag">#Speaker Testimonials</span>
+			</div>
+			<footer class="author">
+				<img src="images/speakers/2025/Outi Nokkonen.jpg"
+					alt="Peegi Kaibald — service designer improving public-sector services in Estonia">
+				<p>
+					Outi will be on Day 2 of the 2025 Summit presenting 'Mission Impossible: Designing the Mindset of
+					Public Officials.' with Peegi Kaibald. See the full program <a href="program.html">here</a>.
+				</p>
+			</footer>
+
+			<br>
+			<p>
+				We asked Outi Nokkonen to share her Legal Design story, and uncovered fascinating insights about
+				bringing creativity to traditionally rigid systems! In this ongoing series featuring Legal Design Summit
+				2025 Speaker Testimonials, we're thrilled to spotlight professionals who are reshaping how we think
+				about law, design, and human experience.
+			</p>
+			<br>
+			<p>
+				Meet Outi Nokkonen, who is a Finnish service designer with over 12 years transforming public sector
+				services through design thinking. Her mission is making public procurement more accessible, human, and
+				less intimidating. With her background in social sciences and political science, she brings a unique
+				societal lens to design work. Currently deepening her expertise by studying procurement and law, she's
+				proving that regulation can enable innovation rather than block it. Her upcoming LDS presentation with
+				Peegi Kaibald explores how design shifts not just processes, but the entire mindset of public officials.
+			</p>
+			<p>
+				Through three key questions, we explored our Legal Design Summit 2025 speakers' journeys, and their
+				responses are truly inspiring! You'll find Outi's thoughts below.
+			</p>
+
+
+			<h3>Tell us your legal design story - what brought you here?</h3>
+			<p>
+				For me, legal design is a promising and much needed approach to making the public sector and especially
+				public procurement more accessible, human and less intimidating.
+
+			</p>
+			<p>
+				I’ve spent the past 12 years working both inside and alongside the Finnish public sector, and throughout
+				that time, my mission has been to make design thinking a natural part of developing public services and
+				systems. In recent years, I’ve become increasingly focused on public procurement. It’s a space that’s
+				often seen as too technical or too regulated for creativity, which is exactly why it needs legal design.
+				There’s enormous potential to reimagine procurement as a tool for collaboration, clarity and meaningful
+				impact.
+
+			</p>
+
+			<h3>What are you most looking forward to about the LDS?</h3>
+			<p>
+				I’m looking forward to discovering new ideas and perspectives. I hope to get inspired by what legal
+				design could enable in the context of public procurement — and what new possibilities we might uncover.
+
+			</p>
+
+			<h3>What key message do you hope to convey? (a teaser on your presentation)</h3>
+			<p>
+				In collaboration with Peegi Kaibald and drawing from Estonia’s pioneering work in legal design, we will
+				explore how even the most regulated parts of public administration (like public procurement) can be
+				reimagined through design. Our aim is to show how design can shift not just processes and documents, but
+				the mindset of public officials.
+			</p>
+			<footer class="author">
+				<img src="images/team/team-2025/Aysenur.png" alt="Portrait of Ayşenur Kölgesiz" />
+				<p>
+					The introduction to this blog post was written by <strong>Ayşenur Kölgesiz</strong>, part of the
+					Legal Design Summit 2025 and Communication and Social Media Team.
+				</p>
+			</footer>
+
+		</article>
+
+
+		<article id="lds-post-4" data-tags="Speaker Testimonials">
+
+			<h2>LDS Blog #4: Speaker Testimonial Series: Peegi Kaibald - How Legal Design is Transforming
+				Citizen Experience in the Public Sector</h2>
+			<div class="tags">
+				<span class="tag">#Speaker Testimonials</span>
+			</div>
+			<footer class="author">
+				<img src="images/speakers/2025/Peegi Kaibald.jpg"
+					alt="Peegi Kaibald — service designer improving public-sector services in Estonia">
+				<p>
+					Peegi will be on Day 2 of the 2025 Summit presenting “Mission Impossible: Designing the Mindset
+					of Public Officials” with Outi Nokkonen. See the full program <a href="program.html">here</a>.
+				</p>
+			</footer>
+
+			<br>
+			<p>
+				We asked Peegi Kaibald to share her Legal Design story, and discovered inspiring examples of how
+				legal
+				design thinking is revolutionizing government services! In this ongoing series featuring Legal
+				Design
+				Summit 2025 Speaker Testimonials, we're thrilled to spotlight professionals who are reshaping how we
+				think about law, design, and human experience.
+			</p>
+			<br>
+			<p>
+				Meet Peegi Kaibald, who is a service designer and business analyst who helps to transform Estonia's
+				public sector by making legal systems more human-centered. Her passion is ensuring people never feel
+				lost or excluded when navigating complex regulations. Leading legal design projects at the Estonian
+				State Shared Service Centre, she's revolutionizing grant measures and digital transformation. Her
+				work
+				earned the prestigious Estonian Design Award in 2024! With master's degrees in service innovation
+				and
+				design, she's proving that design can make law accessible. Her upcoming LDS presentation with Outi
+				Nokkonen will explore how design evolves from buzzword to genuine mindset for public officials.
+				Through three key questions, we explored our Legal Design Summit 2025 speakers' journeys, and their
+				responses are truly inspiring! You'll find Peegi's thoughts below.
+
+			</p>
+
+
+			<h3>Tell us your legal design story - what brought you here?</h3>
+			<p>
+				What I love about legal design is its power to help people navigate complex legal systems without
+				feeling lost, excluded, small, or inadequate. For me, it’s all about making the legal system more
+				human
+				– so people can feel seen, cared for, and able to move through it without feeling helpless.
+
+			</p>
+			<p>
+				I’m glad I can give my own contribution to that as a service designer-business analyst in the
+				Estonian
+				public sector, where I lead legal projects focused on grant measure design, information design,
+				process
+				improvement, and digital transformation. My journey into legal design began over five years ago when
+				I
+				joined the newly established service design unit at the Estonian State Shared Service Centre – the
+				institution responsible for managing the European Union funds in Estonia. At the time, we were just
+				beginning to explore how design could bring meaningful impact to the complex and highly regulated
+				world
+				of grants. From then on, my interest in legal design deepened through my master’s thesis in Service
+				Innovation and Design at Laurea University of Applied Sciences, where I explored the process of
+				shaping
+				our team’s mission and value proposition – an effort that opened up new ways for us to approach
+				legal
+				design in practice.
+			</p>
+			<p>
+
+				Working hands-on with grant regulations and public sector challenges have shown me how legal design
+				can
+				not only break down silos but genuinely make law more accessible – in both content and clarity. I’m
+				proud that our legal design initiatives have also gained recognition and I hope that the Estonian
+				Design
+				Award my colleagues and I received in 2024 for our transformative legal design work inspires others
+				to
+				believe in and to adopt legal design practices as well.
+
+			</p>
+			<h3>What are you most looking forward to about the LDS?</h3>
+			<p>
+				I’m really excited to be part of the legal design community and to get inspired and to connect with
+				peers from other organizations, countries, and continents who are tackling similar challenges. What
+				I
+				especially appreciate about the Summit is its interdisciplinary spirit as it brings together
+				lawyers,
+				designers, and other changemakers. I believe it is exactly this mix of perspectives and expertise
+				that
+				drives legal design forward.
+
+			</p>
+
+			<h3>What key message do you hope to convey? (a teaser on your presentation)</h3>
+			<p>
+				I’m delighted to join forces with Outi Nokkonen to explore how design can evolve from a buzzword
+				into a
+				genuine mindset and daily practice for public officials. Together, we’ll share experiences from
+				Estonia
+				and Finland to find out whether this challenge is a mission impossible or a breakthrough waiting to
+				happen.
+			</p>
+			<footer class="author">
+				<img src="images/team/team-2025/Aysenur.png" alt="Portrait of Ayşenur Kölgesiz" />
+				<p>
+					The introduction to this blog post was written by <strong>Ayşenur Kölgesiz</strong>, part of the
+					Legal Design Summit 2025 and Communication and Social Media Team.
+				</p>
+			</footer>
+
+		</article>
+		<article id="lds-post-3" data-tags="Speaker Testimonials">
+
+			<h2>LDS Blog #3: Speaker Testimonial Series: Natalia Grant - How UX Research Naturally Evolved Into
+				Creating
+				Access to Justice</h2>
+			<div class="tags">
+				<span class="tag">#Speaker Testimonials</span>
+			</div>
+			<footer class="author">
+				<img src="images/speakers/2025/NataliaGrant_crop.jpeg" alt="Natalia Grant" />
+				<p>
+					Natalia will be on Day 2 of the 2025 Summit presenting 'Unlocking Clarity: UX Research Insights
+					from
+					Real Legal Experiences.' with Outi Nokkonen. See the full program <a href="program.html">
+						here</a>.
+				</p>
+			</footer>
+
+			<br>
+			<p>
+				We asked Natalia Grant to share her Legal Design story, and her responses revealed incredible
+				journeys
+				of discovery and purpose! In this ongoing series featuring Legal Design Summit 2025 Speaker
+				Testimonials, we're thrilled to spotlight professionals who are reshaping how we think about law,
+				design, and human experience.
+				Meet Natalia Grant, who is a Senior UX Researcher at Jaramillo Villamizar and an innovator who's
+				spent
+				over 20 years making complex experiences beautifully simple. Her journey from journalism to UX
+				research
+				led her to Legal Design: a perfect reconnection with her career roots in journalism and information
+				architecture! Now she's transforming complex legal experiences into clear, user-centered solutions.
+				With
+				her MA in Applied Imagination, she's bridging cultures and making justice accessible. Her upcoming
+				LDS
+				presentation reveals how to unlock clarity by understanding user context beyond text and tech.
+				Through three key questions, we explored our Legal Design Summit 2025 speakers' journeys, and their
+				responses are truly inspiring! You’ll find Natalia’s thoughts below.
+
+			</p>
+
+
+			<h3>Tell us your legal design story - what brought you here?</h3>
+			<p>
+				“Last year, after two decades in UX, I was searching for deeper meaning in my career when I was
+				contacted by Jaramillo Villamizar, a legal firm that was expanding its Legal Design practice. Thanks
+				to
+				them, I realized that as a UX Researcher, I was already involved in this field by observing people
+				interacting with legal systems in multiple cultures, and that my role was sort of promoting change
+				and
+				justice for them. Finding Legal Design was reconnecting with my career roots: journalism and
+				information
+				architecture.”
+			</p>
+			<h3>What are you most looking forward to about the LDS?</h3>
+			<p>
+				“I’m passionate about communities, and I look forward to connecting with people and their stories,
+				and
+				secondly, to learning more about what is happening in the Legal Design World and how to add value as
+				a
+				professional and as a company. As a researcher, I’m curious about how lawyers work across different
+				cultures and what similarities or differences there are compared to the USA and Latin America, so I
+				will
+				be observing and listening.”
+
+			</p>
+
+			<h3>What key message do you hope to convey? (a teaser on your presentation)</h3>
+			<p>
+				“In my talk, I expect to create awareness about the importance of understanding the user's context
+				for
+				designing better Legal Experiences. I’ll provide tips and tricks to run observational research,
+				based on
+				two cases: the closing ceremony of buying a house in Massachusetts and the reading analysis from a
+				package insert of a pharmaceutical ecosystem. I think the best way to unlock clarity is by observing
+				what could be “blurring” the user's understanding beyond the text or technology itself.”
+			</p>
+			<footer class="author">
+				<img src="images/team/team-2025/Aysenur.png" alt="Portrait of Ayşenur Kölgesiz" />
+				<p>
+					The introduction to this blog post was written by <strong>Ayşenur Kölgesiz</strong>, part of the
+					Legal Design Summit 2025 and Communication and Social Media Team.
+				</p>
+			</footer>
+
+		</article>
+		<br>
+		<article id="lds-post-2" data-tags="Making of LDS">
+
+			<h2>LDS Blog #2: From Proposals to Program - Creating the Legal Design Summit 2025</h2>
+			<div class="tags">
+
+				<span class="tag">#Making of LDS</span>
+
+			</div>
+			<footer class="author">
+				<img src="images/team/team-2025/Humzah Khan Speakers Team.jpeg" alt="Portrait of Humzah Khan" />
+				<p>
+					This post was written by <strong>Humzah Khan</strong>, part of the Legal Design Summit Program
+					and Speakers Team.
+				</p>
+			</footer>
+			<br>
+			<p>
+				<a href="program.html"> Legal Design Summit program </a> is live! In this blog we pull back the curtain
+				and share how we created the program - from our approach to what we learned along the way.
+			</p>
+
+			<figure class="blog-graphic">
+				<img src="images/gallery/From Proposals to Program_ Creating the Legal Design Summit 2025.png"
+					alt="Illustrated flow from speaker proposals to the final Legal Design Summit 2025 program, featuring colourful sticky‑notes, the Finnish flag and a unicorn."
+					loading="lazy">
+				<figcaption>
+					From ideas on sticky‑notes to a polished two‑day experience – a snapshot of our journey.
+				</figcaption>
+			</figure>
+
+			<h3>How we built the program </h3>
+			<p>
+				First, thank you to the brilliant team: Akvilė, Danielle, Katie, Marielle, Mia, Sade and Serena. For
+				their collective effort over the last six months. It was a pleasure to work with a group of
+				committed volunteers who, each in their own way, brought energy, creativity and curiosity to the
+				process. Say hello and a big thank you when you see them in Helsinki!
+				Building on the momentum of a remarkable 2023 Summit, we set out to do something bold for the fifth
+				LDS: create an ambitious, advanced and future-looking program. To get there, we collaborated across
+				the LDS team, embedded design thinking into our methods, and co-created with our community.
+				Step-by-step, here’s how we built the program:
+			</p>
+			<h3>1. Brainstorming workshop</h3>
+			<p>
+				We kicked things off with a workshop with the LDS team to explore what our audiences needed and
+				brainstorm possible themes. We mapped the legal design landscape through three lenses - the past,
+				present, and future - and explored how those themes met the needs of different audiences, for
+				example academics, practitioners, and participants new to the scene. One interesting thing we
+				highlighted was the opportunity to create a stronger feedback loop between academic research and how
+				legal design is being applied in practice.
+				In addition to being good fun and a bit of an icebreaker for a new team, the workshop also gave us
+				clear direction for the types of proposals we wanted to attract, highlighting themes from AI
+				governance to access to justice to re-designing democracies. The workshop also identified
+				opportunities for new content - this blog being one of them!
+
+			</p>
+
+
+			<h3>2. Call for speakers </h3>
+			<p>
+				We launched a public call for speaking proposals at the end of April 2025. This was open for one
+				month and required submission of a Google form. The form included a series of questions, from
+				motivations for speaking to a short summary of the proposal itself.
+				We received over 70 proposals! The overall quality of the proposal was extremely high and we were
+				impressed with the depth and breadth of the ideas and concepts. Thanks again to everyone who took
+				the time to submit a proposal.
+			</p>
+
+
+			<h3>3. Reviewing proposals </h3>
+			<p>
+				To ensure fairness and quality, we designed a collaborative and robust review process. Every
+				proposal was reviewed independently by at least two team members, using pre-agreed criteria and a
+				shared scoring framework.
+				We prioritised proposals that aligned with themes identified in the workshop and presented new,
+				interesting, and original ideas. We welcomed proposals that were critical of legal design, as we
+				highlighted this as an important intervention for the movement to continue building momentum. We
+				dismissed proposals of a commercial nature.
+				With 22 sessions to fill, we created an exhaustive shortlist of the top performing proposals. It
+				took several brainstorming sessions to discuss the ideas and boil the number of proposals down.
+				Making final decisions was definitely the hardest part of the process. In some cases, we noticed
+				several strong proposals orbiting the same theme, so decided to combine their ideas into joint
+				sessions.
+			</p>
+
+
+			<h3>4. Designing the program and confirming speakers </h3>
+			<p>
+				Once we had our shortlist, we started shaping the full program. We clustered the final set of
+				proposals to find subtle narratives and identify themes that complemented each other. This was
+				critical as we wanted to get the pacing and flow just right - making sure attendees would have a
+				meaningful and engaging arc across the two days. Equally, we ensured a healthy balance between
+				keynote speeches (20 mins) and fireside chats (30 mins), as well as coffee and lunch breaks.
+				We confirmed the final speaker list at the end of May. Where we grouped proposals together, we
+				scheduled calls to facilitate introductions, explain our rationale for creating joint sessions, and
+				discuss their session. One team member commented that:
+				<em> “Creating fireside chats was one of our favorite parts of the process and we loved seeing
+					speakers embrace the LDS spirit. One highlight was a panel meeting for the first time and
+					immediately using a Miro board to find the common threads between their proposals and working
+					collaboratively to brainstorm their session.”</em>
+			</p>
+			<h2>What we created</h2>
+			<p>We think we’ve created an exciting, innovative and diverse program. There are some familiar faces
+				and, of course, returning legends. However, the majority of the program includes new people and
+				perspectives ready to challenge and expand what legal design is and can be. Here’s the unfiltered
+				breakdown across the two days: </p>
+			<ul>
+				<li>Day 1 is pure legal design, with a focus on its role and value across the profession. We’ll look
+					at
+					how legal design is shaping policy making, transforming legal services and grappling with
+					generative
+					AI - the sector’s biggest disruptor.</li>
+				<li>Day 2 is about impact, and what legal design can do for people and the planet. The future of law
+					is
+					as much about social and nature value as it is about technology innovation, so sessions touch on
+					big
+					systemic issues, including sustainability, justice and education.</li>
+			</ul>
+			<h2>We also created something new: The LDS Gallery </h2>
+			<p>We received so many incredible proposals this year, but unfortunately couldn’t fit everyone on the
+				shortlist into the program. So we’re launching a new platform. A new space to showcase the important
+				and inspirational work that the legal design community is shaping around the world.
+
+				The gallery will be a digital exhibition, initially launched with a select group of contributors,
+				with the aim of exhibiting legal design projects, experiences and case studies. The response so far
+				has been very positive. When confirmed, one contributor said:
+
+				“I’m excited by this new feature and truly appreciate the opportunity to showcase my work in this
+				innovative format.”
+
+				Our ambition is that the Gallery becomes the Louvre of Legal Design, and look forward to sharing the
+				first iteration with you soon.
+			</p>
+			<h2>Final reflections - what we learned</h2>
+			<ul>
+				<li>This was less about building an event schedule and more about writing the next chapter in the
+					legal
+					design story </li>
+				<li>The quality, ambition and range of perspectives across the ecosystem is genuinely incredible and
+					inspiring </li>
+				<li>Embedding design thinking into our approach was our most valuable tool </li>
+			</ul>
+			<p>Thanks again to everyone involved - see you in Helsinki in September! </p>
+		</article>
+		<br>
+
+		<article id="lds-post-1" data-tags="Selflessness,Inclusion,Courage,Authenticity">
+			<h2>LDS Blog #1: The Legal Design Summit: What we stand for as a global movement</h2>
+			<footer class="author">
+				<img src="images/team/team-2025/sade_mantyla_vice_chair.jpeg" alt="Portrait of Sade Mäntylä" />
+				<p>
+					This post was written by <strong>Sade Mäntylä</strong>, a lawyer and
+					political scientist, doctoral researcher, and Vice Chair at the
+					Legal Design Summit.
+				</p>
+			</footer>
+			<br>
+			<div class="tags">
+				<span class="tag">#Selflessness</span>
+				<span class="tag">#Inclusion</span>
+				<span class="tag">#Courage</span>
+				<span class="tag">#Authenticity</span>
+			</div>
+			<p>
+				<strong>The Legal Design Summit</strong> began as a movement focused on
+				the end-users of legal services. Thus, the initial focus of the
+				event, founded in 2016, was on contract design, user-experience in
+				various legal services, and the wider interlinks between technology
+				and law.
+			</p>
+			<p>
+				While legal design is still about all of these things, over the years,
+				the Summit and the associated movement and community have grown
+				towards a more ambitious agenda. The aim is no longer simply making
+				law more usable but <em>redesigning the whole legal system</em>. What
+				started off as a user-centric revolution in law is today a globally
+				significant non-governmental organization aiming for transborder
+				solidarity, deliberative democracy, social innovation and practical
+				justice outcomes.
+			</p>
+			<p>
+				To reflect this changing vision ahead of the 2025 event, it was time
+				to clarify what the Summit stands for. As a community, the Legal
+				Design Summit is committed to four core values:
+				<strong>selflessness, inclusion, courage, and authenticity</strong>. In
+				what follows, I will explain how each is reflected in our activities.
+			</p>
+
+
+			<h3>Selflessness</h3>
+			<p>
+				Selflessness means that we believe in collective action and support as
+				the most important tools in achieving our shared goals. We see each
+				other and the world with empathy and never put personal gain before
+				the interests of the community.
+			</p>
+			<p>
+				The Summit, organized by volunteers and relying on self-funded
+				speakers, is not about personal profit or monetary value, but about a
+				value of a different kind: collective imagination for better futures.
+				This is no longer limited to simply end-users or other human beings
+				but encompasses non-human beings, the environment, and even the future
+				of life on earth.
+			</p>
+
+			<h3>Inclusion</h3>
+			<p>
+				By being inclusive we strive to create a space where different
+				perspectives and backgrounds come together, and where diversity is
+				celebrated – both in organizers and speakers. While legal design is
+				still dominated by lawyers from Western countries, both legal and
+				non-legal professionals from all over the world are increasingly and
+				importantly involved in the community.
+			</p>
+			<p>
+				By organizing the Summit free of charge and with a focus on globally
+				relevant themes, we aim to foster an accessible, international and
+				multicultural community where anyone can participate in shaping the
+				future of law.
+			</p>
+
+			<h3>Courage</h3>
+			<p>
+				Courage means that reaching for the impossible is in our backbone. We
+				are curious about the world and passionate about improving it by
+				innovatively combining practical and academic knowledge. When faced
+				with a problem to solve, we ask: <em>how hard can it be?</em>
+			</p>
+			<p>
+				This means that we do not steer away from wicked problems – be they
+				functional or theoretical. Nor do we accept the status quo as it is.
+				There is always room for improvement, and it is up to brave people to
+				rise to the challenge.
+			</p>
+
+			<h3>Authenticity</h3>
+			<p>
+				Authenticity means that the Summit is dedicated to making a difference
+				through creative, outside-the-box design thinking. We strive to make
+				an impact by showing up as our authentic selves and by remaining
+				honest and open about our core mission.
+			</p>
+			<p>
+				By welcoming anyone from any background into the community, we aim to
+				expand possibilities for legal design across all areas of law and
+				society. This means remaining open towards what legal design can be,
+				as well as its limitations – while staying true to the common core of
+				design-thinking.
+			</p>
+
+			<h3>The value of collective imagination in turbulent times</h3>
+			<p>
+				As our guiding values show, the Summit stands for an important
+				message. The Summit is not about monetary value, even if it often
+				translates into it – many fantastic careers have taken off in its
+				wake. Instead, it is about scaling ideas for a better world. When a
+				diverse group of open-minded people with different perspectives come
+				together, the outcome is bound to be valuable. Yet the value of such
+				an outcome cannot be expressed in monetary terms, as its primary aim
+				is not to create profit. Instead, it creates a path for a world where
+				well-being and social justice are a reality for more ‘users’ – both
+				human and non-human.
+			</p>
+			<p>
+				One of my personal key learnings from being involved in the Summit for
+				the past few years is that a group of dedicated and imaginative people
+				working for the same end goal can achieve – if not anything, almost
+				anything. As we look to the upcoming event and beyond, the Summit
+				invites everyone to join this community towards a world that is more
+				just <em>by design</em>.
+			</p>
+
+
+
+	</main>
+	<script>
+		(() => {
+			document.documentElement.classList.add('js');
+			const header = document.querySelector('.lds-menu');
+			const inner = header.querySelector('.menu-inner');
+			const nav = header.querySelector('#ldsNav');
+			const moreLi = nav.querySelector('.more');
+			const moreBtn = moreLi.querySelector('button');
+			const subMenu = moreLi.querySelector('.submenu');
+			const toggleBtn = header.querySelector('#menuToggle');
+			const menuContainer = header.querySelector('.menu-container');
+			const blogNav = document.querySelector('.blog-nav');
+
+			const MOBILE_BP = 768;
+			const MAX_VISIBLE = 6;
+
+			function closeMore() {
+				moreLi.classList.remove('open');
+				moreBtn.setAttribute('aria-expanded', 'false');
+			}
+			function closeMobileNav() {
+				menuContainer.classList.remove('open');
+				toggleBtn.setAttribute('aria-expanded', 'false');
+			}
+
+			function redistribute() {
+				while (subMenu.firstChild) nav.insertBefore(subMenu.firstChild, moreLi);
+				moreLi.classList.add('hidden');
+				closeMore();
+
+				if (window.innerWidth <= MOBILE_BP) return;
+
+				const items = [...nav.children].filter(li => li !== moreLi);
+				for (let i = MAX_VISIBLE; i < items.length; i++) {
+					subMenu.appendChild(items[i]);
+				}
+
+				if (subMenu.children.length) moreLi.classList.remove('hidden');
+
+				const fits = () => nav.scrollWidth <= inner.clientWidth;
+				while (!fits()) {
+					const last = nav.querySelector('li:not(.more):last-of-type');
+					if (!last) break;
+					subMenu.insertBefore(last, subMenu.firstChild);
+					moreLi.classList.remove('hidden');
+				}
+
+
+				if (!subMenu.children.length) moreLi.classList.add('hidden');
+			}
+
+
+			toggleBtn.addEventListener('click', () => {
+				const isOpen = menuContainer.classList.toggle('open');
+				toggleBtn.setAttribute('aria-expanded', String(isOpen));
+				if (!isOpen) closeMore();
+			});
+
+
+			moreBtn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				const open = !moreLi.classList.contains('open');
+				moreLi.classList.toggle('open', open);
+				moreBtn.setAttribute('aria-expanded', String(open));
+			});
+
+
+			document.addEventListener('click', (e) => {
+				if (!header.contains(e.target)) { closeMore(); closeMobileNav(); }
+			});
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') { closeMore(); closeMobileNav(); }
+			});
+
+
+			['load', 'resize'].forEach(evt => window.addEventListener(evt, redistribute));
+			if ('ResizeObserver' in window) new ResizeObserver(redistribute).observe(inner);
+
+
+			let lastY = window.scrollY;
+			let ticking = false;
+			const MIN_DELTA = 8;
+			const REVEAL_TOP = 80;
+			const COMPACT_AT = 120;
+
+			const setHidden = (hide) => {
+				header.classList.toggle('is-hidden', hide);
+				blogNav?.classList.toggle('is-hidden', hide);
+			};
+
+			const update = () => {
+				const y = window.scrollY;
+				const dy = y - lastY;
+
+				header.classList.toggle('is-compact', y > COMPACT_AT);
+
+				if (y < REVEAL_TOP || moreLi.classList.contains('open') || header.contains(document.activeElement)) {
+					setHidden(false);
+				} else if (Math.abs(dy) > MIN_DELTA) {
+					setHidden(dy > 0);
+				}
+
+				lastY = y;
+				ticking = false;
+			};
+
+			window.addEventListener('scroll', () => {
+				if (!ticking) { requestAnimationFrame(update); ticking = true; }
+			}, { passive: true });
+
+
+			window.addEventListener('mousemove', (e) => { if (e.clientY <= 8) setHidden(false); });
+
+
+			header.addEventListener('focusin', () => setHidden(false));
+			header.addEventListener('click', () => setHidden(false), true);
+		})();
+	</script>
+
+	<div id="footer"></div>
+	<script>
+		$(function () {
+			$("#footer").load("footer.html");
+		});
+	</script>
+</body>
+
+</html>

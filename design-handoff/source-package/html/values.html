@@ -1,0 +1,743 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta property="og:site_name" content="Legal Design Summit" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Legal Design Summit" />
+  <meta property="og:image" content="images/meta.png" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">"
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link href="css/vendor/formstone/carousel.css" type="text/css" rel="stylesheet" media="all">
+  <link href="css/vendor/formstone/lightbox.css" type="text/css" rel="stylesheet" media="all">
+  <link href="css/vendor/formstone/themes/light.css" type="text/css" rel="stylesheet" media="all">
+  <link href="css/styles.css" type="text/css" rel="stylesheet" media="all">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+  <script type="text/javascript" src="scripts/vendor/respond.min.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/vendor/jquery/jquery.once.min.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/core.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/carousel.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/mediaquery.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/touch.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/transition.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/equalize.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/lightbox.js"></script>
+  <script type="text/javascript" src="scripts/vendor/formstone/viewer.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+  <script src="http://code,jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#footer").load("footer.html");
+    });
+  </script>
+
+  <style>
+    .flex-item h3 {
+      text-align: center;
+    }
+
+    .flex-item img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .image {
+      max-width: 70%;
+    }
+
+    @media only screen and (max-width: 767px) {}
+
+    :root {
+      --accent: #AEECE9;
+      --accent-light: #e5faf7;
+      --danger: #ff3b65;
+      --text-dark: #222;
+      --text-light: #555;
+      --max-width: 900px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-dark);
+      line-height: 1.55;
+      background: #fafafa;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem;
+    }
+
+
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #000;
+      justify-self: center;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 2vw + 1rem, 2.2rem);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    /* turquoise underline on section titles */
+    h1::after,
+    h2::after {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 4px;
+      margin: .5rem auto 0;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-light);
+    }
+
+
+    .values-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-bottom: 3rem;
+    }
+
+    .value-card {
+      background: var(--accent-light);
+      padding: 1.25rem 1rem 1.5rem;
+      border-left: 4px solid var(--accent);
+      border-radius: .25rem;
+    }
+
+    .value-card h3 {
+      margin: 0 0 .5rem;
+      text-transform: uppercase;
+      font-size: .9rem;
+      letter-spacing: .05em;
+    }
+
+    .value-card p {
+      margin: 0;
+      font-size: .95rem;
+      color: var(--text-light);
+    }
+
+
+    .box {
+      border: 2px solid var(--accent);
+      border-radius: .5rem;
+      padding: 1.5rem 1.25rem 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .box.unacceptable {
+      border-color: var(--danger);
+    }
+
+    .box-title {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .box-title .icon {
+      font-size: 1.25em;
+      line-height: 1;
+    }
+
+    .box ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      list-style-type: disc;
+    }
+
+    .box li+li {
+      margin-top: .6rem;
+    }
+
+
+
+
+    .contact {
+      padding: 1.5rem 1.25rem 1.75rem;
+      border: 2px solid var(--accent);
+
+      border-radius: .5rem;
+      background: #fff;
+
+      line-height: 1.6;
+    }
+
+    .box li,
+    .box li span {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .acknowledgement {
+      background: var(--accent-light);
+      border: 2px dashed var(--accent);
+      border-radius: .5rem;
+      padding: 1.75rem 1.25rem 2rem;
+      margin-bottom: 3rem;
+      font-size: .95rem;
+      text-align: center;
+    }
+
+    .acknowledgement p {
+      margin: 0 0 1.1rem;
+      color: var(--text-dark);
+    }
+
+    .acknowledgement strong {
+      font-weight: 600;
+    }
+
+
+    main>.box,
+    main>.contact,
+    main>.acknowledgement {
+      max-width: 780px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    main>.box:not(:last-child),
+    main>.contact,
+    main>.acknowledgement {
+      margin-bottom: 2.75rem;
+
+    }
+
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #111;
+        color: #e9e9e9;
+      }
+
+      .intro,
+      .value-card p,
+      .contact,
+      .box li {
+        color: #bdbdbd;
+      }
+
+      .value-card {
+        background: #013c34;
+      }
+    }
+
+    /* === Theme tokens (fallbacks if not already defined) === */
+    :root {
+      --lds-bar-bg: rgba(125, 218, 208, 0.83);
+      --lds-nav-text: #fff;
+      --lds-nav-font-size: 1.125rem;
+      --lds-max-width: 1200px;
+    }
+
+    /* === Bar container === */
+    .lds-menu {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--lds-bar-bg);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    }
+
+    .lds-menu .menu-inner {
+      max-width: var(--lds-max-width);
+      margin: 0 auto;
+      padding: 0 .75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* center the whole bar on desktop */
+    }
+
+    /* === Toggler (hidden on desktop) === */
+    .lds-menu .menu-toggler {
+      display: none;
+      background: transparent;
+      border: 0;
+      font: inherit;
+      padding: .8rem 1rem;
+      color: var(--lds-nav-text);
+      cursor: pointer;
+    }
+
+    .lds-menu .menu-toggler .icon::before {
+      content: "☰";
+      margin-left: .5rem;
+    }
+
+    .lds-menu .menu-toggler:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* === Primary list (desktop) === */
+    .lds-menu .lds-nav {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      /* centered on desktop */
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: "Helvetica Neue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .lds-menu .lds-nav>li {
+      position: relative;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .lds-menu .lds-nav a,
+    .lds-menu .lds-nav .more>button {
+      display: block;
+      padding: .9rem 1.1rem;
+      color: var(--lds-nav-text);
+      text-decoration: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: var(--lds-nav-font-size);
+      line-height: 1.35;
+      letter-spacing: .01em;
+      text-align: center;
+    }
+
+    .lds-menu .lds-nav a:hover,
+    .lds-menu .lds-nav .more>button:hover {
+      background: rgba(255, 255, 255, .10);
+    }
+
+    .lds-menu .lds-nav a:focus-visible,
+    .lds-menu .lds-nav .more>button:focus-visible,
+    .lds-menu .lds-nav .submenu a:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    .lds-menu .lds-nav .more>button::after {
+      content: " ▾";
+    }
+
+    /* === Submenu (desktop) === */
+    .lds-menu .lds-nav .submenu {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      min-width: 220px;
+      margin: 0;
+      padding: .5rem 0;
+      list-style: none;
+      background: var(--lds-bar-bg);
+      border-radius: 8px;
+      box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .25);
+      z-index: 1000;
+    }
+
+    .lds-menu .lds-nav .submenu li a {
+      padding: .65rem 1rem;
+      display: block;
+    }
+
+    .lds-menu .lds-nav .more.open .submenu {
+      display: block;
+    }
+
+    /* === Mobile panel === */
+    @media (max-width: 768px) {
+      .lds-menu .menu-inner {
+        justify-content: space-between;
+      }
+
+      /* Only collapse if JS is active (progressive enhancement) */
+      .js .lds-menu .menu-toggler {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .js .lds-menu .menu-container {
+        position: relative;
+        width: 100%;
+      }
+
+      .js .lds-menu .menu-container .lds-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--lds-bar-bg);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: max-height .25s ease, opacity .2s ease, visibility .2s ease;
+        box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .25);
+      }
+
+      .js .lds-menu .menu-container.open .lds-nav {
+        max-height: 80vh;
+        overflow: auto;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      /* No overflow bucket on mobile */
+      .lds-menu .lds-nav .more {
+        order: 999;
+      }
+
+      .lds-menu .lds-nav .more.hidden {
+        display: none;
+      }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .lds-menu .menu-container .lds-nav {
+        transition: none;
+      }
+    }
+  </style>
+
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<body class="active">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- LDS Global Navigation -->
+  <div class="lds-menu">
+    <div class="menu-inner">
+      <button class="menu-toggler" id="menuToggle" aria-label="Open navigation" aria-controls="ldsNav"
+        aria-expanded="false">
+        Menu <span class="icon" aria-hidden="true"></span>
+      </button>
+
+      <nav class="menu-container" role="navigation" aria-label="Primary">
+        <ul class="lds-nav" id="ldsNav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="brainfactory.html">BrainFactory</a></li>
+          <li><a href="program.html">Program</a></li>
+          <li><a href="tickets.html">Tickets</a></li>
+          <li><a href="speakers.html">Speakers</a></li>
+          <li><a href="previous-participants.html">Who is attending?</a></li>
+          <li><a href="travel.html">Travel & Venue</a></li>
+          <li><a href="about-us.html">Meet the Team</a></li>
+          <li><a href="values.html">Values</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="the-gallery.html">[Beta] The Gallery</a></li>
+
+          <li class="more hidden">
+            <button type="button" aria-haspopup="true" aria-expanded="false" aria-controls="moreMenu">More</button>
+            <ul class="submenu" id="moreMenu"></ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <h1>Code&nbsp;of&nbsp;Conduct</h1>
+
+    <p class="intro">
+      This Code of Conduct outlines our expectations for all participants at
+      <strong>Legal&nbsp;Design&nbsp;Summit</strong> (including volunteers, staff, attendees,
+      speakers, and partners) and reflects the core values of Legal&nbsp;Design&nbsp;Finland ry.
+      We are committed to creating a welcoming, inclusive, and respectful environment for
+      everyone, free from harassment and discrimination.<br><br>
+      By participating in the Legal&nbsp;Design&nbsp;Summit, you agree to abide by this Code of Conduct.
+    </p>
+
+    <h2>Our&nbsp;Values</h2>
+    <p style="text-align:center; margin:-.75rem 0 2rem; color:var(--text-light)">
+      Legal Design Summit is committed to the following values:
+    </p>
+
+    <section class="values-grid">
+      <article class="value-card">
+        <h3>Selflessness</h3>
+        <p>We believe in supporting each other in achieving our shared goals. We see each other
+          and the world with empathy, and never put personal gain before the interests of
+          the community.</p>
+      </article>
+
+      <article class="value-card">
+        <h3>Inclusion</h3>
+        <p>We create a space where everyone feels welcome and valued, and where diversity and
+          different perspectives are celebrated. To support this, LDS is accessible to everyone
+          through free tickets.</p>
+      </article>
+
+      <article class="value-card">
+        <h3>Courage</h3>
+        <p>Learning, imagination and reaching for the impossible is in our backbone. We are
+          curious about the world and passionate about improving it. When faced with a problem
+          to solve, we ask: how hard can it be?</p>
+      </article>
+
+      <article class="value-card">
+        <h3>Authenticity</h3>
+        <p>We are a movement dedicated to making a difference through creative design-thinking.
+          We strive to make an impact by showing up as our authentic selves, while remaining
+          honest, open and true to our core values.</p>
+      </article>
+    </section>
+
+    <section class="box expected">
+      <div class="box-title"><span class="icon">😊</span> Expected&nbsp;Behaviour</div>
+      <ul>
+        <li>Treat everyone with kindness, courtesy, and empathy.</li>
+        <li>Actively work to create a welcoming environment for people of all backgrounds,
+          identities, and abilities.</li>
+        <li>Keep an open mind.</li>
+        <li>Work together constructively and supportively—helping others and being open to
+          receiving help.</li>
+        <li>Follow all instructions and rules provided by event organizers, including being
+          mindful of the event space.</li>
+      </ul>
+    </section>
+    <section class="box unacceptable">
+      <div class="box-title"><span class="icon">❌</span> Unacceptable&nbsp;Behaviour</div>
+      <ul class="unacceptable">
+        <li><strong>Harassment:</strong> Any form of verbal, physical, or written abuse, intimidation,
+          threats, or unwelcome advances.</li>
+        <li><strong>Discrimination:</strong> Any form of prejudice or discrimination based on race,
+          ethnicity, religion, gender, gender identity, sexual orientation, age, disability or
+          any other personal characteristic.</li>
+        <li><strong>Bullying:</strong> Repeated or persistent negative behaviour that is intended to
+          intimidate, humiliate, or demean another person.</li>
+        <li><strong>Disruption:</strong> Any behaviour that disrupts the event or creates a hostile
+          environment.</li>
+        <li><strong>Theft&nbsp;or&nbsp;Damage:</strong> Stealing or damaging property belonging to the
+          organization, other participants, or the venue.</li>
+      </ul>
+    </section>
+    <section class="contact">
+      <strong>Who to contact?</strong><br>
+      If you experience or witness any behavior that violates this Code of Conduct, please report it immediately to the
+      Vice Chair of the Board (Sade Mäntylä). All reports will be treated confidentially to the extent possible.
+
+      Legal Design Summit is committed to investigating all reports of Code of Conduct violations promptly and fairly.
+      Depending on the severity of the violation, we may take action, such as issuing a warning, removal from current
+      and future events or when necessary, contacting relevant authorities.
+      <br>
+    </section>
+
+    <section class="acknowledgement">
+      <p>
+        By participating in the 2025 Legal&nbsp;Design&nbsp;Summit, you acknowledge that you
+        have read, understood, and agree to abide by this Code of Conduct.
+      </p>
+
+      <p>
+        This Code of Conduct is subject to change at the discretion of the Legal Design
+        Summit Board. Any updates will be communicated to participants.
+      </p>
+
+      <p>
+        <strong>For questions or concerns regarding this Code of Conduct,<br>
+          please contact:</strong><br><br>
+        Name:&nbsp;Sade&nbsp;Mäntylä&nbsp;(Vice&nbsp;Chair)<br>
+        Email:&nbsp;<a href="mailto:sade.mantyla@legaldesignsummit.com">
+          sade.mantyla@legaldesignsummit.com</a>
+      </p>
+    </section>
+  </main>
+
+  <div class="wrapper actions" style="padding-bottom: 0px;">
+    <div class="container">
+      <div id="content-actions">
+
+        <div class="padding-top-40"></div>
+        <div class="social-media padding-top-40 justify-center">
+          <div class="row col" style="justify-content: center;">
+            <a href="https://www.linkedin.com/company/10936008/" class="icon linkedin col-3 margin-right-5"
+              target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/legaldesignsummit/"
+              class="icon facebook col-3 margin-right-5 margin-left-5" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/legaldesignsummit/"
+              class="icon instagram col-3 margin-right-5 margin-left-5" target="_blank">Instagram</a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+
+    const parentContainers = document.querySelectorAll('.read-more-container');
+
+    parentContainers.forEach(parentContainer => {
+      parentContainer.addEventListener('click', event => {
+        const current = event.target;
+        const isReadMoreBtn = current.className.includes('read-more-btn');
+
+        if (!isReadMoreBtn) return;
+
+        const currentText = event.target.parentNode.querySelector('.read-more-text');
+
+        currentText.classList.toggle('read-more-text--show');
+
+        current.textContent = current.textContent.includes('Read More') ? "Read Less..." : "Read More...";
+      });
+    });
+
+    (function () {
+      // Progressive enhancement flag
+      document.documentElement.classList.add('js');
+
+      // Config
+      const MAX_VISIBLE = 6; // number of top-level items to show before "More" on desktop
+
+      // Elements (scoped so you can reuse this block once per page)
+      const root = document.querySelector('.lds-menu');
+      const nav = root.querySelector('#ldsNav');
+      const moreLi = nav.querySelector('.more');
+      const moreBtn = moreLi.querySelector('button');
+      const subMenu = moreLi.querySelector('.submenu');
+      const toggleBtn = root.querySelector('#menuToggle');
+      const menuContainer = root.querySelector('.menu-container');
+
+      function closeMobileNav() {
+        menuContainer.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      function redistribute() {
+        // Put everything back in the main row
+        while (subMenu.firstChild) {
+          nav.insertBefore(subMenu.firstChild, moreLi);
+        }
+        moreLi.classList.add('hidden');
+        moreLi.classList.remove('open');
+        moreBtn.setAttribute('aria-expanded', 'false');
+
+        // Mobile: show everything; no "More"
+        if (window.innerWidth <= 768) return;
+
+        // Desktop: measure available width and bucket overflow into "More"
+        const available = nav.parentElement.clientWidth; // container width
+        let used = moreLi.offsetWidth;                  // reserve space for "More"
+        let shown = 0;
+
+        [...nav.children].forEach(li => {
+          if (li === moreLi) return;
+          const fits = used + li.offsetWidth <= available;
+          const underCap = shown < MAX_VISIBLE;
+
+          if (fits && underCap) {
+            used += li.offsetWidth;
+            shown += 1;
+          } else {
+            subMenu.appendChild(li);
+          }
+        });
+
+        if (subMenu.children.length) {
+          moreLi.classList.remove('hidden');
+        }
+      }
+
+      // Hamburger toggle
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = menuContainer.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', String(isOpen));
+        if (!isOpen) {
+          moreLi.classList.remove('open');
+          moreBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // "More" dropdown (desktop)
+      moreBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = moreLi.classList.toggle('open');
+        moreBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Close on outside click / Esc
+      document.addEventListener('click', (e) => {
+        if (!root.contains(e.target)) {
+          moreLi.classList.remove('open');
+          moreBtn.setAttribute('aria-expanded', 'false');
+          closeMobileNav();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          moreLi.classList.remove('open');
+          moreBtn.setAttribute('aria-expanded', 'false');
+          closeMobileNav();
+        }
+      });
+
+      // Recalc when layout changes
+      window.addEventListener('load', redistribute);
+      window.addEventListener('resize', redistribute);
+      if ('ResizeObserver' in window) {
+        const ro = new ResizeObserver(redistribute);
+        ro.observe(nav.parentElement);
+      }
+    })();
+
+  </script>
+
+
+</body>
+
+</html>

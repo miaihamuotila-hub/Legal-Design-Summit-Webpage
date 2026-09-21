@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Legal Services",
+    "value": 62,
+    "percentage": 39
+  },
+  {
+    "name": "Education",
+    "value": 26,
+    "percentage": 16
+  },
+  {
+    "name": "Legal Technology",
+    "value": 10,
+    "percentage": 6
+  },
+  {
+    "name": "Information Technology",
+    "value": 8,
+    "percentage": 5
+  },
+  {
+    "name": "Legal Innovation",
+    "value": 7,
+    "percentage": 4
+  },
+  {
+    "name": "Public Administration",
+    "value": 7,
+    "percentage": 4
+  },
+  {
+    "name": "Design Services",
+    "value": 6,
+    "percentage": 4
+  },
+  {
+    "name": "Legal Design",
+    "value": 5,
+    "percentage": 3
+  },
+  {
+    "name": "Social Causes",
+    "value": 5,
+    "percentage": 3
+  },
+  {
+    "name": "Other",
+    "value": 25,
+    "percentage": 16
+  }
+]

@@ -1,0 +1,857 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:site_name" content="Legal Design Summit" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Legal Design Summit - Sectors Represented" />
+    <meta property="og:image" content="images/meta.png" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link href="css/vendor/formstone/carousel.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/vendor/formstone/lightbox.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/vendor/formstone/themes/light.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/styles.css" type="text/css" rel="stylesheet" media="all">
+
+    <script type="text/javascript" src="scripts/vendor/respond.min.js"></script>
+    <script type="text/javascript" src="scripts/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/vendor/jquery/jquery.once.min.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/core.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/carousel.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/mediaquery.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/touch.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/transition.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/equalize.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/lightbox.js"></script>
+    <script type="text/javascript" src="scripts/vendor/formstone/viewer.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+
+    <title>Legal Design Summit - Sectors Represented</title>
+    <style>
+        /* Base styles */
+        .sectors-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .sectors-header {
+            background: linear-gradient(to right, #7DDFD3, #aeede8);
+            padding: 24px;
+        }
+
+        .sectors-header h2 {
+            color: #333;
+            margin: 0 0 4px 0;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .sectors-header p {
+            color: #333;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Content */
+        .sectors-content {
+            padding: 16px;
+        }
+
+        .stats-container {
+            background-color: rgba(174, 237, 232, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .stats-number {
+            font-weight: bold;
+            font-size: 30px;
+            color: #333;
+        }
+
+        .stats-label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Charts layout */
+        .charts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .chart-column {
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .chart-box {
+            border: 1px solid #7DDFD3;
+            border-radius: 6px;
+            padding: 16px;
+            height: 350px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-container {
+            flex: 1;
+            position: relative;
+            min-height: 200px;
+        }
+
+        /* Legend styling */
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            margin-top: 15px;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 5px;
+            margin-bottom: 6px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 4px;
+            flex-shrink: 0;
+        }
+
+        .legend-label {
+            font-size: 11px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            margin-top: 24px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .testimonial-card {
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #7DDFD3;
+            background-color: rgba(174, 237, 232, 0.2);
+            position: relative;
+        }
+
+        .testimonial-card:nth-child(odd) {
+            background-color: rgba(174, 237, 232, 0.4);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #333;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .testimonial-card:after {
+            content: '"';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 40px;
+            color: rgba(125, 223, 211, 0.5);
+            font-family: Georgia, serif;
+        }
+
+        /* Footer */
+        .sectors-footer {
+            padding: 16px;
+            font-size: 12px;
+            border-top: 1px solid #7DDFD3;
+            background-color: rgba(174, 237, 232, 0.1);
+            color: #555;
+            text-align: center;
+        }
+
+        .footer-bar {
+            height: 8px;
+            width: 220px;
+            background-color: #7DDFD3;
+            margin: 0 auto 10px;
+        }
+
+        /* Responsive design */
+        @media (min-width: 768px) {
+            .charts-container {
+                flex-direction: row;
+            }
+
+            .chart-column {
+                width: 50%;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid>div:last-child {
+                grid-column: span 2;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .legend {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* === Theme tokens (fallbacks if not already defined) === */
+        :root {
+            --lds-bar-bg: rgba(125, 218, 208, 0.83);
+            --lds-nav-text: #fff;
+            --lds-nav-font-size: 1.125rem;
+            --lds-max-width: 1200px;
+        }
+
+        /* === Bar container === */
+        .lds-menu {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--lds-bar-bg);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+        }
+
+        .lds-menu .menu-inner {
+            max-width: var(--lds-max-width);
+            margin: 0 auto;
+            padding: 0 .75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* center the whole bar on desktop */
+        }
+
+        /* === Toggler (hidden on desktop) === */
+        .lds-menu .menu-toggler {
+            display: none;
+            background: transparent;
+            border: 0;
+            font: inherit;
+            padding: .8rem 1rem;
+            color: var(--lds-nav-text);
+            cursor: pointer;
+        }
+
+        .lds-menu .menu-toggler .icon::before {
+            content: "☰";
+            margin-left: .5rem;
+        }
+
+        .lds-menu .menu-toggler:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        /* === Primary list (desktop) === */
+        .lds-menu .lds-nav {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            /* centered on desktop */
+            gap: 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "Helvetica Neue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        .lds-menu .lds-nav>li {
+            position: relative;
+            white-space: nowrap;
+            flex: 0 0 auto;
+        }
+
+        .lds-menu .lds-nav a,
+        .lds-menu .lds-nav .more>button {
+            display: block;
+            padding: .9rem 1.1rem;
+            color: var(--lds-nav-text);
+            text-decoration: none;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: var(--lds-nav-font-size);
+            line-height: 1.35;
+            letter-spacing: .01em;
+            text-align: center;
+        }
+
+        .lds-menu .lds-nav a:hover,
+        .lds-menu .lds-nav .more>button:hover {
+            background: rgba(255, 255, 255, .10);
+        }
+
+        .lds-menu .lds-nav a:focus-visible,
+        .lds-menu .lds-nav .more>button:focus-visible,
+        .lds-menu .lds-nav .submenu a:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .lds-menu .lds-nav .more>button::after {
+            content: " ▾";
+        }
+
+        /* === Submenu (desktop) === */
+        .lds-menu .lds-nav .submenu {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            min-width: 220px;
+            margin: 0;
+            padding: .5rem 0;
+            list-style: none;
+            background: var(--lds-bar-bg);
+            border-radius: 8px;
+            box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .25);
+            z-index: 1000;
+        }
+
+        .lds-menu .lds-nav .submenu li a {
+            padding: .65rem 1rem;
+            display: block;
+        }
+
+        .lds-menu .lds-nav .more.open .submenu {
+            display: block;
+        }
+
+        /* === Mobile panel === */
+        @media (max-width: 768px) {
+            .lds-menu .menu-inner {
+                justify-content: space-between;
+            }
+
+            /* Only collapse if JS is active (progressive enhancement) */
+            .js .lds-menu .menu-toggler {
+                display: inline-flex;
+                align-items: center;
+                gap: .5rem;
+            }
+
+            .js .lds-menu .menu-container {
+                position: relative;
+                width: 100%;
+            }
+
+            .js .lds-menu .menu-container .lds-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                background: var(--lds-bar-bg);
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: max-height .25s ease, opacity .2s ease, visibility .2s ease;
+                box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .25);
+            }
+
+            .js .lds-menu .menu-container.open .lds-nav {
+                max-height: 80vh;
+                overflow: auto;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+            }
+
+            /* No overflow bucket on mobile */
+            .lds-menu .lds-nav .more {
+                order: 999;
+            }
+
+            .lds-menu .lds-nav .more.hidden {
+                display: none;
+            }
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .lds-menu .menu-container .lds-nav {
+                transition: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="active">
+
+
+    <!-- LDS Global Navigation -->
+    <div class="lds-menu">
+        <div class="menu-inner">
+            <button class="menu-toggler" id="menuToggle" aria-label="Open navigation" aria-controls="ldsNav"
+                aria-expanded="false">
+                Menu <span class="icon" aria-hidden="true"></span>
+            </button>
+
+            <nav class="menu-container" role="navigation" aria-label="Primary">
+                <ul class="lds-nav" id="ldsNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="brainfactory.html">BrainFactory</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="previous-participants.html">Who is attending?</a></li>
+                    <li><a href="travel.html">Travel & Venue</a></li>
+                    <li><a href="about-us.html">Meet the Team</a></li>
+                    <li><a href="values.html">Values</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="the-gallery.html">[Beta] The Gallery</a></li>
+
+                    <li class="more hidden">
+                        <button type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="moreMenu">More</button>
+                        <ul class="submenu" id="moreMenu"></ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="wrapper fluid fill header" style="background-image: url('images/backgrounds/bg-1.jpg');">
+
+        <div class="container">
+
+            <!-- Header Section Begins -->
+
+            <div id="header">
+
+                <!-- Content Main Section Begins -->
+
+                <div class="content-main">
+
+                    <div class="block header-main">
+
+                        <div class="content">
+
+                            <div class="title-container">
+                                <div class="title">
+                                    <h1>Who is Attending<br><span style="color: #c30979;">Legal Design Summit</span>
+                                    </h1>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="wrapper fluid fill content">
+
+
+        <div class="container">
+
+
+            <div id="content">
+
+                <!-- Content Main Section Begins -->
+
+                <div class="content-main">
+
+                    <div class="sectors-container">
+                        <div class="sectors-header">
+                            <h2 style="text-align: center;">Explore the diverse community at Legal Design Summit!</h2>
+                        </div>
+
+                        <div class="sectors-content">
+                            <div class="stats-container">
+                                <span class="stats-number">600+</span>
+                                <span class="stats-label">Total Attendees in 2023</span>
+                            </div>
+
+                            <div class="charts-container">
+                                <!-- Pie Chart -->
+                                <div class="chart-column">
+                                    <h3 class="section-title">Sectors Distribution</h3>
+                                    <div class="chart-box">
+                                        <div class="chart-container">
+                                            <canvas id="sector-pie-chart"></canvas>
+                                        </div>
+                                        <div id="sector-pie-legend" class="legend"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Bar Chart -->
+                                <div class="chart-column">
+                                    <h3 class="section-title">Top 5 Sectors</h3>
+                                    <div class="chart-box">
+                                        <canvas id="sector-bar-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonials -->
+                            <div class="testimonials-container">
+                                <h3 class="section-title">Testimonials for Legal Design Summit</h3>
+                                <div class="testimonials-grid">
+                                    <div class="testimonial-card">
+                                        <p class="testimonial-text">"Unbelievable! From the organisation, the
+                                            volunteers, the speakers and the topics covered."</p>
+                                    </div>
+                                    <div class="testimonial-card">
+                                        <p class="testimonial-text">"Absolutley wonderful experience."</p>
+                                    </div>
+                                    <div class="testimonial-card">
+                                        <p class="testimonial-text">"Amazing. Not only because of the quality of content
+                                            and speakers but also thanks to all these volunteers to putting their time,
+                                            energy and brain juices to organise this event and make it accessible for
+                                            all."</p>
+                                    </div>
+                                    <div class="testimonial-card">
+                                        <p class="testimonial-text">"As a speaker, I felt extremely grateful to be
+                                            speaking at the prestigious Summit."</p>
+                                    </div>
+                                    <div class="testimonial-card">
+                                        <p class="testimonial-text">"What you pulled off is so impressive. The community
+                                            is great. People were approachable and friendly and you could just feel that
+                                            they were all having a good time. Everybody was always smiling. It was a
+                                            happy place all week!"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sectors-footer">
+                            <div class="footer-bar"></div>
+                            Data based on previous Legal Design Summit attendance
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrapper actions" style="background-color: white; padding-bottom: 0px;">
+        <div class="container">
+            <div id="content-actions">
+                <div class="content-main">
+                    <div class="padding-top-40"></div>
+                    <div class="social-media padding-top-40 justify-center">
+                        <div class="row col">
+                            <a href="https://www.linkedin.com/company/10936008/"
+                                class="icon linkedin col-3 margin-right-5" target="_blank">LinkedIn</a>
+                            <a href="https://www.facebook.com/legaldesignsummit/"
+                                class="icon facebook col-3 margin-right-5 margin-left-5" target="_blank">Facebook</a>
+                            <a href="https://www.instagram.com/legaldesignsummit/"
+                                class="icon instagram col-3 margin-right-5 margin-left-5" target="_blank">Instagram</a>
+                            <a href="https://twitter.com/legaldesignFI" class="icon twitter col-3 margin-left-5"
+                                target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper footer" style="background-color: white; padding-top: 40px;">
+        <div class="container">
+            <div class="content-main">
+                <div class="justify-center">
+                    <p style="color: #7ddad0; font-weight: bold;"><a style="color: black; font-weight: normal;"
+                            href="mailto:info@legaldesignsummit.com"> info@legaldesignsummit</a> | <a
+                            style="color: black;  font-weight: normal;" href="https://forms.gle/yFSxNdMBgnmbwZdWA">
+                            Whistleblower Form</a> | <a style="color: black;  font-weight: normal;"
+                            href="privacy.html">Privacy Policy</a> | <a style="color: black;  font-weight: normal;"
+                            href="privacy-rec.html">Recruitment Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="scroll-up" style="padding-top: 30px; padding-bottom: 10px; margin-bottom: 0px;"></a>
+    </div>
+
+    <script>
+        // Sector data
+        const sectorData = [
+            { name: "Legal Services", value: 62, percentage: 39 },
+            { name: "Education", value: 26, percentage: 16 },
+            { name: "Legal Technology", value: 10, percentage: 6 },
+            { name: "Information Technology", value: 8, percentage: 5 },
+            { name: "Legal Innovation", value: 7, percentage: 4 },
+            { name: "Public Administration", value: 7, percentage: 4 },
+            { name: "Design Services", value: 6, percentage: 4 },
+            { name: "Legal Design", value: 5, percentage: 3 },
+            { name: "Social Causes", value: 5, percentage: 3 },
+            { name: "Other", value: 25, percentage: 16 }
+        ];
+
+        // Colors for charts
+        const COLORS = [
+            '#7DDFD3',
+            '#5eb8af',
+            '#4a9993',
+            '#333333',
+            '#555555',
+            '#c30979',
+            '#9a0861',
+            '#e840a5',
+            '#720649',
+            '#444444',
+            '#666666'
+        ];
+
+        // Render the charts when page loads
+        window.onload = function () {
+            // Sector Pie Chart
+            const sectorPieCtx = document.getElementById('sector-pie-chart').getContext('2d');
+            new Chart(sectorPieCtx, {
+                type: 'pie',
+                data: {
+                    labels: sectorData.map(item => item.name),
+                    datasets: [{
+                        data: sectorData.map(item => item.value),
+                        backgroundColor: sectorData.map((_, index) => COLORS[index % COLORS.length]),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            bottom: 10
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed || 0;
+                                    const percentage = sectorData[context.dataIndex].percentage;
+                                    return `${label}: ${value} attendees (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Create custom legend for sector pie chart
+            const sectorLegend = document.getElementById('sector-pie-legend');
+            sectorData.forEach((item, index) => {
+                const legendItem = document.createElement('div');
+                legendItem.className = 'legend-item';
+
+                const colorBox = document.createElement('div');
+                colorBox.className = 'legend-color';
+                colorBox.style.backgroundColor = COLORS[index % COLORS.length];
+
+                const label = document.createElement('span');
+                label.className = 'legend-label';
+                label.textContent = `${item.name}: ${item.percentage}%`;
+
+                legendItem.appendChild(colorBox);
+                legendItem.appendChild(label);
+                sectorLegend.appendChild(legendItem);
+            });
+
+            // Sector Bar Chart (top 5)
+            const sectorBarCtx = document.getElementById('sector-bar-chart').getContext('2d');
+            const top5Sectors = sectorData.slice(0, 5);
+            new Chart(sectorBarCtx, {
+                type: 'bar',
+                data: {
+                    labels: top5Sectors.map(item => item.name),
+                    datasets: [{
+                        axis: 'y',
+                        data: top5Sectors.map(item => item.value),
+                        backgroundColor: top5Sectors.map((_, index) => COLORS[index % COLORS.length]),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const value = context.parsed.x || 0;
+                                    const percentage = top5Sectors[context.dataIndex].percentage;
+                                    return `${value} attendees (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(125, 223, 211, 0.3)'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        };
+        (function () {
+            // Progressive enhancement flag
+            document.documentElement.classList.add('js');
+
+            // Config
+            const MAX_VISIBLE = 6; // number of top-level items to show before "More" on desktop
+
+            // Elements (scoped so you can reuse this block once per page)
+            const root = document.querySelector('.lds-menu');
+            const nav = root.querySelector('#ldsNav');
+            const moreLi = nav.querySelector('.more');
+            const moreBtn = moreLi.querySelector('button');
+            const subMenu = moreLi.querySelector('.submenu');
+            const toggleBtn = root.querySelector('#menuToggle');
+            const menuContainer = root.querySelector('.menu-container');
+
+            function closeMobileNav() {
+                menuContainer.classList.remove('open');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+
+            function redistribute() {
+                // Put everything back in the main row
+                while (subMenu.firstChild) {
+                    nav.insertBefore(subMenu.firstChild, moreLi);
+                }
+                moreLi.classList.add('hidden');
+                moreLi.classList.remove('open');
+                moreBtn.setAttribute('aria-expanded', 'false');
+
+                // Mobile: show everything; no "More"
+                if (window.innerWidth <= 768) return;
+
+                // Desktop: measure available width and bucket overflow into "More"
+                const available = nav.parentElement.clientWidth; // container width
+                let used = moreLi.offsetWidth;                  // reserve space for "More"
+                let shown = 0;
+
+                [...nav.children].forEach(li => {
+                    if (li === moreLi) return;
+                    const fits = used + li.offsetWidth <= available;
+                    const underCap = shown < MAX_VISIBLE;
+
+                    if (fits && underCap) {
+                        used += li.offsetWidth;
+                        shown += 1;
+                    } else {
+                        subMenu.appendChild(li);
+                    }
+                });
+
+                if (subMenu.children.length) {
+                    moreLi.classList.remove('hidden');
+                }
+            }
+
+            // Hamburger toggle
+            toggleBtn.addEventListener('click', () => {
+                const isOpen = menuContainer.classList.toggle('open');
+                toggleBtn.setAttribute('aria-expanded', String(isOpen));
+                if (!isOpen) {
+                    moreLi.classList.remove('open');
+                    moreBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // "More" dropdown (desktop)
+            moreBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = moreLi.classList.toggle('open');
+                moreBtn.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            // Close on outside click / Esc
+            document.addEventListener('click', (e) => {
+                if (!root.contains(e.target)) {
+                    moreLi.classList.remove('open');
+                    moreBtn.setAttribute('aria-expanded', 'false');
+                    closeMobileNav();
+                }
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    moreLi.classList.remove('open');
+                    moreBtn.setAttribute('aria-expanded', 'false');
+                    closeMobileNav();
+                }
+            });
+
+            // Recalc when layout changes
+            window.addEventListener('load', redistribute);
+            window.addEventListener('resize', redistribute);
+            if ('ResizeObserver' in window) {
+                const ro = new ResizeObserver(redistribute);
+                ro.observe(nav.parentElement);
+            }
+        })();
+
+    </script>
+</body>
+
+</html>
