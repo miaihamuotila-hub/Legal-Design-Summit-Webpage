@@ -7,14 +7,19 @@ export function NextEdition() {
       <div className="mx-auto max-w-[1240px] px-5 md:px-8 py-16 md:py-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <p className="h-brand text-[11px] text-[#288F85] mb-3">Next edition</p>
-            <p className="font-bold text-[40px] md:text-[56px] leading-none text-[#1a1a1a]">
-              {nextEdition.year}
+            <p className="h-brand text-[11px] text-[#288F85] mb-3">
+              Next edition &middot; {nextEdition.year}
             </p>
-            <p className="text-[15px] text-[#4E5654] mt-3 max-w-md">
-              {nextEdition.status}. City, venue and ticket details will appear here as
-              soon as they&rsquo;re confirmed &mdash; we&rsquo;d rather tell you nothing
-              than tell you something wrong.
+            <p className="font-bold text-[34px] md:text-[48px] leading-none text-[#1a1a1a]">
+              {nextEdition.dateRange}
+            </p>
+            <p className="h-brand text-[12px] text-[#9C0760] mt-3">
+              BrainFactory &middot; {nextEdition.brainFactoryDate}
+            </p>
+            <p className="text-[15px] text-[#4E5654] mt-4 max-w-md">
+              {nextEdition.status}. Ticket details will appear here as soon as
+              they&rsquo;re confirmed &mdash; we&rsquo;d rather tell you nothing than
+              tell you something wrong.
             </p>
           </div>
           <div className="flex gap-3 shrink-0">

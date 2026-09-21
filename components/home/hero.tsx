@@ -40,11 +40,14 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-[1240px] w-full px-5 md:px-8 pb-16 pt-40">
         <p className="h-brand text-[11px] text-[#7DDAD0] mb-5 tracking-widest">
-          Legal Design Summit &middot; 2027 edition
+          Legal Design Summit &middot; 9&ndash;10 September 2027
         </p>
         <h1 className="font-bold text-white text-[10vw] leading-[1.05] md:text-[52px] md:leading-[1.08] max-w-4xl tracking-tight">
           {manifesto.statement}
         </h1>
+        <p className="h-brand text-[13px] md:text-[15px] text-[#7DDAD0] mt-6 tracking-wide">
+          Designing evolution, leading revolution
+        </p>
 
         <div className="mt-9 flex flex-wrap items-center gap-4">
           <Link

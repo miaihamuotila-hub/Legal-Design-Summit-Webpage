@@ -28,13 +28,15 @@ export const stats2025 = [
   { value: "2", label: "Intensive days" },
 ];
 
-// Needs confirmation from the organiser before dates/venue/tickets can show.
-// Year confirmed directly by the organiser (Mia Ihamuotila, Chair) — nothing else.
+// Dates confirmed directly by the organiser (Mia Ihamuotila, Chair) on
+// 2026-09-21. City, venue, and ticket details are still unconfirmed — left
+// empty rather than guessed.
 export const nextEdition = {
   year: "2027",
-  status: "Dates will be announced",
+  dateRange: "9–10 September 2027",
+  brainFactoryDate: "8 September 2027",
   city: null as string | null,
-  dateRange: null as string | null,
+  status: "City and venue will be announced",
 };
 
 // Historical — real, confirmed external video (2025 BrainFactory Highlights).
