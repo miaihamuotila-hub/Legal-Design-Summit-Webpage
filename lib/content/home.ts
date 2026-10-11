@@ -4,9 +4,12 @@
 // Nothing here is invented; unconfirmed 2027 fields are left empty on purpose.
 
 export const manifesto = {
-  // Evergreen — verbatim from the current homepage's <h1>.
-  statement:
-    "Where law meets design — and a global community turns ideas into better justice, strategic advantage, and truly human-centred legal services.",
+  // Proposed — shortened by the organiser from the old site's full <h1> for
+  // the hero, which reads better as one punchy line than the full sentence.
+  statement: "Where law meets design.",
+  // Evergreen — verbatim from the current homepage's <h1>. Kept in full on
+  // /about as the bridge between the old site's identity and the new copy.
+  full: "Where law meets design — and a global community turns ideas into better justice, strategic advantage, and truly human-centred legal services.",
 };
 
 // Evergreen — verbatim h3 sequence from the current homepage.

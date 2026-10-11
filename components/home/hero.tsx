@@ -42,7 +42,7 @@ export function Hero() {
         <p className="h-brand text-[11px] text-[#7DDAD0] mb-5 tracking-widest">
           {nextEdition.city} &middot; {nextEdition.dateRange}
         </p>
-        <h1 className="font-bold text-white text-[10vw] leading-[1.05] md:text-[52px] md:leading-[1.08] max-w-4xl tracking-tight">
+        <h1 className="font-bold text-white text-[14vw] leading-[1.02] md:text-[76px] md:leading-[1.02] max-w-4xl tracking-tight">
           {manifesto.statement}
         </h1>
         <p className="h-brand text-[13px] md:text-[15px] text-[#7DDAD0] mt-6 tracking-wide">
