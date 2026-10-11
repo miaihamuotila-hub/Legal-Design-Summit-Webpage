@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { manifesto } from "@/lib/content/home";
 import { pageTitle, sections, values, closing } from "@/lib/content/about";
 
@@ -67,12 +66,6 @@ export default function AboutPage() {
               {closing.boldLine}
             </p>
           </div>
-          <Link
-            href="/#updates"
-            className="h-brand inline-block text-[12px] px-6 py-3.5 bg-[#288F85] text-white tracking-wide hover:bg-[#1f6f67] transition-colors mt-8"
-          >
-            Get updates
-          </Link>
         </div>
       </section>
     </>

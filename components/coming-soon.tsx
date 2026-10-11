@@ -1,17 +1,23 @@
 import Link from "next/link";
 
 // Shared "not published yet" page body — used wherever content genuinely
-// doesn't exist for the next edition yet (Program, Speakers). Honest status
-// text instead of a padded-out placeholder, per the brief's rule against
-// showing empty content dressed up as real.
+// doesn't exist for the next edition yet (Program, Speakers, Tickets).
+// Honest status text instead of a padded-out placeholder, per the brief's
+// rule against showing empty content dressed up as real. The "get updates"
+// CTA is opt-in (ctaLabel) rather than always-on, since the same button
+// repeated on every page stopped being useful — it now lives on this
+// component only where signing up is genuinely the page's whole purpose
+// (Tickets), not as decoration everywhere.
 export function ComingSoon({
   eyebrow,
   title,
   note,
+  ctaLabel,
 }: {
   eyebrow: string;
   title: string;
   note: string;
+  ctaLabel?: string;
 }) {
   return (
     <section className="bg-white">
@@ -22,12 +28,14 @@ export function ComingSoon({
         </h1>
         <p className="h-brand text-[13px] text-[#9C0760] mt-6">To be announced</p>
         <p className="text-[15px] text-[#4E5654] mt-4 max-w-md leading-[1.6]">{note}</p>
-        <Link
-          href="/#updates"
-          className="h-brand inline-block text-[12px] px-6 py-3.5 bg-[#288F85] text-white tracking-wide hover:bg-[#1f6f67] transition-colors mt-8"
-        >
-          Get updates
-        </Link>
+        {ctaLabel && (
+          <Link
+            href="/#updates"
+            className="h-brand inline-block text-[12px] px-6 py-3.5 bg-[#288F85] text-white tracking-wide hover:bg-[#1f6f67] transition-colors mt-8"
+          >
+            {ctaLabel}
+          </Link>
+        )}
       </div>
     </section>
   );

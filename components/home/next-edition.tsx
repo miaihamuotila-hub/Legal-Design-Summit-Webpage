@@ -27,10 +27,10 @@ export function NextEdition() {
           </div>
           <div className="flex gap-3 shrink-0">
             <Link
-              href="/#updates"
+              href="/tickets"
               className="h-brand text-[12px] px-6 py-3.5 bg-[#288F85] text-white tracking-wide hover:bg-[#1f6f67] transition-colors"
             >
-              Get updates
+              Tickets
             </Link>
             <Link
               href="/archive"

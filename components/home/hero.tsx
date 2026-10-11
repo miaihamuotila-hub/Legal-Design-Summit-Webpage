@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { manifesto, highlightsVideo, nextEdition } from "@/lib/content/home";
+import { manifesto, aftermovie, nextEdition } from "@/lib/content/home";
 
 // Manifesto-first hero, with the event-first direction's video treatment
 // folded in: a muted, looping ambient video plays behind the statement
@@ -50,20 +50,20 @@ export function Hero() {
         </p>
 
         <div className="mt-9 flex flex-wrap items-center gap-4">
-          <Link
-            href="/#updates"
-            className="h-brand text-[12px] px-6 py-3.5 bg-[#7DDAD0] text-[#1a1a1a] tracking-wide hover:bg-white transition-colors"
-          >
-            Get updates
-          </Link>
           <a
-            href={highlightsVideo.href}
+            href={aftermovie.href}
             target="_blank"
             rel="noopener noreferrer"
+            className="h-brand text-[12px] px-6 py-3.5 bg-[#7DDAD0] text-[#1a1a1a] tracking-wide hover:bg-white transition-colors"
+          >
+            {aftermovie.label}
+          </a>
+          <Link
+            href="/tickets"
             className="h-brand text-[12px] px-6 py-3.5 border border-white/40 text-white tracking-wide hover:border-white transition-colors"
           >
-            {highlightsVideo.label}
-          </a>
+            Tickets
+          </Link>
         </div>
       </div>
     </section>

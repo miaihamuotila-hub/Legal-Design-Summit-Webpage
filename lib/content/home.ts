@@ -50,6 +50,13 @@ export const nextEdition = {
   status: "Ticket details will be announced",
 };
 
+// Historical — real, confirmed 2025 aftermovie (LinkedIn post, as linked from
+// the old homepage's "View the 2025 aftermovie here!").
+export const aftermovie = {
+  label: "Watch 2025 aftermovie",
+  href: "https://www.linkedin.com/feed/update/urn:li:activity:7381283883494846464",
+};
+
 // Historical — real, confirmed external video (2025 BrainFactory Highlights).
 // Not the full summit aftermovie; labelled accurately rather than overstated.
 export const highlightsVideo = {
