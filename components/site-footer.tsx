@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { navGroups } from "@/lib/nav";
+import { nextEdition } from "@/lib/content/home";
 
 const SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/legaldesignsummit/" },
@@ -18,8 +19,9 @@ export function SiteFooter() {
           <div>
             <div className="h-brand text-xl md:text-2xl">Stay in the loop</div>
             <p className="text-[13px] text-[#A9B1B1] mt-1.5 max-w-md">
-              The next edition&rsquo;s dates aren&rsquo;t confirmed yet. Follow along and
-              you&rsquo;ll be first to know when they are.
+              {nextEdition.dateRange} in {nextEdition.city}. Ticket details
+              aren&rsquo;t confirmed yet &mdash; follow along and you&rsquo;ll be first
+              to know when they are.
             </p>
           </div>
           <div className="flex gap-3 shrink-0">
